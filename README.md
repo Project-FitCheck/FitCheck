@@ -1,1 +1,1 @@
-FitCheck is a website/app that makes the creation and cataloging of outfits easy.
+FitCheck is a website/app that makes the creation and cataloging of outfits
