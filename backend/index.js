@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-require("dotenv").config();
+require('dotenv').config();
 
 const app = express();
 app.use(cors);
@@ -14,5 +14,5 @@ const port = process.env.PORT || 3000
 mongoose.connect(url)
 
 app.listen(port, () => {
-    
+    console.log("server running")
 })
