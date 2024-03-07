@@ -20,6 +20,20 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
+    },
+    model: {
+        bsonType: binData
+    },
+    closet: {
+        bsonType: objectId,
+        required: true
+    },
+    locker: {
+        bsonType: objectId,
+        required: true
     }
 
-})
+});
+
+const UserModel = mongoose.model("FitCheck0", UserSchema);
+module.exports = UserModel

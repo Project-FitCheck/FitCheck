@@ -1,9 +1,18 @@
-const express = require("express")
-const app = express()
-const mongoose = require("mongoose")
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
-mongoose.connect("")
+require("dotenv").config();
 
-app.listen(3000, () => {
+const app = express();
+app.use(cors);
+app.use(express.json);
+
+const url = process.env.CONNECTIONSTRING
+const port = process.env.PORT || 3000
+
+mongoose.connect(url)
+
+app.listen(port, () => {
     
 })
