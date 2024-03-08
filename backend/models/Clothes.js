@@ -1,14 +1,5 @@
 const mongoose = require('mongoose');
 
-const SIZE = Object.freeze({
-    XS: "XS",
-	S: "S",
-	M: "M",
-	L: "L",
-	XL: "XL",
-    XXL: "XXL" 
-})
-
 const clothesSchema = new mongoose.Schema({
     productTitle: { type: String, required: true },
     type: { type: String, required: true },
