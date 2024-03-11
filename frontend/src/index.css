@@ -1,4 +1,4 @@
-body {
+/*body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,111 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}*/
+
+.navbar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: lightgray;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
 }
+
+.navbar button {
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 25px;
+  color: black;
+  cursor: pointer;
+}
+
+.navbar p:hover {
+  color: #f1f1f1;
+}
+
+.settings {
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  background-color: lightgray;
+}
+
+.account {
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  /*color: coral;*/
+  background-color: lightgray;
+  border-radius: 8px;
+}
+
+.profileImg {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: 3px solid lightgray;
+}
+
+.info {
+  margin: auto;
+  max-width: 500px;
+  background-color: lightgray;
+}
+
+table, td, th {  
+  border: 1px solid black;
+  text-align: left;
+}
+
+table {
+  border-collapse: 100%;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+}
+
+.editModel {
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.editButton {
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.password {
+  text-align: center;
+  margin: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.themes {
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 8px;
+  /*text-shadow: 2px 2px 5px coral;*/
+  background-color: lightgray;
+}
+
+.privacy {
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: lightgray;
+}
+
