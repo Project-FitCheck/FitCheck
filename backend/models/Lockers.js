@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const Outfit = require("./Outfit");
 
 const LockerSchema = new mongoose.Schema({
