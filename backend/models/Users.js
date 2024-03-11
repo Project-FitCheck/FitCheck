@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     model: {
-        bsonType: binData
+        type: mongoose.Types.Buffer
     },
     closet: {
         type: mongoose.Types.ObjectId,
