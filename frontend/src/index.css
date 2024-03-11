@@ -25,6 +25,8 @@ code {
 }
 
 .navbar button {
+  margin-left: 20px;
+  margin-bottom: 50px;
   padding: 10px;
   border-radius: 12px;
   font-size: 25px;
@@ -53,7 +55,7 @@ code {
 }
 
 .profileImg {
-  margin: auto;
+  margin: auto auto 20px auto;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -83,7 +85,7 @@ th, td {
   padding: 10px;
 }
 
-.editModel {
+.edit {
   margin: auto;
   text-align: center;
   padding: 20px;
@@ -101,8 +103,13 @@ th, td {
   cursor: pointer;
 }
 
-.themes {
+.modal {
   margin: auto;
+  max-width: 100px;
+}
+
+.themes {
+  margin: auto auto 30px auto;
   max-width: 500px;
   text-align: center;
   border-radius: 8px;
