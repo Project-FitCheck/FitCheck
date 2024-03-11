@@ -22,18 +22,19 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     model: {
-        bsonType: binData
+        type: mongoose.Types.Buffer
     },
     closet: {
-        bsonType: objectId,
+        type: mongoose.Types.ObjectId,
         required: true
     },
     locker: {
-        bsonType: objectId,
+        type: mongoose.Types.ObjectId,
         required: true
-    }
+    },
+    
 
 });
 
-const UserModel = mongoose.model("FitCheck0", UserSchema);
+const UserModel = mongoose.model("User", UserSchema);
 module.exports = UserModel
