@@ -6,7 +6,8 @@ const OutfitSchema = new mongoose.Schema({
     head: [Clothes.schema],
     torso: [Clothes.schema],
     legs: [Clothes.schema],
-    feet: Clothes.schema,
+    socks: Clothes.schema,
+    shoes: Clothes.schema,
     jewelery: [Clothes.schema],
     tags: [String]
 });
