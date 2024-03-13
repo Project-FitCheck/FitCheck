@@ -3,6 +3,7 @@ import Switch from '@mui/material/Switch';
 import Select from 'react-select';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import NavBar from './components/navbar';
 
 const options = [
   {value: 'light', label: 'Light (Default)'},
@@ -13,11 +14,8 @@ const options = [
 function App() {
   return (
     <>
-    <div class="navbar">
-      <button>Home</button>
-      <button>Model</button>
-      <button>Search</button>
-      <button>Profile</button>
+    <div class="navigation">
+      <NavBar />
     </div>
 
     <div className="settings">
