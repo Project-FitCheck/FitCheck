@@ -48,16 +48,16 @@ function App() {
     </div>
 
     <div className="edit">
-        <button class="editButton">Edit Model</button>
-        <Popup trigger= {<button class="password">Change Password</button>}
+      <button class="editButton">Edit Model</button>
+      <Popup trigger= {<button class="password">Change Password</button>}
         modal nested> { 
           close => (
             <div class="modal">
               <div class="oldPass">
-                Old Password
+                <h1>Old Password</h1>
               </div>
               <div class="newPass">
-                New Password
+                <h1>New Password</h1>
               </div>
               <div>
                 <button onclick = {() => close()}>Submit</button>
@@ -65,7 +65,7 @@ function App() {
             </div>
           )
         }
-        </Popup>
+    </Popup>
     </div>
 
     <div className="themes">
