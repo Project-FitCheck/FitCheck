@@ -14,7 +14,7 @@ const options = [
 function App() {
   return (
     <>
-    <div class="navigation">
+    <div className="navigation">
       <NavBar />
     </div>
 
@@ -32,18 +32,20 @@ function App() {
 
     <div className="info">
       <table>
-        <tr>
-          <td>Name:</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Username:</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>DOB:</td>
-          <td></td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>Name:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Username:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>DOB:</td>
+            <td></td>
+          </tr>
+        </tbody>
       </table>
     </div>
 
