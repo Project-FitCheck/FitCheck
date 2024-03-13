@@ -50,15 +50,15 @@ function App() {
     </div>
 
     <div className="edit">
-      <button class="editButton">Edit Model</button>
-      <Popup trigger= {<button class="password">Change Password</button>}
+      <button className="editButton">Edit Model</button>
+      <Popup trigger= {<button className="password">Change Password</button>}
         modal nested> { 
           close => (
-            <div class="modal">
-              <div class="oldPass">
+            <div className="modal">
+              <div className="oldPass">
                 <h1>Old Password</h1>
               </div>
-              <div class="newPass">
+              <div className="newPass">
                 <h1>New Password</h1>
               </div>
               <div>
