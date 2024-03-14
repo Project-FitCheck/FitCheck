@@ -1,5 +1,5 @@
+/* eslint-disable no-unused-vars */
 import express from "express";
-import mongoose from "mongoose";
 import {LockerModel} from "../models/Lockers"
 
 const router = express.Router();

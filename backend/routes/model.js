@@ -16,4 +16,4 @@ router.post("/update", async (req, res) => {
 
 });
 
-export {router as closetRouter};
+export {router as modelRouter};

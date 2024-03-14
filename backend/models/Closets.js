@@ -8,9 +8,9 @@ const ClosetSchema = new mongoose.Schema({
         default: 0,
     },
 
-    favClothes: [Clothes.schema],
-    clothes: [Clothes.schema],
-    wishlist: [Clothes.schema],
+    favClothes: [ClothesModel.schema],
+    clothes: [ClothesModel.schema],
+    wishlist: [ClothesModel.schema],
     owner: String
 });
 
