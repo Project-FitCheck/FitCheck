@@ -31,9 +31,7 @@ const UserSchema = new mongoose.Schema({
     locker: {
         type: mongoose.Types.ObjectId,
         required: true
-    },
-    
-
+    }
 });
 
 const UserModel = mongoose.model("User", UserSchema);

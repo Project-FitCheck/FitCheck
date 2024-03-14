@@ -6,9 +6,11 @@ const LockerSchema = new mongoose.Schema({
         required: true,
         default: 0
     },
-    favOutfits: [OutfitModel.schema],
-    outfits: [OutfitModel.schema],
-    wishlist: [OutfitModel.schema],
+
+    favOutfits: [Outfit.schema],
+    outfits: [Outfit.schema],
+    wishlist: [Outfit.schema],
+    owner: String
 });
 
 const LockerModel = mongoose.model('Locker', LockerSchema);
