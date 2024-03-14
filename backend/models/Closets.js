@@ -1,5 +1,5 @@
-const mongoose = require("mongoose")
-const Clothes = require("./Clothes")
+import mongoose from "mongoose";
+import ClothesModel from "./Clothes";
 
 const ClosetSchema = new mongoose.Schema({
     numClothes: {
@@ -7,9 +7,9 @@ const ClosetSchema = new mongoose.Schema({
         required: true,
         default: 0,
     },
-    favClothes: [Clothes.schema],
-    clothes: [Clothes.schema],
-    wishlist: [Clothes.schema]
+    favClothes: [ClothesModel.schema],
+    clothes: [ClothesModel.schema],
+    wishlist: [ClothesModel.schema]
 });
 
 const ClosetModel = mongoose.model("Closet", ClosetSchema);

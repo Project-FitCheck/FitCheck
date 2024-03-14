@@ -1,6 +1,5 @@
-const mongoose = require('mongoose');
-
-const Clothes = require("./Clothes")
+import mongoose from "mongoose";
+import Clothes from "./Clothes";
 
 const OutfitSchema = new mongoose.Schema({
     head: [Clothes.schema],
@@ -12,5 +11,5 @@ const OutfitSchema = new mongoose.Schema({
     tags: [String]
 });
 
-const Outfits = mongoose.model('Outfit', OutfitSchema);
-module.exports = Outfits;
+const OutfitModel = mongoose.model('Outfit', OutfitSchema);
+module.exports = OutfitModel;
