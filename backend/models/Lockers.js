@@ -1,16 +1,15 @@
-const mongoose = require("mongoose");
-const Outfit = require("./Outfit");
-
+import mongoose from "mongoose";
+import OutfitModel from "./Outfit"
 const LockerSchema = new mongoose.Schema({
     numOutfits: {
         type: Number,
         required: true,
         default: 0
     },
-    favOutfits: [Outfit.schema],
-    outfits: [Outfit.schema],
-    wishlist: [Outfit.schema],
+    favOutfits: [OutfitModel.schema],
+    outfits: [OutfitModel.schema],
+    wishlist: [OutfitModel.schema],
 });
 
-const Lockers = mongoose.model('Locker', LockerSchema);
-module.exports = Lockers;
+const LockerModel = mongoose.model('Locker', LockerSchema);
+export {LockerModel};
