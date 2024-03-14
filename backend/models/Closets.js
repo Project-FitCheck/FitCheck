@@ -13,4 +13,4 @@ const ClosetSchema = new mongoose.Schema({
 });
 
 const ClosetModel = mongoose.model("Closet", ClosetSchema);
-module.exports = ClosetModel
+export {ClosetModel}
