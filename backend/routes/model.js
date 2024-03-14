@@ -1,6 +1,5 @@
 import express from "express";
-import mongoose from "mongoose";
-import {userModel} from "../models/user"
+import { userModel } from "../models/user"
 
 const router = express.Router();
 
@@ -16,4 +15,4 @@ router.post("/update", async (req, res) => {
 
 });
 
-export {router as modelRouter};
+export { router as modelRouter };

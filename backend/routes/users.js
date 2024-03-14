@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
 import express from "express";
 import bcrypt from "bcrypt";
-import {UserModel} from "../models/Users";
-import {LockerModel} from "../models/Lockers.js";
-import {ClosetModel} from "../models/Closets"
+import { UserModel } from "../models/Users";
+import { LockerModel } from "../models/Lockers.js";
+import { ClosetModel } from "../models/Closets"
 
 const router = express.Router();
 
@@ -52,7 +51,14 @@ router.post("/login", async (req, res) => {
 });
 
 router.put("/update", async (req, res) => {
-
+    const {userid, fieldToBeUpdated, updatedValue} = req.body;
+    const user = await UserModel.findById(userid);
+    if (typeof updatedValue != typeof user.get(fieldToBeUpdated)) {
+        res.json({message: fieldToBeUpdated + "cannot be set to this value"});
+    }
+    user.set(fieldToBeUpdated, updatedValue);
+    user.save();
+    res.json({message: fieldToBeUpdated + "has been updated"});
 });
 
 export { router as userRouter };

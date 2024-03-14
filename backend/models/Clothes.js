@@ -15,4 +15,4 @@ const clothesSchema = new mongoose.Schema({
 
 const ClothesModel = mongoose.model('Clothe', clothesSchema);
 
-export {ClothesModel};
+export { ClothesModel };

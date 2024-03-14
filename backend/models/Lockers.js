@@ -14,4 +14,4 @@ const LockerSchema = new mongoose.Schema({
 });
 
 const LockerModel = mongoose.model('Locker', LockerSchema);
-export {LockerModel};
+export { LockerModel };
