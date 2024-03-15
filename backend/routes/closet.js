@@ -10,7 +10,7 @@ const router = express.Router();
 */
 router.get("/closet", async (req, res) => {
     const closetId = req.body;
-    const closet = await ClosetModel.findById({ closetId });
+    const closet = await ClosetModel.findById(closetId);
     const clothes = await closet.get("clothes");
     res.json({ clothes });
 });
@@ -32,15 +32,34 @@ router.get("/closet", async (req, res) => {
 }
 */
 router.post("/closet/add", async (req, res) => {
-
+    const { closetId, clothingItem } = req.body
+    var closet = await ClosetModel.findById(closetId);
+    closet.clothes.push(clothingItem);
+    await closet.save();
 });
 
 /*req: {
-    user: closet_id
+    closetid: closet_id
+    clothing_item: {
+        productTitle: { type: String, required: true },
+        type: { type: String, required: true },
+        color: String,
+        size: String,
+        description: String,
+        material: String,
+        brand: String,
+        price: Number,
+        fit: String,
+        style: String
+    }
 }
 */
-router.post("/closet", async (req, res) => {
 
+router.post("/closet", async (req, res) => {
+    const { closetId, clothingItem } = req.body
+    var closet = await ClosetModel.findById(closetId);
+    closet.favClothes.push(clothingItem);
+    await closet.save();
 });
 
 export { router as closetRouter };
