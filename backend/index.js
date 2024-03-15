@@ -19,10 +19,10 @@ app.use("/closet", closetRouter);
 app.use("/locker", lockerRouter);
 app.use("/model", modelRouter);
 
-const url = process.env.CONNECTIONSTRING
-const port = process.env.PORT || 3000
+const uri = process.env.CONNECTIONSTRING;
+const port = process.env.PORT || 3000;
 
-mongoose.connect(url)
+mongoose.connect(uri);
 
 app.listen(port, () => {
     console.log("server running")

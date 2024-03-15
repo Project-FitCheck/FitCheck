@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import express from "express";
 import { ClosetModel } from "../models/Closets";
+import { ClothesModel } from "../models/Clothes";
 
 const router = express.Router();
 
@@ -34,8 +35,11 @@ router.get("/closet", async (req, res) => {
 router.post("/closet/add", async (req, res) => {
     const { closetId, clothingItem } = req.body
     var closet = await ClosetModel.findById(closetId);
-    closet.clothes.push(clothingItem);
+    const newClothingItem = new ClothesModel(clothingItem);
+    closet.clothes.push(newClothingItem);
+    closet.numClothes++;
     await closet.save();
+    res.status(200).json({message: "Successfully Added " + clothingItem.type})
 });
 
 /*req: {
@@ -58,8 +62,10 @@ router.post("/closet/add", async (req, res) => {
 router.post("/closet", async (req, res) => {
     const { closetId, clothingItem } = req.body
     var closet = await ClosetModel.findById(closetId);
+    closet.
     closet.favClothes.push(clothingItem);
     await closet.save();
+    res.status(200).json("Clothing item added to favorites");
 });
 
 export { router as closetRouter };
