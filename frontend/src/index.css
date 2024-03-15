@@ -87,6 +87,11 @@ th, td {
   cursor: pointer;
 }
 
+.popup {
+  margin: auto;
+  max-width: 500px;
+}
+
 .password {
   text-align: center;
   margin: 10px;
