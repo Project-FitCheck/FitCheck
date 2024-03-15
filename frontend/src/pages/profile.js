@@ -11,7 +11,7 @@ const options = [
   {value: 'midnight', label: 'Midnight'}
 ]
 
-function App() {
+function Profile() {
   return (
     <>
     <div className="navigation">
@@ -86,4 +86,4 @@ function App() {
   );
 }
 
-export default App;
+export default Profile;
