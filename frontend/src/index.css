@@ -101,3 +101,86 @@ th, td {
   padding-top: 1px;
   background-color: lightgray;
 }
+
+.account {
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  /*color: coral;*/
+  background-color: lightgray;
+  border-radius: 8px;
+}
+
+.profileImg {
+  margin: auto auto 20px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: 3px solid lightgray;
+}
+
+.info {
+  margin: auto;
+  max-width: 500px;
+  background-color: lightgray;
+}
+
+table, td, th {  
+  border: 1px solid black;
+  text-align: left;
+}
+
+table {
+  border-collapse: 100%;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+}
+
+.edit {
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.editButton {
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.popup {
+  margin: auto;
+  max-width: 500px;
+}
+
+.password {
+  text-align: center;
+  margin: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.themes {
+  margin: auto auto 30px auto;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 8px;
+  padding-top: 1px;
+  /*text-shadow: 2px 2px 5px coral;*/
+  background-color: lightgray;
+}
+
+.privacy {
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 8px;
+  padding-top: 1px;
+  background-color: lightgray;
+}
+
