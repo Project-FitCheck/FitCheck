@@ -1,17 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .navigation Button {
   margin-left: 20px;
   margin-bottom: 50px;
@@ -25,8 +11,17 @@ code {
   margin: auto;
   text-align: center;
   padding: 10px;
-  background-color: lightgray;
+  /*color: black;*/
+  cursor: pointer;
 }
+
+/*.settings {
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  background-color: lightgray;
+}*/
 
 .account {
   margin: auto;
@@ -82,11 +77,6 @@ th, td {
   cursor: pointer;
 }
 
-.popup {
-  margin: auto;
-  max-width: 500px;
-}
-
 .password {
   text-align: center;
   margin: 10px;
@@ -111,4 +101,3 @@ th, td {
   padding-top: 1px;
   background-color: lightgray;
 }
-
