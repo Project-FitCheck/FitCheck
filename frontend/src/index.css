@@ -102,6 +102,14 @@ th, td {
   background-color: lightgray;
 }
 
+/*.settings {
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  background-color: lightgray;
+}*/
+
 .account {
   margin: auto;
   max-width: 500px;
@@ -156,11 +164,6 @@ th, td {
   cursor: pointer;
 }
 
-.popup {
-  margin: auto;
-  max-width: 500px;
-}
-
 .password {
   text-align: center;
   margin: 10px;
@@ -185,4 +188,3 @@ th, td {
   padding-top: 1px;
   background-color: lightgray;
 }
-
