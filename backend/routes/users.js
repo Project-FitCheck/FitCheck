@@ -7,7 +7,7 @@ import { ClosetModel } from "../models/Closets"
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
-    const { firstName, lastName, username, password, email } = res.body;
+    const { firstName, lastName, username, password, email } = req.body;
     const user = await UserModel.findOne({ username });
     if (user) {
         res.json({ message: "User already exists" });
