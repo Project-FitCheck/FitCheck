@@ -20,19 +20,13 @@ body {
   padding: 10px;
   border-radius: 20px;
   font-size: 25px;
-  /*color: black;*/
   cursor: pointer;
 }
 
-/*.navigation p:hover {
-  color: #f1f1f1;
-}*/
-
 .settings {
   margin: auto;
-  /*max-width: 500px;*/
   text-align: center;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   background-color: lightgray;
 }
 
@@ -40,7 +34,6 @@ body {
   margin: auto;
   max-width: 500px;
   text-align: center;
-  /*color: coral;*/
   background-color: lightgray;
   border-radius: 8px;
 }
@@ -54,6 +47,10 @@ body {
   align-items: center;
   text-align: center;
   border: 3px solid lightgray;
+}
+
+.profileImg, p {
+  margin: auto;
 }
 
 .info {
@@ -105,7 +102,6 @@ th, td {
   text-align: center;
   border-radius: 8px;
   padding-top: 1px;
-  /*text-shadow: 2px 2px 5px coral;*/
   background-color: lightgray;
 }
 

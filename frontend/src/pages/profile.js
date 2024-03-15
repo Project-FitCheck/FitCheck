@@ -27,7 +27,7 @@ function Profile() {
     </div>
 
     <div className="profileImg">
-      <p>Profile picture goes here</p>
+      <p>Profile image goes here</p>
     </div>
 
     <div className="info">
