@@ -1,5 +1,22 @@
+body {
+  margin: 0px;
+}
+
+.navigation {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color: lightgray;
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
+
 .navigation Button {
   margin-left: 20px;
+  margin-right: 20px;
   margin-bottom: 50px;
   padding: 10px;
   border-radius: 20px;
@@ -11,17 +28,8 @@
   margin: auto;
   text-align: center;
   padding: 10px;
-  /*color: black;*/
-  cursor: pointer;
-}
-
-/*.settings {
-  margin: auto;
-  max-width: 500px;
-  text-align: center;
-  padding: 10px;
   background-color: lightgray;
-}*/
+}
 
 .account {
   margin: auto;
@@ -47,94 +55,7 @@
 }
 
 .info {
-  margin: auto;
-  max-width: 500px;
-  background-color: lightgray;
-}
-
-table, td, th {  
-  border: 1px solid black;
-  text-align: left;
-}
-
-table {
-  border-collapse: 100%;
-  width: 100%;
-}
-
-th, td {
-  padding: 10px;
-}
-
-.edit {
-  margin: auto;
-  text-align: center;
-  padding: 20px;
-}
-
-.editButton {
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.password {
-  text-align: center;
-  margin: 10px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.themes {
-  margin: auto auto 30px auto;
-  max-width: 500px;
-  text-align: center;
-  border-radius: 8px;
-  padding-top: 1px;
-  background-color: lightgray;
-}
-
-.privacy {
-  margin: auto;
-  max-width: 500px;
-  text-align: center;
-  border-radius: 8px;
-  padding-top: 1px;
-  background-color: lightgray;
-}
-
-/*.settings {
-  margin: auto;
-  max-width: 500px;
-  text-align: center;
-  padding: 10px 10px 10px 10px;
-  background-color: lightgray;
-}*/
-
-.account {
-  margin: auto;
-  max-width: 500px;
-  text-align: center;
-  background-color: lightgray;
-  border-radius: 8px;
-}
-
-.profileImg {
-  margin: auto auto 20px auto;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  border: 3px solid lightgray;
-}
-
-.profileImg, p {
-  margin: auto;
-}
-
-.info {
-  margin: auto;
+  margin: 10px auto auto auto;
   max-width: 500px;
   background-color: lightgray;
 }
