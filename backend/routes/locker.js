@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import express from "express";
-import { LockerModel } from "../models/Lockers.js"
+import { LockerModel } from "../models/Lockers"
 
 const router = express.Router();
 

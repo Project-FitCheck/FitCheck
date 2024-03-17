@@ -1,27 +1,17 @@
 import express from "express";
-import { UserModel } from "../models/Users.js"
+import { UserModel } from "../models/Users"
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-    const {userId}  = req.query;
-    console.log({userId});
-    try {
-        const user = await UserModel.findById(userId);
-        if (!user) {
-            return res.status(404).json({ message: "User not found " + userId });
-        }
-        const model = user.bodyModel;
-        return res.status(200).json(model);
-    } catch (err) {
-        console.log(err);
-        return res.status(500).json({ message: "Internal server error: " + err + " " + userId });
-    }
+router.get("/model", async (req, res) => {
+    const userid = req.body;
+    const user = await UserModel.findById(userid);
+    const model = await user.get("model").fullBody;
+    res.status(200).json(model);
 });
 
 /*
 req: {
-    userId: userId
     model: {
         gender: MALE | FEMALE
         head: head_svg_string,
@@ -34,26 +24,19 @@ req: {
     }
 }
 */
-router.put("/create", async (req, res) => {
-    const { userId, modelData } = req.body;
-    try {
-        const user = await UserModel.findById(userId)
-        if (!user) {
-            console.log("user doesn't exist");
-            return res.status(404).json({ message: "User not found" })
-        }
-        user.bodyModel = modelData;
-
-        await user.save();
-
-        return res.status(200).json({ message: "User model has now been created", });
-    } catch (err) {
-        console.log(err);
-        return res.status(500).json({ message: "Internal server error: " + err })
+router.post("/model", async (req, res) => {
+    const modelDetails = req.body;
+    const user = await UserModel.findOne({modelDetails})
+    if (modelDetails) {
+        res.json({ message: "User already has a model" });
     }
+    user.model = modelDetails;
+    await user.save();
+    res.json({message: "User model has now been created"});
 });
 
 /*
+UPDATED
 req: {
     userid: user_id
     model: {
@@ -68,20 +51,13 @@ req: {
     }
 }
 */
-router.put("/update", async (req, res) => {
-    const { userId, newModel } = req.body;
-    try {
-        const user = await UserModel.findById(userId)
-        if (!user) {
-            return res.status(404).json({ message: "user not found" })
-        }
-        user.bodyModel = newModel;
-        await user.save();
-        return res.status(200).json({ message: "User model has now been updated" });
-    } catch (err) {
-        console.log(err);
-        return res.status(500).json({ message: "Internal server error" })
-    }
+router.put("/model/update", async (req, res) => {
+    const {userId, newModel} = req.body;
+    const user = await UserModel.findById({userId})
+
+    user.model = newModel;
+    await user.save();
+    res.json({message: "User model has now been updated"});
 });
 
 export { router as modelRouter };

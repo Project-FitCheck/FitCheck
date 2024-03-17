@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import express from "express";
-import { ClosetModel } from "../models/Closets.js";
-import { ClothesModel } from "../models/Clothes.js";
+import { ClosetModel } from "../models/Closets";
+import { ClothesModel } from "../models/Clothes";
 
 const router = express.Router();
 
@@ -9,7 +9,7 @@ const router = express.Router();
     user: closet_id
 }
 */
-router.get("/", async (req, res) => {
+router.get("/closet", async (req, res) => {
     const closetId = req.body;
     const closet = await ClosetModel.findById(closetId);
     const clothes = await closet.get("clothes");
@@ -32,9 +32,8 @@ router.get("/", async (req, res) => {
     }
 }
 */
-router.post("/add", async (req, res) => {
+router.post("/closet/add", async (req, res) => {
     const { closetId, clothingItem } = req.body
-    
     var closet = await ClosetModel.findById(closetId);
     const newClothingItem = new ClothesModel(clothingItem);
     closet.clothes.push(newClothingItem);
