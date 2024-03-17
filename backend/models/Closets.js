@@ -9,7 +9,8 @@ const ClosetSchema = new mongoose.Schema({
     },
     favClothes: [ClothesModel.schema],
     clothes: [ClothesModel.schema],
-    wishlist: [ClothesModel.schema]
+    wishlist: [ClothesModel.schema],
+    owner: String
 });
 
 const ClosetModel = mongoose.model("Closet", ClosetSchema);
