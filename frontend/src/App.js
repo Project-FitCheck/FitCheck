@@ -1,19 +1,21 @@
 import React from 'react';
-import Profile from "./pages/profile";
 import './index.css';
-import NavBar from './components/navbar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import NavBar from './components/navbar';
+
+import Profile from "./pages/profile";
 
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <BrowserRouter>
+        <NavBar />
         <Routes>
-          <Route path='/closet' element={<closet />} />
+          <Route path='/closet' element={<></>} />
           <Route path='/closet/add' element={<></>} />
-          <Route path='/model/edit' element={<model />} />
+          <Route path='/model/edit' element={<></>} />
           <Route path='/profile' element={<Profile />} />
           {/*<Route path='/' element={<></>}/>*/}
         </Routes>
@@ -21,5 +23,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
