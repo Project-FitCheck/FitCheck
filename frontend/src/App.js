@@ -1,7 +1,10 @@
 import React from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import './styles/index.css';
 =======
+=======
+>>>>>>> 4c845da (copy and added some files)
 import './index.css';
 <<<<<<< HEAD
 >>>>>>> 0d7b7dd (Pages (#26))
@@ -10,11 +13,20 @@ import './App.css';
 
 import './CSS/NavBar.css';
 
+<<<<<<< HEAD
 >>>>>>> 39bcb2d (Added components and homepage (#30))
+=======
+=======
+import './styles/index.css';
+>>>>>>> bc5c2a6 (copy and added some files)
+>>>>>>> 4c845da (copy and added some files)
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import NavBar from './components/navbar';
-import './index.css';
+
+import Profile from "./pages/profile";
+import EditModel from "./pages/edit_model";
+
 
 import Signup from './pages/signup';
 import Login from './pages/login';
@@ -37,12 +49,12 @@ import Outfits from './pages/locker';
 import AddClothing from './pages/add_clothing';
 
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
         <Routes>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           <Route path='/' element={<Navigate to="/closet" />} />
@@ -52,6 +64,8 @@ function App() {
           <Route path='/profile' element={<Profile />} />
 =======
 =======
+=======
+>>>>>>> 4c845da (copy and added some files)
           <Route path='/signup' element={<Signup />} />
 <<<<<<< HEAD
           <Route path="login" element={<Login />} />
@@ -65,7 +79,14 @@ function App() {
 >>>>>>> 39bcb2d (Added components and homepage (#30))
           <Route path='/model/edit' element={<></>} />
           <Route path='/locker' element={<Outfits />}/>
+=======
+          <Route path='/' element={<Navigate to="/closet" />} />
+          <Route path='/closet' element={<></>} />
+          <Route path='/closet/add' element={<></>} />
+          <Route path='/model/edit' element={<EditModel />} />
+>>>>>>> bc5c2a6 (copy and added some files)
           <Route path='/profile' element={<Profile />} />
+<<<<<<< HEAD
 <<<<<<< HEAD
           <Route path='/' element={<Navigate to="/closet"/>}/>
 >>>>>>> 0d7b7dd (Pages (#26))
@@ -73,6 +94,8 @@ function App() {
           <Route path='/model/create' element={<CreateModel />} />
           <Route path='/' element={<Navigate to="/signup" />} />
 >>>>>>> 45f074f (created login page, still needs some more api func (#31))
+=======
+>>>>>>> 4c845da (copy and added some files)
         </Routes>
       </BrowserRouter>
     </div>
