@@ -4,9 +4,9 @@ import './index.css';
 import NavBar from './components/navbar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 function App() {
   return (
-
     <div className="App">
       <NavBar />
       <BrowserRouter>
@@ -19,7 +19,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
-
   );
 }
 
