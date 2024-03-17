@@ -25,8 +25,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path='/closet' element={<Closet />} />
           <Route path='/closet/add' element={<AddClothing />} />
-          <Route path='/model/edit' element={<EditModel />} />
-          <Route path='/locker' element={<Outfits />} />
+          <Route path='/model/edit' element={<EditModel/>} />
+          <Route path='/locker' element={<Outfits />}/>
           <Route path='/profile' element={<Profile />} />
           <Route path='/model/create' element={<CreateModel />} />
           <Route path='/' element={<Navigate to="/signup" />} />
