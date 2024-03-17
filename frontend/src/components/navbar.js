@@ -11,7 +11,6 @@ const NavBar = () => {
     return (
         <div className="navigation">
             <Stack spacing={2} direction="column">
-
                 <Button component={Link} to={"/closet"}
                     className={location.pathname === isActive('/closet') ? 'active' : 'inactive'}
                     variant="contained"> Home </Button>
