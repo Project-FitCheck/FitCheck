@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import "../styles/editModel.css";
 import { Button } from "@mui/base";
@@ -57,6 +58,14 @@ function EditModel() {
             {showSliders && Part && <PartViewer part={Part} />}
         </div>
     );
+=======
+import React from "react";
+
+function EditModel() {
+    return (
+        <div></div>
+    )
+>>>>>>> 0d7b7dd (Pages (#26))
 }
 
 export default EditModel;
