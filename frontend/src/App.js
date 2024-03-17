@@ -49,6 +49,7 @@ import Outfits from './pages/locker';
 import AddClothing from './pages/add_clothing';
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
