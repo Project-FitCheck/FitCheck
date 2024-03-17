@@ -13,7 +13,8 @@ import './CSS/NavBar.css';
 >>>>>>> 39bcb2d (Added components and homepage (#30))
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import NavBar from './components/navbar.js';
+import NavBar from './components/navbar';
+import './index.css';
 
 import Signup from './pages/signup';
 import Login from './pages/login';
@@ -36,6 +37,7 @@ import Outfits from './pages/locker';
 import AddClothing from './pages/add_clothing';
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
