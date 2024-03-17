@@ -1,19 +1,33 @@
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import {Link} from 'react-router-dom';
+import { Button, Stack } from '@mui/material';
+import { Link, useLocation } from 'react-router-dom';
 
 const NavBar = () => {
+    const location = useLocation();
+
+    const isActive = (path) => {
+        return location.pathname.startsWith(path);
+    };
+
     return (
         <div className="navigation">
             <Stack spacing={2} direction="column">
-                <Button variant="contained">Home</Button>
-                <Button variant="contained">Model</Button>
-                <Button variant="contained">Search</Button>
-                <Button variant="contained">Profile</Button>
+                <Button component={Link} to={"/closet"}
+                    className={location.pathname === isActive('/closet') ? 'active' : 'inactive'}
+                    variant="contained"> Home </Button>
+
+                <Button component={Link} to={"/model"}
+                    className={location.pathname === isActive('/model') ? 'active' : 'inactive'}
+                    variant="contained"> Model </Button>
+
+                <Button component={Link} to={"/search"}
+                    className={location.pathname === isActive('/search') ? 'active' : 'inactive'}
+                    variant="contained">Search</Button>
+
+                <Button component={Link} to={"/profile"}
+                    className={location.pathname === isActive('/profile') ? 'active' : 'inactive'}
+                    variant="contained">Profile</Button>
             </Stack>
         </div>
-        
-        /*<Link to="home/closet">Home</Link>*/
     );
 }
 export default NavBar
