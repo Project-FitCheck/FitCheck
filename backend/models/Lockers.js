@@ -6,10 +6,12 @@ const LockerSchema = new mongoose.Schema({
         required: true,
         default: 0
     },
+
     favOutfits: [OutfitModel.schema],
     outfits: [OutfitModel.schema],
     wishlist: [OutfitModel.schema],
+    owner: String
 });
 
 const LockerModel = mongoose.model('Locker', LockerSchema);
-export {LockerModel};
+export { LockerModel };

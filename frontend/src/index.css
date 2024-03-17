@@ -4,7 +4,7 @@ body {
 
 .navigation {
   height: 100%;
-  width: 160px;
+  width: 260px;
   position: fixed;
   z-index: 1; 
   top: 0; 
@@ -14,7 +14,7 @@ body {
   padding-top: 20px;
 }
 
-.navigation Button {
+.navigation Link {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 50px;

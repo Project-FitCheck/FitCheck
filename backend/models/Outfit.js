@@ -12,4 +12,4 @@ const OutfitSchema = new mongoose.Schema({
 });
 
 const OutfitModel = mongoose.model('Outfit', OutfitSchema);
-export {OutfitModel};
+export { OutfitModel };
