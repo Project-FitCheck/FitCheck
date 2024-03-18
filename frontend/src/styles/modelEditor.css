@@ -5,6 +5,7 @@
     text-align: center;
 }
 
+<<<<<<< HEAD
 /*Note: X = width, Y = height, W = width, H = height*/
 .sliderX, .sliderY, .sliderW, .sliderH {
     margin: auto;
@@ -17,11 +18,26 @@
     width: 50%;
 }
 .sliderX .track, .sliderY .track, .sliderW .track, .sliderH .track {
+=======
+/*Note: X = width, Y = height*/
+.sliderX, .sliderY {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.sliderX-slider, .sliderY-slider {
+    margin: auto;
+    width: 50%;
+}
+.sliderX .track, .sliderY .track {
+>>>>>>> a55a3c2 (made a model editor viewer and added sliders)
     top: 8px;
     height: 4px;
     background-color: darkgray; 
 }
 
+<<<<<<< HEAD
 .sliderX .track.track-0, .sliderY .track.track-0, .sliderW .track.track-0, .sliderH .track.track-0 {
     background-color: #007bff; 
 }
@@ -33,3 +49,21 @@
     background-color: #007bff;
     cursor: pointer;
 }
+=======
+.sliderX .track.track-0, .sliderY .track.track-0 {
+    background-color: #007bff; 
+}
+
+.sliderX .thumb, .sliderY .thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+/*.editBody img {
+    margin: auto;
+    width: 50%;
+}*/
+>>>>>>> a55a3c2 (made a model editor viewer and added sliders)
