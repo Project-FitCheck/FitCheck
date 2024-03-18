@@ -1,3 +1,5 @@
+// This is deprecated and not needed for now
+
 import React from 'react';
 import '../CSS/NavBar.css';
 import NavButton from './NavButton';

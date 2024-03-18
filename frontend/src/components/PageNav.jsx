@@ -8,18 +8,18 @@ function PageNav(props) {
 	let lockerPage = false;
 	if (props.page === 'clothes') {
 		closetPage = true;
-	} else {
+	} else if (props.page === 'outfits') {
 		lockerPage = true;
 	}
 
 	return (<div className='PageNav'>
 		<div className='PageNavButtons'>
-			<a href="/add_clothing"><button className='addClothes'>+</button></a>
+			<a href="/closet/add"><button className='addClothes'>+</button></a>
 			<a href=""><button className='searchButton'>Srch</button></a>
 		</div>
 		<ul>
-			<NavButton name={'Clothes'} link={"/closet"} page={closetPage}/>
-			<NavButton name={'Outfits'} link={"/locker"} page={lockerPage}/>
+			<NavButton name={'CLOTHES'} link={"/closet"} page={closetPage}/>
+			<NavButton name={'OUTFITS'} link={"/locker"} page={lockerPage}/>
 		</ul>
 	</div>);
 }

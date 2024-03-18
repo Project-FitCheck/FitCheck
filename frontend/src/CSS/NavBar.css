@@ -1,21 +1,35 @@
-.NavBar {
-	height: 100vh;
+.navigation {
+	height: 100%;
 	width: 25%;
-	float: left;
-	background-color: var(--gray);
-	margin: 0;
-	padding: 0;
 	position: fixed;
+	z-index: 1;
 	top: 0;
+	left: 0;
+	background-color: var(--gray);
 }
 
-.NavBar ul {
+.navigation div {
 	height: 100%;
-	width: 80%;
-	margin: 0 auto;
-	padding: 0;
-	list-style: none;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+}
+
+.navigation div a {
+	transition: none;
+	font-size: 30px;
+	text-align: center;
+	width: 80%;
+	padding: 25px 0;
+	display: block;
+	color: var(--orange);
+	text-decoration: none;
+	border-radius: 10px;
+	background-color: white;
+	border: 1px solid black;
+}
+
+.navigation div a:hover {
+	background-color: var(--purple);
 }
