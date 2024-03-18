@@ -4,3 +4,9 @@
 	padding: 0;
 	position: relative;
 }
+
+.Clothes h1 {
+	height: 40px;
+	text-align: center;
+	color: var(--orange);
+}
