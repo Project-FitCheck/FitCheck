@@ -84,10 +84,19 @@ Select{
 }
 
 .privacy {
+<<<<<<< HEAD
   margin: auto;
   max-width: 500px;
   text-align: center;
   border-radius: 8px;
   padding-top: 1px;
   background-color: lightgray;
+=======
+	margin: auto;
+	max-width: 500px;
+	text-align: center;
+	border-radius: 8px;
+	padding-top: 1px;
+	background-color: lightgray;
+>>>>>>> 56cd1fe (made styles folder and updated import pathing)
 }
