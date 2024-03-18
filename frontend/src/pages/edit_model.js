@@ -34,7 +34,6 @@ function EditModel() {
         axios.put("http://localhost:3001/model/update", updatedModel)
     }
     
-
     return (
         <div className="EditModel">
             <div className="ModelSettings">
