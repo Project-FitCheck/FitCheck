@@ -65,7 +65,11 @@ function EditModel() {
                 </ul>
             </div>
             <ModelViewer model={gender} />
+<<<<<<< HEAD
             <Button className="save-model" onClick={()=> saveModel()}>Save Model</Button>
+=======
+            <Button className="save-model">Save Model</Button>
+>>>>>>> 6940a12 (added most of the edit model page functionality)
         </div>
     );
 }
