@@ -1,13 +1,30 @@
+.ModelViewer{
+    position: absolute;
+    left: 400px;
+    top: -20px;
+}
+
+svg{
+    height: 700px;
+}
+
 .ModelSettings {
     position: absolute;
-    right: 200px;
+    left: 800px
+}
 
+.save-model{
+    position: absolute;
+    top: 640px;
+    left: 395px;
+    width: 12em;
 }
 
 ul {
     list-style-type: none;
     display: block;
     padding: 0;
+    position: absolute;
 }
 
 
@@ -15,7 +32,7 @@ li {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    left: 35px;
+    left: 10px;
 }
 
 .gender-setting {
@@ -138,8 +155,8 @@ Button:before {
     position: absolute;
     z-index: -1;
     background: var(--color);
-    height: 150px;
-    width: 200px;
+    height: 300px;
+    width: 400px;
     border-radius: 50%;
 }
 
@@ -154,12 +171,17 @@ Button:before {
 }
 
 Button:hover:before {
-    top: -30px;
-    left: -30px;
+    top: -50px;
+    left: -50px;
 }
 
-Button:active:before,
-Button:active {
+Button:active:before {
     background: #3a0ca3;
     transition: background 0s;
 }
+
+.active{
+    color: #fff;
+    background: #3a0ca3; 
+}
+

@@ -2,28 +2,6 @@ body {
   margin: 0px;
 }
 
-.navigation {
-  height: 100%;
-  width: 260px;
-  position: fixed;
-  z-index: 1; 
-  top: 0; 
-  left: 0;
-  background-color: lightgray;
-  overflow-x: hidden; 
-  padding-top: 20px;
-}
-
-.navigation Link {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 50px;
-  padding: 10px;
-  border-radius: 20px;
-  font-size: 25px;
-  cursor: pointer;
-}
-
 .settings {
   margin: auto;
   text-align: center;
@@ -99,6 +77,10 @@ th, td {
   border-radius: 8px;
   padding-top: 1px;
   background-color: lightgray;
+}
+
+Select{
+  height: 2x;
 }
 
 .privacy {
