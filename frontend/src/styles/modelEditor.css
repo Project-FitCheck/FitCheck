@@ -5,36 +5,31 @@
     text-align: center;
 }
 
-/*Note: X = width, Y = height*/
-.sliderX, .sliderY {
+/*Note: X = width, Y = height, W = width, H = height*/
+.sliderX, .sliderY, .sliderW, .sliderH {
     margin: auto;
-    width: 50%;
+    width: 30%;
     padding: 10px;
 }
 
-.sliderX-slider, .sliderY-slider {
+.sliderX-slider, .sliderY-slider, .sliderW-slider, .sliderH-slider {
     margin: auto;
     width: 50%;
 }
-.sliderX .track, .sliderY .track {
+.sliderX .track, .sliderY .track, .sliderW .track, .sliderH .track {
     top: 8px;
     height: 4px;
     background-color: darkgray; 
 }
 
-.sliderX .track.track-0, .sliderY .track.track-0 {
+.sliderX .track.track-0, .sliderY .track.track-0, .sliderW .track.track-0, .sliderH .track.track-0 {
     background-color: #007bff; 
 }
 
-.sliderX .thumb, .sliderY .thumb {
-    width: 20px;
-    height: 20px;
+.sliderX .thumb, .sliderY .thumb, .sliderW .thumb, .sliderH .thumb {
+    width: 18px;
+    height:18px;
     border-radius: 50%;
     background-color: #007bff;
     cursor: pointer;
 }
-
-/*.editBody img {
-    margin: auto;
-    width: 50%;
-}*/
