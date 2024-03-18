@@ -1,10 +1,9 @@
 import React from 'react';
 import './index.css';
 import './App.css';
-<<<<<<< HEAD
+
 import './CSS/NavBar.css';
-=======
->>>>>>> 02b5840 (Added components and homepage)
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import NavBar from './components/navbar.js';
@@ -19,6 +18,7 @@ import CreateModel from './pages/create_model';
 
 import Closet from './pages/closet';
 import Outfits from './pages/locker';
+import AddClothing from './pages/add_clothing';
 
 function App() {
   return (
