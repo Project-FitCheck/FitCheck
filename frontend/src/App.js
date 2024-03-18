@@ -9,7 +9,6 @@ import EditModel from "./pages/edit_model";
 
 
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -25,6 +24,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
