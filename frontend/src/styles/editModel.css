@@ -15,7 +15,7 @@ li{
 }
 
 .gender-setting::before{
-    content: url();
+    content: url("../assets/FitCheck_male_template/male_body.svg");
     position: absolute;
     left: 0; /* Align the images to the left of the list items */
     top: 0; /* Align the images with the top of the list items */
