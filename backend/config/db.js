@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
+import config from "dotenv";
+config.config();
 
-const uri = "mongodb+srv://eacquah:Clutchshot27@fitcheck0.fe4dwwk.mongodb.net/FitCheck0?retryWrites=true&w=majority&appName=FitCheck0";
+const uri = process.env.CONNECTIONSTRING
 
 const connectDB = async () => {
     try {
