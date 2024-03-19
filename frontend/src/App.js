@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NavBar from './components/navbar';
 
 import Profile from "./pages/profile";
+import Signup from './pages/signup';
+import CreateModel from './pages/create_model';
 
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
           <Route path='/closet/add' element={<></>} />
           <Route path='/model/edit' element={<></>} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/' element={<Navigate to="/closet"/>}/>
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/model/create' element={<CreateModel />} />
+          <Route path='/' element={<Navigate to="/signup"/>}/>
         </Routes>
       </BrowserRouter>
     </div>
