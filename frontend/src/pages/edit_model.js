@@ -66,7 +66,6 @@ function EditModel() {
             </div>
             <ModelViewer model={gender} />
             <Button className="save-model" onClick={()=> saveModel()}>Save Model</Button>
-
         </div>
     );
 }
