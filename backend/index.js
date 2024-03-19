@@ -1,13 +1,11 @@
 import express from 'express';
 import cors from "cors";
-import config from "dotenv";
 import { userRouter } from "./routes/users.js";
 import { lockerRouter } from './routes/locker.js';
 import { closetRouter } from './routes/closet.js';
 import { modelRouter } from './routes/model.js';
 import connectDB from './config/db.js';
 
-config.config();
 
 const app = express();
 app.use(cors());
