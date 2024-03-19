@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/editModel.css";
 import { Button } from "@mui/base";
 import ModelViewer from "../components/model_viewer"
+import axios from "axios"
 
 function EditModel() {
     const [gender, setGender] = useState(null);
@@ -15,6 +16,24 @@ function EditModel() {
         }
         setGender(newGender)
     }
+
+    function saveModel() {
+        const updatedModel = {
+            userId: "userId",
+            newModel: {
+                gender: "MALE | FEMALE",
+                head: "head_svg_string",
+                leftArm: "left_arm_svg_string",
+                rightArm: "right_arm_svg_string", 
+                torso: "torso_svg_string",
+                legs: "legs_svg_string",
+                feet: "feet_svg_string",
+                fullBody: "full_body_svg_string"
+            }
+        }
+        axios.put("http://localhost:3001/model/update", updatedModel)
+    }
+
     return (
         <div className="EditModel">
             <div className="ModelSettings">
@@ -46,7 +65,7 @@ function EditModel() {
                 </ul>
             </div>
             <ModelViewer model={gender} />
-            <Button className="save-model">Save Model</Button>
+            <Button className="save-model" onClick={()=> saveModel()}>Save Model</Button>
         </div>
     );
 }

@@ -47,17 +47,24 @@ req: {
         torso: torso_svg_string,
         legs: legs_svg_string,
         feet: feet_svg_string,
-        fullBody: 
+        fullBody: full_body_svg_string
     }
 }
 */
 router.put("/model/update", async (req, res) => {
-    const {userId, newModel} = req.body;
-    const user = await UserModel.findById({userId})
-
-    user.model = newModel;
-    await user.save();
-    res.json({message: "User model has now been updated"});
+    const { userId, newModel } = req.body;
+    try {
+        const user = await UserModel.findById(userId)
+        if (!user) {
+            return res.status(404).json({ message: "user not found" })
+        }
+        user.bodyModel = newModel;
+        await user.save();
+        return res.status(200).json({ message: "User model has now been updated" });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ message: "Internal server error" })
+    }
 });
 
 export { router as modelRouter };
