@@ -1,12 +1,14 @@
 import '../CSS/MainPage.css';
 import PageNav from '../components/PageNav.jsx';
 import Clothes from '../components/Clothes.jsx';
+import Outfits from '../components/Outfits.jsx';
 
-function Closet() {
+
+function MainPage(props) {
 	return <div className='MainPage'>
-		<PageNav page={'clothes'}/>
+		<PageNav />
 		<Clothes />
 	</div>
 }
 
-export default Closet;
+export default MainPage;

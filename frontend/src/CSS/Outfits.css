@@ -1,0 +1,12 @@
+.Outfits {
+	height: 86%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.Outfits h1 {
+	height: 40px;
+	text-align: center;
+	color: var(--orange);
+}

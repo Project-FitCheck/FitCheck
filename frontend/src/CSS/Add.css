@@ -1,0 +1,46 @@
+.Add {
+	height: 86%;
+	margin: 0;
+	padding: 0;
+}
+
+.Add form {
+	padding: 50px;
+	margin: 0 auto;
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5em;
+	background-color: var(--gray);
+	border-radius: 20px;
+}
+
+.Add label {
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.Add input {
+	font-size: .75em;
+}
+
+.Add select {
+	text-align: center;
+	background-color: aqua;
+	font-size: .75em;
+	width: 100%;
+	border: 1px solid black;
+	background-color: var(--gray);
+	padding: 8px 2px;
+	border-radius: 5px;
+}
+
+.Add button {
+	font-size: 1em;
+	color: var(--orange);
+	margin: 0 auto;
+	padding: 10px;
+	background-color: var(--purple);
+	width: 50%;
+	border-radius: 5px;
+}
