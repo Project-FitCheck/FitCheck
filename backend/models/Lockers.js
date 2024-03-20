@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import OutfitModel from "./Outfit"
+import { OutfitModel } from "./Outfit.js"
 const LockerSchema = new mongoose.Schema({
     numOutfits: {
         type: Number,

@@ -1,64 +1,109 @@
 import express from "express";
 import bcrypt from "bcrypt";
-import { UserModel } from "../models/Users";
+import jwt from "jsonwebtoken"
+import { UserModel } from "../models/Users.js";
 import { LockerModel } from "../models/Lockers.js";
-import { ClosetModel } from "../models/Closets"
+import { ClosetModel } from "../models/Closets.js";
 
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
     const { firstName, lastName, username, password, email } = req.body;
-    const user = await UserModel.findOne({ username });
-    if (user) {
-        res.json({ message: "User already exists" });
+    try {
+        const userExists = await UserModel.findOne({ username });
+        if (userExists) {
+            return res.status(400).json({ message: "User already exists" });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const model = {
+            gender: "tba",
+            head: "tba",
+            leftArm: "tba",
+            rightArm: "tba",
+            torso: "tba",
+            legs: "tba",
+            feet: "tba",
+            fullBody: "tba",
+        }; //  replace with svg of model*/
+
+        const closet = new ClosetModel({
+            numClothes: 0,
+            clothes: [],
+            favClothes: [],
+            wishlist: [],
+            owner: username
+        });
+        await closet.save();
+
+        const locker = new LockerModel({
+            numOutfits: 0,
+            outfits: [],
+            favOutfits: [],
+            wishlist: [],
+            owner: username
+        });
+        await locker.save();
+
+        const newUser = new UserModel({
+            firstName,
+            lastName,
+            username,
+            password: hashedPassword,
+            email,
+            bodyModel: model,
+            closet: closet._id,
+            locker: locker._id
+        });
+        await newUser.save();
+        
+        const token = jwt.sign({ userId: newUser._id }, "secret");
+        return res.json({ token, message: "User created successfully, logging in\n Successfully logged in", userId: newUser._id, userDetails: newUser });
+    } catch (error) {
+        console.error("Error creating user:", error);
+        return res.status(500).json({ message: "Internal server error" });
     }
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const model = "model svg"; //replace with svg of model
-
-    const closet = new ClosetModel({
-        numClothes: 0, clothes: [], favClothes: [],
-        wishlist: [], owner: username
-    });
-    await closet.save();
-
-    const locker = new LockerModel({
-        numOutfits: 0, outfits: [], favOutfits: [],
-        wishlist: [], owner: username
-    });
-    await locker.save();
-
-    const newUser = new UserModel({
-        firstName, lastName, username,
-        hashedPassword, model, email, closet: closet._id, locker: locker._id
-    });
-    await newUser.save();
 });
 
 router.post("/login", async (req, res) => {
     const { username, password } = req.body;
-    const user = await UserModel.findOne({ username });
-    if (!user) {
-        res.json({ message: "User Doesn't exists" });
+    try {
+        const user = await UserModel.findOne({ username });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        const validPassword = await bcrypt.compare(password, user.hashedPassword);
+        if (!validPassword) {
+            return res.status(401).json({ message: "Incorrect password" });
+        }
+        const token = jwt.sign({ userId: user._id }, "secret");
+        return res.json({ token, message: "Successfully logged in" });
+    } catch (error) {
+        console.error("Error logging in:", error);
+        return res.status(500).json({ message: "Internal server error" });
     }
-
-    const validPassword = await bcrypt.compare(password, user.password);
-
-    if (!validPassword) {
-        res.json({ message: "Incorrect password" });
-    }
-
-    res.json({ message: "Successfully logged in" });
 });
 
 router.put("/update", async (req, res) => {
-    const {userid, fieldToBeUpdated, updatedValue} = req.body;
-    const user = await UserModel.findById(userid);
-    if (typeof updatedValue != typeof user.get(fieldToBeUpdated)) {
-        res.json({message: fieldToBeUpdated + "cannot be set to this value"});
+    const { userid, fieldToBeUpdated, updatedValue } = req.body;
+    try {
+        const user = await UserModel.findById(userid);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        if (typeof updatedValue !== typeof user[fieldToBeUpdated]) {
+            return res.status(400).json({ message: `${fieldToBeUpdated} cannot be set to this value` });
+        }
+
+        user.set(fieldToBeUpdated, updatedValue);
+        await user.save();
+        return res.json({ message: `${fieldToBeUpdated} has been updated` });
+    } catch (error) {
+        console.error("Error updating user:", error);
+        return res.status(500).json({ message: "Internal server error" });
     }
-    user.set(fieldToBeUpdated, updatedValue);
-    user.save();
-    res.json({message: fieldToBeUpdated + "has been updated"});
 });
 
 export { router as userRouter };
