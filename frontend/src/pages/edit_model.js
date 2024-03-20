@@ -24,30 +24,30 @@ function EditModel() {
                         <Button variant="contained" onClick={handleButtonClick}>Female</Button>
                     </li>
                     <li className="head-setting">
-                        <Button variant="contained" onClick={handleButtonClick}>Head</Button>
+                        <Button variant="contained" onClick={() => handleButtonClick("male_head")}>Head</Button>
                         {/*Head button that goes to page to 
                         edit head size on full model*/}
                     </li>
                     <li className="torso-setting">
-                        <Button variant="contained" onClick={handleButtonClick}>Torso</Button>
+                        <Button variant="contained" onClick={() => handleButtonClick("male_torso")}>Torso</Button>
                         {/*Torso button that goes to page to 
                         edit torso length and width while on
                         full model*/}
                     </li>
                     <li className="arms-setting">
-                        <Button variant="contained" onClick={handleButtonClick}>Arms</Button>
+                        <Button variant="contained" onClick={() => handleButtonClick("male_arms")}>Arms</Button>
                         {/*Arms button that goes to page to 
                         edit arm length and thickness while
                         on full model*/}
                     </li>
                     <li className="legs-setting">
-                        <Button variant="contained" onClick={handleButtonClick}>Legs</Button>
+                        <Button variant="contained" onClick={() => handleButtonClick("male_legs")}>Legs</Button>
                         {/*Legs button that goes to page to 
                         edit arm length and thickness while
                         on full model*/}
                     </li>
                     <li className="feet-setting">
-                        <Button variant="contained" onClick={handleButtonClick}>Feet</Button>
+                        <Button variant="contained" onClick={() => handleButtonClick("male_feet")}>Feet</Button>
                         {/*Feet button that goes to page to 
                         edit feet size on fill model*/}
                     </li>
