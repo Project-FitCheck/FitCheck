@@ -1,4 +1,4 @@
-import '../CSS/MainPage.css';
+import '../styles/MainPage.css';
 import PageNav from '../components/PageNav.jsx';
 import Clothes from '../components/Clothes.jsx';
 

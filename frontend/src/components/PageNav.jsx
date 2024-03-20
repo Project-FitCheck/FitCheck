@@ -1,6 +1,6 @@
 import React from 'react';
-import '../CSS/PageNav.css';
-import '../CSS/Highlight.css';
+import '../styles/PageNav.css';
+import '../styles/Highlight.css';
 import NavButton from './NavButton';
 
 function PageNav(props) {

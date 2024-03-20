@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/CardArea.css';
+import '../styles/CardArea.css';
 import Card from './Card.jsx';
 
 function CardArea() {

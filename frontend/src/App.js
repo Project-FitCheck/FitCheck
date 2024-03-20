@@ -3,17 +3,21 @@ import './styles/navigation.css';
 import './styles/index.css';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import NavBar from './components/navbar.js';
 
 import Signup from './pages/signup';
 import Login from './pages/login';
-import Profile from "./pages/profile";
-import EditModel from "./pages/edit_model";
 import CreateModel from './pages/create_model';
+
+import NavBar from './components/navbar.js';
 
 import Closet from './pages/closet';
 import Outfits from './pages/locker';
 import AddClothing from './pages/add_clothing';
+
+import EditModel from "./pages/edit_model";
+
+import Profile from "./pages/profile";
+
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/Add.css';
+import '../styles/Add.css';
 
 function Add() {
 	return <div className='Add'>
