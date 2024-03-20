@@ -12,7 +12,6 @@ function ModelViewer({model}) {
             <FemaleModel />
         </div>)
         }
-
 }
 
 export default ModelViewer;

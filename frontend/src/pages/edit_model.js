@@ -21,7 +21,7 @@ function EditModel() {
         const updatedModel = {
             userId: "userId",
             newModel: {
-                gender: "MALE | FEMALE",
+                gender: gender,
                 head: "head_svg_string",
                 leftArm: "left_arm_svg_string",
                 rightArm: "right_arm_svg_string", 
@@ -33,6 +33,7 @@ function EditModel() {
         }
         axios.put("http://localhost:3001/model/update", updatedModel)
     }
+    
 
     return (
         <div className="EditModel">
