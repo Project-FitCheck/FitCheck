@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
-import Clothes from "./Clothes";
+import { ClothesModel } from "./Clothes.js";
 
 const OutfitSchema = new mongoose.Schema({
-    head: [Clothes.schema],
-    torso: [Clothes.schema],
-    legs: [Clothes.schema],
-    socks: Clothes.schema,
-    shoes: Clothes.schema,
-    jewelery: [Clothes.schema],
+    head: [ClothesModel.schema],
+    torso: [ClothesModel.schema],
+    legs: [ClothesModel.schema],
+    socks: ClothesModel.schema,
+    shoes: ClothesModel.schema,
+    jewelery: [ClothesModel.schema],
     tags: [String]
 });
 
