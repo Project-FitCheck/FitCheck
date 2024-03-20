@@ -4,9 +4,8 @@ import { UserModel } from "../models/Users.js"
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-    const {userId}  = req.query;
-    console.log({userId});
-    try {
+    const {userId} = req.query;
+     try {
         const user = await UserModel.findById(userId);
         if (!user) {
             return res.status(404).json({ message: "User not found " + userId });
@@ -64,7 +63,7 @@ req: {
         torso: torso_svg_string,
         legs: legs_svg_string,
         feet: feet_svg_string,
-        fullBody: 
+        fullBody: full_body_svg_string
     }
 }
 */

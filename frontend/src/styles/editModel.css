@@ -20,7 +20,7 @@ svg{
     width: 12em;
 }
 
-ul {
+.EditModel ul {
     list-style-type: none;
     display: block;
     padding: 0;
@@ -65,7 +65,7 @@ li {
 
 
 .head-icon {
-    content: url("./assets/FitCheck_male_template/male_head.svg");
+    content: url("../assets/FitCheck_male_template/male_head.svg");
     position: relative;
     left: 15px;
     /* Align the images to the left of the list items */
@@ -78,7 +78,7 @@ li {
 }
 
 .torso-icon {
-    content: url("./assets/FitCheck_male_template/male_torso.svg");
+    content: url("../assets/FitCheck_male_template/male_torso.svg");
     position: relative;
     left: 15px;
     /* Align the images to the left of the list items */
@@ -91,7 +91,7 @@ li {
 }
 
 .arms-icon {
-    content: url("./assets/FitCheck_male_template/male_leftarm.svg");
+    content: url("../assets/FitCheck_male_template/male_leftarm.svg");
     position: relative;
     left: 15px;
     /* Align the images to the left of the list items */
@@ -105,7 +105,7 @@ li {
 }
 
 .legs-icon {
-    content: url("./assets/FitCheck_male_template/male_legs.svg");
+    content: url("../assets/FitCheck_male_template/male_legs.svg");
     position: relative;
     left: 15px;
     /* Align the images to the left of the list items */
@@ -119,7 +119,7 @@ li {
 }
 
 .feet-icon {
-    content: url("./assets/FitCheck_male_template/male_feet.svg");
+    content: url("../assets/FitCheck_male_template/male_feet.svg");
     position: relative;
     left: 15px;
     /* Align the images to the left of the list items */
@@ -185,8 +185,74 @@ Button:active:before {
     background: #3a0ca3; 
 }
 
-.signup{
-    margin-left: 500px;
-    top: 50%;
-  }
-  
+.ModelSettings {
+    position: absolute;
+    right: 100px;
+
+}
+
+.ModelSettings ul{
+    list-style-type: none;
+    /*padding-left: 20px;*/
+}
+
+.ModelSettings li{
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.gender-setting::before{
+    position: absolute;
+    left: 0; /* Align the images to the left of the list items */
+    top: 0; /* Align the images with the top of the list items */
+    width: 5px; /* Adjust the width of the images */
+    height: 5px; /* Adjust the height of the images */
+    margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+
+.head-setting::before{
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: px; /* Align the images with the top of the list items */
+    width: 50px; /* Adjust the width of the images */
+    height: 50px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+    
+}
+
+.torso-setting::before{
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 100px; /* Adjust the width of the images */
+    height: 100px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.arms-setting::before{
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 50px; /* Adjust the width of the images */
+    height: 50px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.legs-setting::before{
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 50px; /* Adjust the width of the images */
+    height: 50px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.feet-setting::before{
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 50px; /* Adjust the width of the images */
+    height: 50px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import '../CSS/NavButton.css';
+import '../styles/NavButton.css';
 
 function NavButton(props) {
 	let isHighlighted;
