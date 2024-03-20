@@ -1,14 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../styles/editModel.css";
 import { Button } from "@mui/base";
 import ModelViewer from "../components/model_viewer"
-import ModelEditor from "../components/modelEditorViewer"
+import PartViewer from "../components/partViewer";
 
 function EditModel() {
 
     const [showSliders, setShowSliders] = useState(false);
+    const [Part, setPart] = useState("male_body");
 
-    const handleButtonClick = () => {
+    const handleButtonClick = (part) => {
+        setPart(part);
         setShowSliders(true);
     };
 
@@ -18,7 +20,7 @@ function EditModel() {
             <div className="ModelSettings">
                 <ul>
                     <li className="gender-setting">
-                        <Button variant="contained" onClick={handleButtonClick}>Male</Button>
+                        <Button variant="contained" onClick={() => handleButtonClick("male_body")}>Male</Button>
                         <Button variant="contained" onClick={handleButtonClick}>Female</Button>
                     </li>
                     <li className="head-setting">
@@ -51,7 +53,8 @@ function EditModel() {
                     </li>
                 </ul>
             </div>
-            {showSliders && <ModelEditor />}
+
+            {showSliders && Part && <PartViewer part={Part} />}
         </div>
     );
 }

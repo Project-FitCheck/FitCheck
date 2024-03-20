@@ -1,12 +1,14 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { ResponsiveSVG } from '@cutting/svg';
 import Slider from 'react-slider';
 import '../styles/modelEditor.css';
+import PartViewer from './partViewer';
 
-function ModelEditor() {
+function ModelEditor({prop}) {
     const ref = useRef(null);
+    const part = prop;
 
-    const [imgStyle, setImgStyle] = useState({
+    /*const [imgStyleFeet, setImgStyleFeet] = useState({
         position: "absolute",
         top: "250px",
         left: "250px",
@@ -14,70 +16,64 @@ function ModelEditor() {
         height: "250px"
     });
 
-    function slider (prop, value) {
-        setImgStyle(prevStyle => ({
-            ...prevStyle,
-            [prop]: value + "px"
-        }));
-    };
+    const [imgStyleHead, setImgStyleHead] = useState({
+        position: "absolute",
+        top: "250px",
+        left: "250px",
+        width: "250px",
+        height: "250px"
+    });
+
+    const [imgStyleLeftarm, setImgStyleLeftarm] = useState({
+        position: "absolute",
+        top: "250px",
+        left: "250px",
+        width: "250px",
+        height: "250px"
+    });
+
+    const [imgStyleLegs, setImgStyleLegs] = useState({
+        position: "absolute",
+        top: "250px",
+        left: "250px",
+        width: "250px",
+        height: "250px"
+    });
+
+    const [imgStyleRightarm, setImgStyleRightarm] = useState({
+        position: "absolute",
+        top: "250px",
+        left: "250px",
+        width: "250px",
+        height: "250px"
+    });
+
+    const [imgStyleTorso, setImgStyleTorso] = useState({
+        position: "absolute",
+        top: "250px",
+        left: "250px",
+        width: "250px",
+        height: "250px"
+    });*/
 
     return (
-        <div className="editBody" ref={ref}>
-            <ResponsiveSVG ref={ref}>
+        <div className="editBody">
 
-                {/*Male body*/}
+            <PartViewer part={part} />
 
-                <img src="../assets/FitCheck_male_template/male_body.svg" style={imgStyle} alt="male body" />
-                <img src="../assets/FitCheck_male_template/male_feet.svg" style={imgStyle} alt="male feet" />
-                <img src="../assets/FitCheck_male_template/male_head.svg" style={imgStyle} alt="male head" />
-                <img src="../assets/FitCheck_male_template/male_leftarm.svg" style={imgStyle} alt="male leftarm" />
-                <img src="../assets/FitCheck_male_template/male_legs.svg" style={imgStyle} alt="male legs" />
-                <img src="../assets/FitCheck_male_template/male_rightarm.svg" style={imgStyle} alt="male rightarm" />
-                <img src="../assets/FitCheck_male_template/male_torso.svg" style={imgStyle} alt="male torso" />
+            {/*Male body*/}
 
-            </ResponsiveSVG>
+
+            {/*<ResponsiveSVG innerRef={<svg onClick={()=>{part.current=imgStyleFeet; set.current=setImgStyleFeet}} style={imgStyleFeet} href="../assets/FitCheck_male_template/male_feet.svg" />} />
+            <ResponsiveSVG innerRef={<svg onClick={()=>{part.current=imgStyleHead; set.current=setImgStyleHead}} style={imgStyleHead} href="../assets/FitCheck_male_template/male_head.svg" />} />
+            <ResponsiveSVG innerRef={<svg onClick={()=>{part.current=imgStyleLeftarm; set.current=setImgStyleLeftarm}} style={imgStyleLeftarm} href="../assets/FitCheck_male_template/male_leftarm.svg" />} />
+            <ResponsiveSVG innerRef={<svg onClick={()=>{part.current=imgStyleLegs; set.current=setImgStyleLegs}} style={imgStyleLegs} href="../assets/FitCheck_male_template/male_legs.svg" />} />
+            <ResponsiveSVG innerRef={<svg onClick={()=>{part.current=imgStyleRightarm; set.current=setImgStyleRightarm}} style={imgStyleRightarm} href="../assets/FitCheck_male_template/male_rightarm.svg" />} />
+            <ResponsiveSVG innerRef={<svg onClick={()=>{part.current=imgStyleTorso; set.current=setImgStyleTorso}} style={imgStyleTorso} href="../assets/FitCheck_male_template/male_torso.svg" />} />*/}
 
             {/*sliders*/}
 
-            <div className="sliderX">
-                <label>X Position</label>
-                <Slider
-                    min={0}
-                    max={500}
-                    value={parseInt(imgStyle.left)}
-                    onChange={value => slider("left", value)}
-                />
-            </div>
 
-            <div className="sliderY">
-            <label>Y Position</label>
-                <Slider
-                    min={0}
-                    max={500}
-                    value={parseInt(imgStyle.top)}
-                    onChange={value => slider("top", value)}
-                />
-            </div>
-
-            <div className="sliderW">
-            <label>Width</label>
-                <Slider
-                    min={0}
-                    max={500}
-                    value={parseInt(imgStyle.width)}
-                    onChange={value => slider("width", value)}
-                />
-            </div>
-
-            <div className="sliderH">
-            <label>Height</label>
-                <Slider
-                    min={0}
-                    max={500}
-                    value={parseInt(imgStyle.height)}
-                    onChange={value => slider("height", value)}
-                />
-            </div>
 
         </div>
     );
