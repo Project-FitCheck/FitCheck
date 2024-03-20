@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    model: {
+    bodyModel: {
         gender: {
             type: String
         },
