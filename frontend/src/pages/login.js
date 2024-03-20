@@ -37,7 +37,7 @@ function Login() {
     return (
         <div className="signup">
             <form onSubmit={onSubmit}>
-                <h2>Create Account</h2>
+                <h2>Login</h2>
                 {error && <div className="error">{error}</div>}
                 <div className="form-group">
                     <label htmlFor="username">Username</label>
