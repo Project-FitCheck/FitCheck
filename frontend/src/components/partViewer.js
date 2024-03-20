@@ -98,11 +98,11 @@ function PartViewer({part}) {
     if (part === "male_body" || part === "female_body") {
         return (
             <div className={part}>
-
-                <ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleBody}> 
+                <img src={<ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleBody}> 
                     <MaleBody  />
                     <FemaleBody />
-                </ResponsiveSVG>
+                </ResponsiveSVG>} alt="model part" />
+                
 
 
                 <div className="sliderX">
