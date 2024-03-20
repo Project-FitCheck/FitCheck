@@ -12,7 +12,8 @@ test('renders profile page when profile nav button is pressed', () => {
   //const linkElement = 
   screen.getByText(/ACCOUNT INFORMATION/i);
   //expect(linkElement).toBeInTheDocument();
-}); */
+});
+ */
 
 test('adds 1 + 2 to equal 3', () => {
   expect(1 + 2).toBe(3);
