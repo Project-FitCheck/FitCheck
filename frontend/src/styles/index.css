@@ -100,7 +100,10 @@ td {
 }
 
 .privacy {
+<<<<<<< HEAD
 <<<<<<< HEAD:frontend/src/styles/index.css
+=======
+>>>>>>> 4d13255 (add a logout button on profile page)
   margin: auto;
   max-width: 500px;
   text-align: center;
@@ -123,6 +126,7 @@ td {
   margin-top: 10px;
   border-radius: 12px;
   cursor: pointer;
+<<<<<<< HEAD
 =======
 	margin: auto;
 	max-width: 500px;
@@ -131,4 +135,6 @@ td {
 	padding-top: 1px;
 	background-color: lightgray;
 >>>>>>> 39bcb2d (Added components and homepage (#30)):frontend/src/index.css
+=======
+>>>>>>> 4d13255 (add a logout button on profile page)
 }
