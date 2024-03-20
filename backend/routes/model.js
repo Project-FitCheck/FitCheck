@@ -4,9 +4,8 @@ import { UserModel } from "../models/Users.js"
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-    const {userId}  = req.query;
-    console.log({userId});
-    try {
+    const {userId} = req.query;
+     try {
         const user = await UserModel.findById(userId);
         if (!user) {
             return res.status(404).json({ message: "User not found " + userId });

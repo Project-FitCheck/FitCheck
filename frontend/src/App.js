@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/index.css';
-import './styles/App.js';
+import './styles/App.css';
 
 import './styles/NavBar.css';
 
@@ -25,15 +25,15 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path='/signup' element={<Signup />} />
+          <Route path='/' element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/model/create' element={<CreateModel />} />
           <Route path='/closet' element={<Closet />} />
           <Route path='/closet/add' element={<AddClothing />} />
-          <Route path='/model/edit' element={<EditModel />} />
           <Route path='/locker' element={<Outfits />} />
+          <Route path='/model/edit' element={<EditModel />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/model/create' element={<CreateModel />} />
-          <Route path='/' element={<Navigate to="/signup" />} />
         </Routes>
       </BrowserRouter>
     </div>

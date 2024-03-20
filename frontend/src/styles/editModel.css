@@ -20,7 +20,7 @@ svg{
     width: 12em;
 }
 
-ul {
+.EditModel ul {
     list-style-type: none;
     display: block;
     padding: 0;
@@ -191,12 +191,12 @@ Button:active:before {
 
 }
 
-ul{
+.ModelSettings ul{
     list-style-type: none;
     /*padding-left: 20px;*/
 }
 
-li{
+.ModelSettings li{
     margin-bottom: 20px;
     display: flex;
 }
@@ -212,8 +212,6 @@ li{
 
 
 .head-setting::before{
-    
-    content: url("../assets/FitCheck_male_template/male_head.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: px; /* Align the images with the top of the list items */
@@ -224,7 +222,6 @@ li{
 }
 
 .torso-setting::before{
-    content: url("../assets/FitCheck_male_template/male_torso.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -234,7 +231,6 @@ li{
 }
 
 .arms-setting::before{
-    content: url("../assets/FitCheck_male_template/male_leftarm.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -244,7 +240,6 @@ li{
 }
 
 .legs-setting::before{
-    content: url("../assets/FitCheck_male_template/male_legs.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -254,7 +249,6 @@ li{
 }
 
 .feet-setting::before{
-    content: url("../assets/FitCheck_male_template/male_feet.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
