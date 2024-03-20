@@ -91,11 +91,35 @@ td {
 	background-color: lightgray;
 }
 
+.themes h2 {
+  margin: 10px 0px 10px 0px;
+}
+
+.themes p {
+  padding-bottom: 10px;
+}
+
 .privacy {
-	margin: auto;
-	max-width: 500px;
-	text-align: center;
-	border-radius: 8px;
-	padding-top: 1px;
-	background-color: lightgray;
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 8px;
+  padding-top: 1px;
+  background-color: lightgray;
+}
+
+.privacy h2 {
+  margin: 10px 0px 10px 0px;
+}
+
+.logOut{
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.logout, button {
+  margin-top: 10px;
+  border-radius: 12px;
+  cursor: pointer;
 }
