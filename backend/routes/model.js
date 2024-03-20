@@ -64,7 +64,7 @@ req: {
         torso: torso_svg_string,
         legs: legs_svg_string,
         feet: feet_svg_string,
-        fullBody: 
+        fullBody: full_body_svg_string
     }
 }
 */
