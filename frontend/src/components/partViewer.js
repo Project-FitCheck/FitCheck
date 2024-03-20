@@ -4,10 +4,18 @@ import Slider from 'react-slider';
 import '../styles/modelEditor.css';
 import {ResponsiveSVG} from '@cutting/svg';
 import {ReactComponent as MaleBody} from "../assets/FitCheck_male_template/male_body.svg"
+<<<<<<< HEAD
 import {ReactComponent as FemaleBody} from "../assets/FitCheck_female_template/female_body.svg"
 
 function PartViewer({part}) {
 
+=======
+
+function PartViewer({part}) {
+
+    console.log({part});
+
+>>>>>>> c74d2c0 (Made a new file for sliders)
     const [imgStyleBody, setImgStyleBody] = useState({
         position: "absolute",
         top: "250px",
@@ -16,6 +24,7 @@ function PartViewer({part}) {
         height: "250px"
     });
 
+<<<<<<< HEAD
     const [imgStyleFeet, setImgStyleFeet] = useState({
         position: "absolute",
         top: "250px",
@@ -64,11 +73,14 @@ function PartViewer({part}) {
         height: "250px"
     });
 
+=======
+>>>>>>> c74d2c0 (Made a new file for sliders)
     function slider(prop, value) {
         setImgStyleBody(prevStyle => ({
             ...prevStyle,
             [prop]: value + "px"
         }));
+<<<<<<< HEAD
         setImgStyleFeet(prevStyle => ({
             ...prevStyle,
             [prop]: value + "px"
@@ -96,12 +108,20 @@ function PartViewer({part}) {
     };
 
     if (part === "male_body" || part === "female_body") {
+=======
+    };
+
+    if (part === "male_body") {
+>>>>>>> c74d2c0 (Made a new file for sliders)
         return (
             <div className={part}>
 
                 <ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleBody}> 
                     <MaleBody  />
+<<<<<<< HEAD
                     <FemaleBody />
+=======
+>>>>>>> c74d2c0 (Made a new file for sliders)
                 </ResponsiveSVG>
 
 
@@ -148,6 +168,7 @@ function PartViewer({part}) {
         )
 
     }
+<<<<<<< HEAD
     if (part === "male_feet" || part === "female_feet") {
         return (
             <div className={part}>
@@ -464,6 +485,24 @@ function PartViewer({part}) {
                 </div>
             </div>
         )
+=======
+    if (part === "male_feet") {
+
+    }
+    if (part === "male_head") {
+
+    }
+    if (part === "male_leftarm") {
+
+    }
+    if (part === "male_legs") {
+
+    }
+    if (part === "male_rightarm") {
+
+    }
+    if (part === "male_torso") {
+>>>>>>> c74d2c0 (Made a new file for sliders)
 
     }
 }
