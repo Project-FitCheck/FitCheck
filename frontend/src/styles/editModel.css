@@ -202,7 +202,6 @@ li{
 }
 
 .gender-setting::before{
-    content: url();
     position: absolute;
     left: 0; /* Align the images to the left of the list items */
     top: 0; /* Align the images with the top of the list items */
