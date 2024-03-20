@@ -11,9 +11,7 @@ import NavBar from './components/navbar.js';
 import Signup from './pages/signup';
 import Login from './pages/login';
 import Profile from "./pages/profile";
-import Closet from './pages/closet';
-import Outfits from './pages/locker';
-import AddClothing from './pages/add_clothing';
+
 import CreateModel from './pages/create_model';
 
 import Closet from './pages/closet';
