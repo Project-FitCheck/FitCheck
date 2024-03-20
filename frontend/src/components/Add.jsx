@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import '../styles/Add.css';
+=======
+import '../CSS/Add.css';
+>>>>>>> 39bcb2d (Added components and homepage (#30))
 
 function Add() {
 	return <div className='Add'>

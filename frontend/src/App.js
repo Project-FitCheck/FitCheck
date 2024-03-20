@@ -19,8 +19,12 @@ import EditModel from "./pages/edit_model";
 import Signup from './pages/signup';
 import Login from './pages/login';
 import Profile from "./pages/profile";
+
 import CreateModel from './pages/create_model';
 
+import Closet from './pages/closet';
+import Outfits from './pages/locker';
+import AddClothing from './pages/add_clothing';
 
 function App() {
   return (
