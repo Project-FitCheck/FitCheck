@@ -15,15 +15,7 @@ li{
 }
 
 .gender-setting::before{
-<<<<<<< HEAD
-<<<<<<< HEAD
     content: url("../assets/FitCheck_male_template/male_body.svg");
-=======
-    content: url();
->>>>>>> 4c845da (copy and added some files)
-=======
-    content: url("../assets/FitCheck_male_template/male_body.svg");
->>>>>>> a55a3c2 (made a model editor viewer and added sliders)
     position: absolute;
     left: 0; /* Align the images to the left of the list items */
     top: 0; /* Align the images with the top of the list items */
