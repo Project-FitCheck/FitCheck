@@ -13,6 +13,7 @@ import Login from './pages/login';
 import Profile from "./pages/profile";
 
 import CreateModel from './pages/create_model';
+import EditModel from './pages/edit_model.js';
 
 import Closet from './pages/closet';
 import Outfits from './pages/locker';
@@ -28,8 +29,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path='/closet' element={<Closet />} />
           <Route path='/closet/add' element={<AddClothing />} />
-          <Route path='/model/edit' element={<></>} />
-          <Route path='/locker' element={<Outfits />}/>
+          <Route path='/model/edit' element={<EditModel />} />
+          <Route path='/locker' element={<Outfits />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/model/create' element={<CreateModel />} />
           <Route path='/' element={<Navigate to="/signup" />} />
