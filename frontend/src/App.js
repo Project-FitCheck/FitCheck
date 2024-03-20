@@ -16,7 +16,10 @@ import AddClothing from './pages/add_clothing';
 
 import EditModel from "./pages/edit_model";
 
+import Signup from './pages/signup';
+import Login from './pages/login';
 import Profile from "./pages/profile";
+import CreateModel from './pages/create_model';
 
 function App() {
   return (
