@@ -16,10 +16,8 @@ import AddClothing from './pages/add_clothing';
 
 import EditModel from "./pages/edit_model";
 
-import Signup from './pages/signup';
-import Login from './pages/login';
 import Profile from "./pages/profile";
-import CreateModel from './pages/create_model';
+
 
 function App() {
   return (
@@ -27,14 +25,14 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path='/signup' element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/model/create' element={<CreateModel />} />
           <Route path='/closet' element={<Closet />} />
           <Route path='/closet/add' element={<AddClothing />} />
-          <Route path='/model/edit' element={<EditModel/>} />
-          <Route path='/locker' element={<Outfits />}/>
+          <Route path='/model/edit' element={<EditModel />} />
+          <Route path='/locker' element={<Outfits />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/model/create' element={<CreateModel />} />
           <Route path='/' element={<Navigate to="/signup" />} />
         </Routes>
       </BrowserRouter>

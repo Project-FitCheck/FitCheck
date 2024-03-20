@@ -1,82 +1,94 @@
 body {
-  margin: 0px;
+	margin: 0px;
+}
+
+h1 {
+	font-size: 2.5em;
+	height: 40px;
+	text-align: center;
+	color: var(--orange);
+	font-weight: normal;
 }
 
 .settings {
-  margin: auto;
-  text-align: center;
-  padding: 10px;
-  background-color: lightgray;
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+	background-color: lightgray;
 }
 
 .account {
-  margin: auto;
-  max-width: 500px;
-  text-align: center;
-  background-color: lightgray;
-  border-radius: 8px;
+	margin: auto;
+	max-width: 500px;
+	text-align: center;
+	background-color: lightgray;
+	border-radius: 8px;
 }
 
 .profileImg {
-  margin: auto auto 20px auto;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  border: 3px solid lightgray;
+	margin: auto auto 20px auto;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	border: 3px solid lightgray;
 }
 
-.profileImg, p {
-  margin: auto;
+.profileImg,
+p {
+	margin: auto;
 }
 
 .info {
-  margin: 10px auto auto auto;
-  max-width: 500px;
-  background-color: lightgray;
+	margin: 10px auto auto auto;
+	max-width: 500px;
+	background-color: lightgray;
 }
 
-table, td, th {  
-  border: 1px solid black;
-  text-align: left;
+table,
+td,
+th {
+	border: 1px solid black;
+	text-align: left;
 }
 
 table {
-  border-collapse: 100%;
-  width: 100%;
+	border-collapse: 100%;
+	width: 100%;
 }
 
-th, td {
-  padding: 10px;
+th,
+td {
+	padding: 10px;
 }
 
 .edit {
-  margin: auto;
-  text-align: center;
-  padding: 20px;
+	margin: auto;
+	text-align: center;
+	padding: 20px;
 }
 
 .editButton {
-  border-radius: 12px;
-  cursor: pointer;
+	border-radius: 12px;
+	cursor: pointer;
 }
 
 .password {
-  text-align: center;
-  margin: 10px;
-  border-radius: 12px;
-  cursor: pointer;
+	text-align: center;
+	margin: 10px;
+	border-radius: 12px;
+	cursor: pointer;
 }
 
 .themes {
-  margin: auto auto 30px auto;
-  max-width: 500px;
-  text-align: center;
-  border-radius: 8px;
-  padding-top: 1px;
-  background-color: lightgray;
+	margin: auto auto 30px auto;
+	max-width: 500px;
+	text-align: center;
+	border-radius: 8px;
+	padding-top: 1px;
+	background-color: lightgray;
 }
 
 Select{

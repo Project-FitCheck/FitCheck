@@ -1,11 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
 import '../styles/PageNav.css';
 import '../styles/Highlight.css';
-=======
-import '../CSS/PageNav.css';
-import '../CSS/Highlight.css';
->>>>>>> 39bcb2d (Added components and homepage (#30))
 import NavButton from './NavButton';
 
 function PageNav(props) {
