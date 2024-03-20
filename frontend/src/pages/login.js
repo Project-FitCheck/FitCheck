@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Button } from "@mui/material";
-import { redirect } from "react-router-dom"
-import useCookies from "react-cookies"
+import { useNavigate } from "react-router-dom"
+import { useCookies } from "react-cookie"
 
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [, setCookies] = useCookies(["access_token"]);
+    const navigate = useNavigate()
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -17,7 +18,7 @@ function Login() {
                 username: username,
                 password: password,
             });
-            if(response.status === 500) {
+            if (response.status === 500) {
                 return;
             }
             console.log("User logged in successfully:");
@@ -27,7 +28,7 @@ function Login() {
 
             setCookies("access_token", response.data.token);
             window.localStorage.setItem("userId", response.data.userId);
-            redirect("/closet");
+            navigate("/closet");
         } catch (err) {
             console.error("Error submitting user data:", err);
             setError("An error occurred. Please try again later.");
