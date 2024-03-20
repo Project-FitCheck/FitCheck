@@ -1,0 +1,11 @@
+body {
+	margin: 0px;
+}
+
+h1 {
+	font-size: 2.5em;
+	height: 40px;
+	text-align: center;
+	color: var(--orange);
+	font-weight: normal;
+}

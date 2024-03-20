@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/Clothes.css';
+import '../styles/Clothes.css';
 import CardArea from './CardArea';
 
 function Clothes() {

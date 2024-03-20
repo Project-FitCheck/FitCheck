@@ -1,0 +1,264 @@
+.ModelViewer{
+    position: absolute;
+    left: 400px;
+    top: -20px;
+}
+
+svg{
+    height: 700px;
+}
+
+.ModelSettings {
+    position: absolute;
+    left: 800px
+}
+
+.save-model{
+    position: absolute;
+    top: 640px;
+    left: 395px;
+    width: 12em;
+}
+
+ul {
+    list-style-type: none;
+    display: block;
+    padding: 0;
+    position: absolute;
+}
+
+
+li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    left: 10px;
+}
+
+.gender-setting {
+    margin-top: 50px;
+}
+
+.head-setting {
+    position: relative;
+}
+
+.torso-setting {
+    position: relative;
+    
+}
+
+.arms-setting {
+    position: relative;
+    
+}
+
+.legs-setting {
+    position: relative;
+    
+}
+
+.feet-setting {
+    position: relative;
+    
+}
+
+
+.head-icon {
+    content: url("../assets/FitCheck_male_template/male_head.svg");
+    position: relative;
+    left: 15px;
+    /* Align the images to the left of the list items */
+    /* Align the images with the top of the list items */
+    width: 80px;
+    /* Adjust the width of the images */
+    height: 50px;
+    /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.torso-icon {
+    content: url("../assets/FitCheck_male_template/male_torso.svg");
+    position: relative;
+    left: 15px;
+    /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 80px;
+    /* Adjust the width of the images */
+    height: 60px;
+    /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.arms-icon {
+    content: url("../assets/FitCheck_male_template/male_leftarm.svg");
+    position: relative;
+    left: 15px;
+    /* Align the images to the left of the list items */
+    top: -10px;
+    /* Align the images with the top of the list items */
+    width: 80px;
+    /* Adjust the width of the images */
+    height: 80px;
+    /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.legs-icon {
+    content: url("../assets/FitCheck_male_template/male_legs.svg");
+    position: relative;
+    left: 15px;
+    /* Align the images to the left of the list items */
+    top: -5px;
+    /* Align the images with the top of the list items */
+    width: 80px;
+    /* Adjust the width of the images */
+    height: 80px;
+    /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.feet-icon {
+    content: url("../assets/FitCheck_male_template/male_feet.svg");
+    position: relative;
+    left: 15px;
+    /* Align the images to the left of the list items */
+    top: 10px;
+    width: 80px;
+    /* Adjust the width of the images */
+    height: 60px;
+    /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+Button {
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+}
+
+Button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 300px;
+    width: 400px;
+    border-radius: 50%;
+}
+
+Button:hover {
+    color: #fff;
+}
+
+Button:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+}
+
+Button:hover:before {
+    top: -50px;
+    left: -50px;
+}
+
+Button:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+}
+
+.active{
+    color: #fff;
+    background: #3a0ca3; 
+}
+
+.ModelSettings {
+    position: absolute;
+    right: 100px;
+
+}
+
+ul{
+    list-style-type: none;
+    /*padding-left: 20px;*/
+}
+
+li{
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.gender-setting::before{
+    position: absolute;
+    left: 0; /* Align the images to the left of the list items */
+    top: 0; /* Align the images with the top of the list items */
+    width: 5px; /* Adjust the width of the images */
+    height: 5px; /* Adjust the height of the images */
+    margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+
+.head-setting::before{
+    
+    content: url("../assets/FitCheck_male_template/male_head.svg");
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: px; /* Align the images with the top of the list items */
+    width: 50px; /* Adjust the width of the images */
+    height: 50px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+    
+}
+
+.torso-setting::before{
+    content: url("../assets/FitCheck_male_template/male_torso.svg");
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 100px; /* Adjust the width of the images */
+    height: 100px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.arms-setting::before{
+    content: url("../assets/FitCheck_male_template/male_leftarm.svg");
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 50px; /* Adjust the width of the images */
+    height: 50px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.legs-setting::before{
+    content: url("../assets/FitCheck_male_template/male_legs.svg");
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 50px; /* Adjust the width of the images */
+    height: 50px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}
+
+.feet-setting::before{
+    content: url("../assets/FitCheck_male_template/male_feet.svg");
+    position: relative;
+    left: 0; /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 50px; /* Adjust the width of the images */
+    height: 50px; /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
+}

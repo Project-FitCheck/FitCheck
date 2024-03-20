@@ -1,8 +1,8 @@
 import React from 'react';
-import './index.css';
-import './App.css';
+import './styles/index.css';
+import './styles/App.js';
 
-import './CSS/NavBar.css';
+import './styles/NavBar.css';
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
