@@ -27,15 +27,11 @@ function ModelViewer({ modelData, mode }) {
         if (modelData.gender === "male") {
             return (<div className="ModelViewer">
                 <MaleModel />
-<<<<<<< Updated upstream
-            </div>)
-=======
             </div>);
 		} else if (model === "female") {
             return (<div className="ModelViewer">
             	<FemaleModel />
         	</div>);
->>>>>>> Stashed changes
         }
         else {
             return (<div className="ModelViewer">

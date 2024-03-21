@@ -64,7 +64,6 @@ function EditModel() {
 
     return (
         <div className="EditModel">
-<<<<<<< Updated upstream
             <div className="ModelSettings">
                 <ul>
                     <li className="gender-setting">
@@ -96,10 +95,6 @@ function EditModel() {
             <ModelViewer modelData={{gender:gender, head:head, torso:torso, leftArm:leftArm, righttArm:righttArm, legs:legs, feet:feet}} mode={"update"} />
             <Button className="save-model" onClick={() => saveModel()}>Save Model</Button>
         </div>
-=======
-			
-		</div>
->>>>>>> Stashed changes
     );
 }
 

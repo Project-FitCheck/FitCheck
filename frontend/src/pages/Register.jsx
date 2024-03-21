@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom"
 import { useCookies } from "react-cookie"
 
-function Signup() {
+export default function Register (props) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [username, setUsername] = useState("");
@@ -13,8 +12,8 @@ function Signup() {
     const [error, setError] = useState("");
     const [, setCookies] = useCookies(["access_token"]);
     const navigate = useNavigate()
-
-    const onSubmit = async (event) => {
+    
+    const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(firstName, lastName, username, password, email)
         try {
@@ -50,36 +49,28 @@ function Signup() {
             setError("An error occurred. Please try again later.");
         }
     };
+    
+    return(
+        <div className="auth-from-container">
+            <h1>FitCheck</h1>
+        <form className ="register-form"onSubmit={handleSubmit}>
+            <label htmlFor>First name</label>
+            <input value ={firstName} onChange ={(e)=> setFirstName(e.target.value)}name="firstname" id="firstname" placeholder="first name"/>
 
-    return (
-        <div className="signup">
-            <form onSubmit={onSubmit}>
-                <h2>Create Account</h2>
-                {error && <div className="error">{error}</div>}
-                <div className="form-group">
-                    <label htmlFor="firstName">First Name</label>
-                    <input type="text" id="firstName" value={firstName} onChange={(event) => setFirstName(event.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="lastName">Last Name</label>
-                    <input type="text" id="lastName" value={lastName} onChange={(event) => setLastName(event.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="username">Username</label>
-                    <input type="text" id="username" value={username} onChange={(event) => setUsername(event.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" value={password} onChange={(event) => setPassword(event.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email" value={email} onChange={(event) => setEmail(event.target.value)} />
-                </div>
-                <Button type="submit">Submit</Button>
-            </form>
+            <label htmlFor>Last name</label>
+            <input value ={lastName} onChange ={(e)=> setLastName(e.target.value)}name="lastname" id="lastname" placeholder="last name"/>
+
+            <label htmlFor>username</label>
+            <input value ={username} onChange ={(e)=> setUsername(e.target.value)}name="username" id="username" placeholder="username"/>
+
+            <label htmlFor="email"> Email </label>
+            <input value={email} onChange ={(e)=> setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email"/>
+           
+            <label htmlFor="password"> Password </label>
+            <input value={password} onChange ={(e)=> setPassword(e.target.value)} type="password" placeholder="**********" id="password" name="password"/>
+            <button type="submit">Create</button>
+        </form>
+        <button className="link-btn" onClick={()=> props.onFormSwitch('login')}>Already have an account? Login here</button>
         </div>
-    );
+    )
 }
-
-export default Signup;
