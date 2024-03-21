@@ -1,0 +1,32 @@
+.ModelNav {
+	height: 14%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	background-color: white;
+	border-bottom: 1px solid black;
+	top: 0;
+	position: sticky;
+	z-index: 1;
+}
+
+.ModelNav button {
+	margin: auto;
+	height: 100px;
+	width: 100px;
+	font-size: 40px;
+	border-radius: 50%;
+	color: var(--purple);
+	border: none;
+}
+
+.ModelNav button:hover {
+	cursor: pointer;
+}
+
+.ModelNavButtons {
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+}

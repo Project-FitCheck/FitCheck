@@ -3,6 +3,7 @@ import Switch from '@mui/material/Switch';
 import Select from 'react-select';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import "../styles/profile.css"
 
 const options = [
   { value: 'light', label: 'Light (Default)' },

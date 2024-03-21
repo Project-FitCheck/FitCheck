@@ -1,8 +1,8 @@
-body {
+.profile body {
 	margin: 0px;
 }
 
-h1 {
+.profile h1 {
 	font-size: 2.5em;
 	height: 40px;
 	text-align: center;
@@ -10,14 +10,14 @@ h1 {
 	font-weight: normal;
 }
 
-.settings {
+.profile .settings {
 	margin: auto;
 	text-align: center;
 	padding: 10px;
 	background-color: lightgray;
 }
 
-.account {
+.profile .account {
 	margin: auto;
 	max-width: 500px;
 	text-align: center;
@@ -25,7 +25,7 @@ h1 {
 	border-radius: 8px;
 }
 
-.profileImg {
+.profile .profileImg {
 	margin: auto auto 20px auto;
 	width: 200px;
 	height: 200px;
@@ -36,53 +36,53 @@ h1 {
 	border: 3px solid lightgray;
 }
 
-.profileImg,
+.profile .profileImg,
 p {
 	margin: auto;
 }
 
-.info {
+.profile .info {
 	margin: 10px auto auto auto;
 	max-width: 500px;
 	background-color: lightgray;
 }
 
-table,
+.profile table,
 td,
 th {
 	border: 1px solid black;
 	text-align: left;
 }
 
-table {
+.profile table {
 	border-collapse: 100%;
 	width: 100%;
 }
 
-th,
+.profile th,
 td {
 	padding: 10px;
 }
 
-.edit {
+.profile .edit {
 	margin: auto;
 	text-align: center;
 	padding: 20px;
 }
 
-.editButton {
+.profile .editButton {
 	border-radius: 12px;
 	cursor: pointer;
 }
 
-.password {
+.profile .password {
 	text-align: center;
 	margin: 10px;
 	border-radius: 12px;
 	cursor: pointer;
 }
 
-.themes {
+.profile .themes {
 	margin: auto auto 30px auto;
 	max-width: 500px;
 	text-align: center;
@@ -91,35 +91,16 @@ td {
 	background-color: lightgray;
 }
 
-.themes h2 {
-  margin: 10px 0px 10px 0px;
+.profile Select{
+  height: 2x;
 }
 
-.themes p {
-  padding-bottom: 10px;
-}
+.profile .privacy {
 
-.privacy {
   margin: auto;
   max-width: 500px;
   text-align: center;
   border-radius: 8px;
   padding-top: 1px;
   background-color: lightgray;
-}
-
-.privacy h2 {
-  margin: 10px 0px 10px 0px;
-}
-
-.logOut{
-  margin: auto;
-  text-align: center;
-  padding: 20px;
-}
-
-.logout, button {
-  margin-top: 10px;
-  border-radius: 12px;
-  cursor: pointer;
 }

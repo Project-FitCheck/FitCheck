@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../createModel.css";
+import "../styles/createModel.css";
 import { Button } from "@mui/base";
 import ModelViewer from "../components/model_viewer"
 import axios from "axios";
@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom"
 function CreateModel() {
     const [gender, setGender] = useState(null);
     const [active, setActive] = useState(null);
+    const [modelData, setModelData] = useState(null);
+
     const navigate = useNavigate()
     function handleClick(newGender) {
         setActive(newGender === gender ? "active" : ""); // Adjust logic for setting active class
@@ -16,10 +18,10 @@ function CreateModel() {
     }
 
     const createModel = async () => {
-        var svgFullBody = document.getElementById("Body").outerHTML;
+        const svgFullBody = document.getElementById("Body").outerHTML;
         const userId = window.localStorage.getItem("userId");
         console.log(userId);
-        const model = {
+        setModelData({
             userId: userId,
             modelData: {
                 fullBody: svgFullBody,
@@ -31,12 +33,10 @@ function CreateModel() {
                 legs: "tba",
                 feet: "tba",
             }
-        };
+        });
 
         try {
-            await axios.put("http://localhost:3001/model/create", model);
-            /*await axios.get("http://localhost:3001/model/?userId=" + userId);*/
-            console.log("testing get now");
+            await axios.put("http://localhost:3001/model/create", modelData);
             navigate("/closet");
         } catch (error) {
             console.log(error)
@@ -73,7 +73,7 @@ function CreateModel() {
     </li>*/}
                 </ul>
             </div>
-            <ModelViewer model={gender} />
+            <ModelViewer model={modelData} mode="create"/>
             <Button /* component={ Link } to="/closet" */ className="save-model" onClick={() => createModel()}>Create Model</Button>
         </div>
     );
