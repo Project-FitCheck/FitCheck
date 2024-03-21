@@ -1,26 +1,26 @@
-.ModelViewer{
+.EditModel .ModelViewer{
     position: absolute;
     left: 400px;
     top: -20px;
 }
 
-svg{
+.EditModel svg{
     height: 700px;
 }
 
-.ModelSettings {
+.EditModel .ModelSettings {
     position: absolute;
     left: 800px
 }
 
-.save-model{
+.EditModel .save-model{
     position: absolute;
     top: 640px;
     left: 395px;
     width: 12em;
 }
 
-.EditModel ul {
+.EditModel .EditModel ul {
     list-style-type: none;
     display: block;
     padding: 0;
@@ -28,43 +28,43 @@ svg{
 }
 
 
-li {
+.EditModel li {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     left: 10px;
 }
 
-.gender-setting {
+.EditModel .gender-setting {
     margin-top: 50px;
 }
 
-.head-setting {
+.EditModel .head-setting {
     position: relative;
 }
 
-.torso-setting {
-    position: relative;
-    
-}
-
-.arms-setting {
+.EditModel .torso-setting {
     position: relative;
     
 }
 
-.legs-setting {
+.EditModel .arms-setting {
     position: relative;
     
 }
 
-.feet-setting {
+.EditModel .legs-setting {
+    position: relative;
+    
+}
+
+.EditModel .feet-setting {
     position: relative;
     
 }
 
 
-.head-icon {
+.EditModel .head-icon {
     content: url("../assets/FitCheck_male_template/male_head.svg");
     position: relative;
     left: 15px;
@@ -77,7 +77,7 @@ li {
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-.torso-icon {
+.EditModel .torso-icon {
     content: url("../assets/FitCheck_male_template/male_torso.svg");
     position: relative;
     left: 15px;
@@ -90,7 +90,7 @@ li {
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-.arms-icon {
+.EditModel .arms-icon {
     content: url("../assets/FitCheck_male_template/male_leftarm.svg");
     position: relative;
     left: 15px;
@@ -104,7 +104,7 @@ li {
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-.legs-icon {
+.EditModel .legs-icon {
     content: url("../assets/FitCheck_male_template/male_legs.svg");
     position: relative;
     left: 15px;
@@ -118,7 +118,7 @@ li {
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-.feet-icon {
+.EditModel .feet-icon {
     content: url("../assets/FitCheck_male_template/male_feet.svg");
     position: relative;
     left: 15px;
@@ -131,7 +131,7 @@ li {
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-Button {
+.EditModel Button {
     --color: #560bad;
     font-family: inherit;
     display: inline-block;
@@ -150,7 +150,7 @@ Button {
     color: var(--color);
 }
 
-Button:before {
+.EditModel Button:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -160,48 +160,48 @@ Button:before {
     border-radius: 50%;
 }
 
-Button:hover {
+.EditModel Button:hover {
     color: #fff;
 }
 
-Button:before {
+.EditModel Button:before {
     top: 100%;
     left: 100%;
     transition: all .7s;
 }
 
-Button:hover:before {
+.EditModel Button:hover:before {
     top: -50px;
     left: -50px;
 }
 
-Button:active:before {
+.EditModel Button:active:before {
     background: #3a0ca3;
     transition: background 0s;
 }
 
-.active{
+.EditModel .active{
     color: #fff;
     background: #3a0ca3; 
 }
 
-.ModelSettings {
+.EditModel .ModelSettings {
     position: absolute;
     right: 100px;
 
 }
 
-.ModelSettings ul{
+.EditModel .ModelSettings ul{
     list-style-type: none;
     /*padding-left: 20px;*/
 }
 
-.ModelSettings li{
+.EditModel .ModelSettings li{
     margin-bottom: 20px;
     display: flex;
 }
 
-.gender-setting::before{
+.EditModel .gender-setting::before{
     position: absolute;
     left: 0; /* Align the images to the left of the list items */
     top: 0; /* Align the images with the top of the list items */
@@ -211,7 +211,7 @@ Button:active:before {
 }
 
 
-.head-setting::before{
+.EditModel .head-setting::before{
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: px; /* Align the images with the top of the list items */
@@ -221,7 +221,7 @@ Button:active:before {
     
 }
 
-.torso-setting::before{
+.EditModel .torso-setting::before{
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -230,7 +230,7 @@ Button:active:before {
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-.arms-setting::before{
+.EditModel .arms-setting::before{
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -239,7 +239,7 @@ Button:active:before {
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-.legs-setting::before{
+.EditModel .legs-setting::before{
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -248,7 +248,7 @@ Button:active:before {
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-.feet-setting::before{
+.EditModel .feet-setting::before{
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
