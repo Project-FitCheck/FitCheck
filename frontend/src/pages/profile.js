@@ -78,6 +78,11 @@ function Profile() {
         <p>Make your account public or private. It's public by default.</p>
         <Switch />
       </div>
+      
+      <div className="logOut">
+        <button>Logout</button>
+      </div>
+
     </div>
 
   );

@@ -1,0 +1,35 @@
+.editBody {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+/*Note: X = width, Y = height, W = width, H = height*/
+.sliderX, .sliderY, .sliderW, .sliderH {
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+}
+
+.sliderX-slider, .sliderY-slider, .sliderW-slider, .sliderH-slider {
+    margin: auto;
+    width: 50%;
+}
+.sliderX .track, .sliderY .track, .sliderW .track, .sliderH .track {
+    top: 8px;
+    height: 4px;
+    background-color: darkgray; 
+}
+
+.sliderX .track.track-0, .sliderY .track.track-0, .sliderW .track.track-0, .sliderH .track.track-0 {
+    background-color: #007bff; 
+}
+
+.sliderX .thumb, .sliderY .thumb, .sliderW .thumb, .sliderH .thumb {
+    width: 18px;
+    height:18px;
+    border-radius: 50%;
+    background-color: #007bff;
+    cursor: pointer;
+}
