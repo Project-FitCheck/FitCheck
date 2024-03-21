@@ -104,3 +104,19 @@ td {
   padding-top: 1px;
   background-color: lightgray;
 }
+
+.profile .privacy h2 {
+	margin: 10px 0px 10px 0px;
+  }
+
+.profile .logOut{
+	margin: auto;
+	text-align: center;
+	padding: 20px;
+  }
+  
+.profile .logout, button {
+	margin-top: 10px;
+	border-radius: 12px;
+	cursor: pointer;
+  }

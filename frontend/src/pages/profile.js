@@ -1,4 +1,4 @@
-import React from 'react';
+import {useNavigate, React} from 'react';
 import Switch from '@mui/material/Switch';
 import Select from 'react-select';
 import Popup from 'reactjs-popup';
@@ -12,6 +12,7 @@ const options = [
 ]
 
 function Profile() {
+  const navigate = useNavigate();
   return (
 
     <div className="profile">
@@ -78,7 +79,14 @@ function Profile() {
         <p>Make your account public or private. It's public by default.</p>
         <Switch />
       </div>
+
+      <div className="logOut">
+        <button onClick={()=>{window.localStorage.removeItem("userId");navigate("/")}}>Logout</button>
+      </div>
+
     </div>
+
+
 
   );
 }
