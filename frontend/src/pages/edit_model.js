@@ -4,6 +4,7 @@ import { Button } from "@mui/base";
 import ModelViewer from "../components/model_viewer"
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
+import NavBar from '../components/navbar.js';
 
 function EditModel() {
     const [gender, setGender] = useState("");
@@ -24,7 +25,7 @@ function EditModel() {
         }
         updateModel();
     }, [feet, gender, head, leftArm, legs, righttArm, torso]); */
-    
+
     function handleGender(newGender) {
         if (active) {
             setActive("active");
@@ -56,7 +57,7 @@ function EditModel() {
         console.log(body);
         const updatedModel = {
             userId: userId,
-            newModel: { gender, head, torso, leftArm, righttArm, legs, feet, fullBody:body }
+            newModel: { gender, head, torso, leftArm, righttArm, legs, feet, fullBody: body }
         }
         await axios.put("http://localhost:3001/model/update", updatedModel);
         navigate("/model");
@@ -64,6 +65,7 @@ function EditModel() {
 
     return (
         <div className="EditModel">
+            <NavBar />
             <div className="ModelSettings">
                 <ul>
                     <li className="gender-setting">
@@ -92,7 +94,7 @@ function EditModel() {
                     </li>
                 </ul>
             </div>
-            <ModelViewer modelData={{gender:gender, head:head, torso:torso, leftArm:leftArm, righttArm:righttArm, legs:legs, feet:feet}} mode={"update"} />
+            <ModelViewer modelData={{ gender: gender, head: head, torso: torso, leftArm: leftArm, righttArm: righttArm, legs: legs, feet: feet }} mode={"update"} />
             <Button className="save-model" onClick={() => saveModel()}>Save Model</Button>
         </div>
     );
