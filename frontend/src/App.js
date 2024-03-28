@@ -1,8 +1,6 @@
 import React from 'react';
 import './styles/index.css';
 
-import './CSS/NavBar.css';
-
 import './styles/App.css';
 import './styles/Home.css';
 import './styles/NavBar.css';
