@@ -8,7 +8,6 @@ import './styles/NavBar.css';
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-
 import ChangePassword from "./pages/change_pw.js";
 
 import Home from './pages/Home.jsx';
