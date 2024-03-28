@@ -1,10 +1,12 @@
 import '../styles/MainPage.css';
 import PageNav from '../components/PageNav.jsx';
 import Outfits from '../components/Outfits.jsx';
+import NavBar from '../components/navbar.js';
 
 function Locker() {
 	return <div className='MainPage'>
-		<PageNav page={'outfit'}/>
+		<NavBar />
+		<PageNav page={'outfit'} />
 		<Outfits />
 	</div>
 }
