@@ -4,6 +4,7 @@ import Select from 'react-select';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import "../styles/profile.css"
+import NavBar from '../components/navbar.js';
 
 const options = [
   { value: 'light', label: 'Light (Default)' },
@@ -16,6 +17,7 @@ function Profile() {
   return (
 
     <div className="profile">
+      <NavBar />
       <div className="settings">
         <h1>SETTINGS</h1>
       </div>

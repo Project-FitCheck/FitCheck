@@ -4,6 +4,8 @@ import { Button } from "@mui/base";
 import ModelViewer from "../components/model_viewer"
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
+import NavBar from '../components/navbar.js';
+
 
 
 function CreateModel() {
@@ -45,6 +47,7 @@ function CreateModel() {
 
     return (
         <div className="CreateModel">
+            <NavBar />
             <div className="ModelSettings">
                 <ul>
                     <li className="gender-setting">
@@ -73,7 +76,7 @@ function CreateModel() {
     </li>*/}
                 </ul>
             </div>
-            <ModelViewer model={modelData} mode="create"/>
+            <ModelViewer modelData={{ gender: gender, head: "head", torso: "torso", leftArm: "leftArm", righttArm: "righttArm", legs: "legs", feet: "feet" }} mode={"create"} />
             <Button /* component={ Link } to="/closet" */ className="save-model" onClick={() => createModel()}>Create Model</Button>
         </div>
     );
