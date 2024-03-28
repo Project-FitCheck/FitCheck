@@ -1,10 +1,11 @@
-import {useNavigate, React} from 'react';
+import { React } from 'react';
 import Switch from '@mui/material/Switch';
 import Select from 'react-select';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import "../styles/profile.css"
 import NavBar from '../components/navbar.js';
+import { useNavigate } from "react-router-dom"
 
 const options = [
   { value: 'light', label: 'Light (Default)' },
@@ -51,22 +52,21 @@ function Profile() {
 
       <div className="edit">
         <button className="editButton">Edit Model</button>
-        <Popup trigger={<button className="password">Change Password</button>}
-          modal nested> {
-            close => (
-              <div className="modal">
-                <div className="oldPass">
-                  <h1>Old Password</h1>
-                </div>
-                <div className="newPass">
-                  <h1>New Password</h1>
-                </div>
-                <div>
-                  <button onclick={() => close()}>Submit</button>
-                </div>
+        <Popup trigger={<button className="password">Change Password</button>} modal nested> {
+          close => (
+            <div className="modal">
+              <div className="oldPass">
+                <h1>Old Password</h1>
               </div>
-            )
-          }
+              <div className="newPass">
+                <h1>New Password</h1>
+              </div>
+              <div>
+                <button onclick={() => close()}>Submit</button>
+              </div>
+            </div>
+          )
+        }
         </Popup>
       </div>
 
@@ -83,13 +83,10 @@ function Profile() {
       </div>
 
       <div className="logOut">
-        <button onClick={()=>{window.localStorage.removeItem("userId");navigate("/")}}>Logout</button>
+        <button onClick={() => { window.localStorage.removeItem("userId"); navigate("/") }}>Logout</button>
       </div>
 
     </div>
-
-
-
   );
 }
 
