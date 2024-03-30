@@ -52,6 +52,7 @@ function ModelViewer({ props }) {
                         <FemaleModel style={{ 'fill': props.color }} />
                     ) : (
                         <MaleModel style={{ 'fill': props.color }} />
+
                     ))}
             </div>
         );
