@@ -75,6 +75,15 @@ For some reason the style doesnt apply from the file so I inlined it
 }
  */
 
+/*.CreateModel .selectColor {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 245px;
+    left: 25%;
+    top: 55px;
+}*/
+
 .CreateModel .gender-setting {
     margin-top: 50px;
     display: flex;
