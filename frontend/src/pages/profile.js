@@ -41,10 +41,6 @@ function Profile() {
               <td>Username:</td>
               <td></td>
             </tr>
-            <tr>
-              <td>DOB:</td>
-              <td></td>
-            </tr>
           </tbody>
         </table>
       </div>
