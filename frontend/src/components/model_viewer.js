@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { ReactComponent as MaleModel } from "../assets/FitCheck_male_template/male_body.svg";
 import { ReactComponent as FemaleModel } from "../assets/FitCheck_female_template/female_body.svg";
 import axios from "axios";
-import '../styles/ModelViewer.css';
-
 
 function ModelViewer({ props }) {
     const [model, setModel] = useState(null);
@@ -14,8 +12,6 @@ function ModelViewer({ props }) {
             try {
                 const userId = window.localStorage.getItem("userId");
                 const response = await axios.get("http://localhost:3001/model/?userId=" + userId);
-				response.data.fullBody.replace(/"/g, '');
-
                 setModel(response.data.fullBody);
                 setModelGender(response.data.gender);
             } catch (error) {
