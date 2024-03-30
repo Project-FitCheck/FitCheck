@@ -3,7 +3,7 @@ import { ReactComponent as MaleModel } from "../assets/FitCheck_male_template/ma
 import { ReactComponent as FemaleModel } from "../assets/FitCheck_female_template/female_body.svg";
 import axios from "axios";
 
-function ModelViewer({ modelData, mode }) {
+function ModelViewer({ props }) {
     const [model, setModel] = useState(null);
     const [modelGender, setModelGender] = useState(null)
 
@@ -23,36 +23,35 @@ function ModelViewer({ modelData, mode }) {
 
 
 
-    if (mode === "create") {
-        if (modelData.gender === "male") {
+    if (props.mode === "create") {
+        if (props.gender === "male") {
             return (<div className="ModelViewer">
-                <MaleModel />
+                <MaleModel style={{ '--svg-fill-color': props.color.hex }} />
             </div>);
-		} else if (model === "female") {
+        } else if (model === "female") {
             return (<div className="ModelViewer">
-            	<FemaleModel />
-        	</div>);
+                <FemaleModel style={{ '--svg-fill-color': props.color.hex }} />
+            </div>);
         }
-        else {
-            return (<div className="ModelViewer">
-                <FemaleModel />
-            </div>)
-        }
+    } else if (props.mode === "view") {
+        <div className="ModelViewer">
+            {model}
+        </div>
     } else {
-        console.log(modelData.gender);
+        console.log(props.color);
         console.log(modelGender);
         return (
             <div className="ModelViewer">
-                {(modelGender === modelData.gender) ? (
-                    ("male" === modelData.gender) ? (
-                        <MaleModel />
+                {(modelGender === props.gender) ? (
+                    ("male" === props.gender) ? (
+                        <MaleModel style={{ '--svg-fill-color': props.color }}/>
                     ) : (
-                        <FemaleModel />
+                        <FemaleModel style={{ '--svg-fill-color': props.color }}/>
                     )) : (
-                    ("female" === modelData.gender) ? (
-                        <FemaleModel />
+                    ("female" === props.gender) ? (
+                        <FemaleModel style={{ '--svg-fill-color': props.color }}/>
                     ) : (
-                        <MaleModel />
+                        <MaleModel style={{ '--svg-fill-color': props.color }}/>
                     ))}
             </div>
         );

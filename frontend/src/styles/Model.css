@@ -4,3 +4,7 @@
 	padding: 0;
 	position: relative;
 }
+
+.Model svg{
+    height: 700px;
+}

@@ -8,7 +8,8 @@ const OutfitSchema = new mongoose.Schema({
     socks: ClothesModel.schema,
     shoes: ClothesModel.schema,
     jewelery: [ClothesModel.schema],
-    tags: [String]
+    tags: [String],
+    image: Buffer,
 });
 
 const OutfitModel = mongoose.model('Outfit', OutfitSchema);

@@ -7,9 +7,13 @@ import NavBar from '../components/navbar.js';
 
 function Model() {
 	return (<div className='MainPage'>
-		<NavBar />
-		<ModelNav />
-		<ModelViewer modelData="" mode=""/>
+		<div className='Model'>
+			<NavBar />
+			<ModelNav />
+			<div className='viewModel'>
+				<ModelViewer props={{}} />
+			</div>
+		</div>
 	</div>);
 }
 

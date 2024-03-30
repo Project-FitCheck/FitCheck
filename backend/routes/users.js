@@ -18,12 +18,6 @@ router.post("/signup", async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const model = {
             gender: "tba",
-            head: "tba",
-            leftArm: "tba",
-            rightArm: "tba",
-            torso: "tba",
-            legs: "tba",
-            feet: "tba",
             fullBody: "tba",
         }; //  replace with svg of model*/
 
