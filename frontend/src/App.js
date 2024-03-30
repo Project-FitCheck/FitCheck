@@ -10,16 +10,14 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 
 
-import Signup from './pages/signup.js';
-import Login from './pages/login.js';
+import Regsiter from './pages/Register.jsx';
+import Login from './pages/Login.jsx';
 import Profile from "./pages/profile.js";
 import EditModel from "./pages/edit_model.js";
 
 import Home from './pages/Home.jsx';
-import Profile from "./pages/profile";
 import Model from "./pages/model"
 import CreateModel from './pages/create_model';
-import EditModel from './pages/edit_model.js';
 
 
 import Closet from './pages/closet.js';
