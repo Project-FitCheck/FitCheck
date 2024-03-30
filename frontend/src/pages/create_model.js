@@ -5,19 +5,32 @@ import ModelViewer from "../components/model_viewer"
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
 import NavBar from '../components/navbar.js';
+import ModelNav from "../components/ModelNav.jsx";
+import { CompactPicker } from "react-color";
 
 
 
 function CreateModel() {
-    const [gender, setGender] = useState(null);
-    const [active, setActive] = useState(null);
+    const [gender, setGender] = useState("");
     const [modelData, setModelData] = useState(null);
+    const [color, setColor] = useState("");
 
     const navigate = useNavigate()
-    function handleClick(newGender) {
-        setActive(newGender === gender ? "active" : ""); // Adjust logic for setting active class
-        setGender(newGender);
-    }
+
+    const skinTones = [
+        "#F9E4D6",
+        "#F3D9C6",
+        "#ffdbc5", // Lightest
+        "#EBCBB6",
+        "#DEBFA7",
+        "#e0ac69",
+        "#c68642",
+        "#BB8666",
+        "#8d5524",
+        "#61412D",
+        "#5e3c1e",
+        "#3E291B",
+    ];
 
     const createModel = async () => {
         const svgFullBody = document.getElementById("Body").outerHTML;
@@ -28,12 +41,6 @@ function CreateModel() {
             modelData: {
                 fullBody: svgFullBody,
                 gender: gender,
-                head: "tba",
-                leftArm: "tba",
-                rightArm: "tba",
-                torso: "tba",
-                legs: "tba",
-                feet: "tba",
             }
         });
 
@@ -46,38 +53,33 @@ function CreateModel() {
     }
 
     return (
-        <div className="CreateModel">
-            <NavBar />
-            <div className="ModelSettings">
-                <ul>
-                    <li className="gender-setting">
-                        <Button className={active} variant="contained" onClick={() => handleClick("male")}>Male</Button>
-                        <Button className={active} variant="contained" onClick={() => handleClick("female")}>Female</Button>
-                    </li>
-                    {/*<li className="head-setting">
-                        <div className="head-icon" />
-                        <Button className={"active" ? active : ""} variant="contained">Head</Button>
-                    </li>
-                    <li className="torso-setting">
-                        <div className="torso-icon" />
-                        <Button className={"active" ? active : ""} variant="contained">Torso</Button>
-                    </li>
-                    <li className="arms-setting">
-                        <div className="arms-icon" />
-                        <Button className={"active" ? active : ""} variant="contained">Arms</Button>
-                    </li>
-                    <li className="legs-setting">
-                        <div className="legs-icon" />
-                        <Button className={"active" ? active : ""} variant="contained">Legs</Button>
-                    </li>
-                    <li className="feet-setting">
-                        <div className="feet-icon" />
-                        <Button className={"active" ? active : ""} variant="contained">Feet</Button>
-    </li>*/}
-                </ul>
+        <div className="MainPage">
+            <ModelNav />
+            <div className="EditModel">
+                <NavBar />
+                <div className="ModelSettings">
+                    <ul>
+                        <li className="gender-setting">
+                            <div className="male-icon" />
+                            <Button className={gender === "male" ? "active" : ""} variant="contained" onClick={() => setGender("male")}>Male</Button>
+                            <div className="female-icon" />
+                            <Button className={gender === "female" ? "active" : ""} variant="contained" onClick={() => setGender("female")}>Female</Button>
+                        </li>
+                        <li className="selectColor">
+                            <h2> Select Skin Color</h2>
+                            <CompactPicker colors={skinTones} color={color} onChangeComplete={setColor} />
+                        </li>
+                    </ul>
+                    <Button className="create-model" style={
+                        {
+                            "position": "relative",
+                            "top": "400px",
+                            "left": "25%",
+                            "width": "12em"
+                        }} onClick={() => createModel()}>Create Model</Button>
+                </div>
+                <ModelViewer props={{ gender: gender, color: color.hex, mode: "create" }} />
             </div>
-            <ModelViewer modelData={{ gender: gender, head: "head", torso: "torso", leftArm: "leftArm", righttArm: "righttArm", legs: "legs", feet: "feet" }} mode={"create"} />
-            <Button /* component={ Link } to="/closet" */ className="save-model" onClick={() => createModel()}>Create Model</Button>
         </div>
     );
 }

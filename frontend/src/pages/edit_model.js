@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/editModel.css";
 import { Button } from "@mui/base";
-import ModelViewer from "../components/model_viewer"
-import axios from "axios"
+import ModelViewer from "../components/model_viewer";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import NavBar from '../components/navbar.js';
 import ModelNav from "../components/ModelNav.jsx";

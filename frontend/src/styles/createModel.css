@@ -1,191 +1,148 @@
 .CreateModel .ModelViewer {
-	position: absolute;
-	left: 400px;
-	top: -20px;
+    position: absolute;
+    top: 10%;
 }
 
 .CreateModel svg {
-	height: 700px;
+    height: 90vh;
 }
 
 .CreateModel .ModelSettings {
-	position: absolute;
-	left: 800px
+    --dark-grey: #353535;
+    --middle-grey: #767676;
+    --lightest-grey: linear-gradient(#fafafa, #ebebeb);
+    --shadow: 0 5px 15px 0 #00000026;
+    --shadow-active: 0 5px 5px 0 #00000026;
+    --border-radius-main: 10px;
+    --border-radius-icon: 50px;
+    position: relative;
+    left: 35%;
+    top: 55px;
+    width: 512px;
+    height: 512px;
+    align-items: center;
+    cursor: default;
+    color: var(--dark-grey);
+    opacity: .9;
+    padding: 1.5rem;
+    font-weight: 600;
+    background: var(--lightest-grey);
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--shadow);
+    transition: .2s ease all;
 }
 
-.CreateModel .save-model {
-	position: absolute;
-	top: 640px;
-	left: 395px;
-	width: 12em;
+/*
+For some reason the style doesnt apply from the file so I inlined it 
+.CreateModel .create-model{
+	position: relative;
+    top: 400px;
+    left: 25%;
+    width: 12em;
 }
+ */
 
 .CreateModel ul {
-	list-style-type: none;
-	display: block;
-	padding: 0;
-	position: absolute;
+    list-style-type: none;
+    display: block;
+    padding: 0;
+    position: absolute;
 }
 
-
-.CreateModel li {
-	margin-bottom: 20px;
-	display: flex;
-	align-items: center;
-	left: 10px;
+.CreateModel .selectColor {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 245px;
+    left: 25%;
+    top: 55px;
 }
 
 .CreateModel .gender-setting {
-	margin-top: 50px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    left: 10px;
 }
 
-.CreateModel .head-setting {
-	position: relative;
+.CreateModel .male-icon {
+    content: url("../assets/FitCheck_male_template/male_torso.png");
+    position: relative;
+    fill: linear-gradient(#fafafa, #ebebeb);
+    left: 15px;
+    /* Align the images to the left of the list items */
+    /* Align the images with the top of the list items */
+    width: 100px;
+    /* Adjust the width of the images */
+    height: 100px;
+    /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-.CreateModel .torso-setting {
-	position: relative;
-
+.CreateModel .female-icon {
+    content: url("../assets/FitCheck_female_template/female_torso.png");
+    position: relative;
+    left: 15px;
+    /* Align the images to the left of the list items */
+    /*top: 0; /* Align the images with the top of the list items */
+    width: 80px;
+    /* Adjust the width of the images */
+    height: 80px;
+    /* Adjust the height of the images */
+    /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-.CreateModel .arms-setting {
-	position: relative;
-
-}
-
-.CreateModel .legs-setting {
-	position: relative;
-
-}
-
-.CreateModel .feet-setting {
-	position: relative;
-
-}
-
-
-.CreateModel .head-icon {
-	content: url("../assets/FitCheck_male_template/male_head.svg");
-	position: relative;
-	left: 15px;
-	/* Align the images to the left of the list items */
-	/* Align the images with the top of the list items */
-	width: 80px;
-	/* Adjust the width of the images */
-	height: 50px;
-	/* Adjust the height of the images */
-	/*margin-top: 4px; /* Adjust the margin to center the images vertically */
-}
-
-.CreateModel .CreateModel .torso-icon {
-	content: url("../assets/FitCheck_male_template/male_torso.svg");
-	position: relative;
-	left: 15px;
-	/* Align the images to the left of the list items */
-	/*top: 0; /* Align the images with the top of the list items */
-	width: 80px;
-	/* Adjust the width of the images */
-	height: 60px;
-	/* Adjust the height of the images */
-	/*margin-top: 4px; /* Adjust the margin to center the images vertically */
-}
-
-.CreateModel .arms-icon {
-	content: url("../assets/FitCheck_male_template/male_leftarm.svg");
-	position: relative;
-	left: 15px;
-	/* Align the images to the left of the list items */
-	top: -10px;
-	/* Align the images with the top of the list items */
-	width: 80px;
-	/* Adjust the width of the images */
-	height: 80px;
-	/* Adjust the height of the images */
-	/*margin-top: 4px; /* Adjust the margin to center the images vertically */
-}
-
-.CreateModel .legs-icon {
-	content: url("../assets/FitCheck_male_template/male_legs.svg");
-	position: relative;
-	left: 15px;
-	/* Align the images to the left of the list items */
-	top: -5px;
-	/* Align the images with the top of the list items */
-	width: 80px;
-	/* Adjust the width of the images */
-	height: 80px;
-	/* Adjust the height of the images */
-	/*margin-top: 4px; /* Adjust the margin to center the images vertically */
-}
-
-.CreateModel .feet-icon {
-	content: url("../assets/FitCheck_male_template/male_feet.svg");
-	position: relative;
-	left: 15px;
-	/* Align the images to the left of the list items */
-	top: 10px;
-	width: 80px;
-	/* Adjust the width of the images */
-	height: 60px;
-	/* Adjust the height of the images */
-	/*margin-top: 4px; /* Adjust the margin to center the images vertically */
-}
 
 .CreateModel Button {
-	--color: #560bad;
-	font-family: inherit;
-	display: inline-block;
-	width: 8em;
-	height: 2.6em;
-	line-height: 2.5em;
-	margin: 20px;
-	position: relative;
-	overflow: hidden;
-	border: 2px solid var(--color);
-	transition: color .5s;
-	z-index: 1;
-	font-size: 17px;
-	border-radius: 6px;
-	font-weight: 500;
-	color: var(--color);
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
 }
 
 .CreateModel Button:before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	background: var(--color);
-	height: 300px;
-	width: 400px;
-	border-radius: 50%;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 300px;
+    width: 400px;
+    border-radius: 50%;
 }
 
 .CreateModel Button:hover {
-	color: #fff;
+    color: #fff;
 }
 
 .CreateModel Button:before {
-	top: 100%;
-	left: 100%;
-	transition: all .7s;
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
 }
 
 .CreateModel Button:hover:before {
-	top: -50px;
-	left: -50px;
+    top: -50px;
+    left: -50px;
 }
 
 .CreateModel Button:active:before {
-	background: #3a0ca3;
-	transition: background 0s;
+    background: #3a0ca3;
+    transition: background .5s;
 }
 
-.CreateModel .active {
-	color: #fff;
-	background: #3a0ca3;
-}
-
-.CreateModel .signup {
-	margin-left: 500px;
-	top: 50%;
+.CreateModel Button.active {
+    color: #fff;
+    background: #3a0ca3;
 }

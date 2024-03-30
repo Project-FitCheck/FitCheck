@@ -26,11 +26,11 @@ function ModelViewer({ props }) {
     if (props.mode === "create") {
         if (props.gender === "male") {
             return (<div className="ModelViewer">
-                <MaleModel style={{ '--svg-fill-color': props.color.hex }} />
+                <MaleModel style={{ '--svg-fill-color': props.color }} />
             </div>);
-        } else if (model === "female") {
+        } else if (props.gender === "female") {
             return (<div className="ModelViewer">
-                <FemaleModel style={{ '--svg-fill-color': props.color.hex }} />
+                <FemaleModel style={{ '--svg-fill-color': props.color }} />
             </div>);
         }
     } else if (props.mode === "view") {
