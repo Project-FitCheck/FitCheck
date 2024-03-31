@@ -33,20 +33,15 @@ function App() {
           <Route path='/model/create' element={<CreateModel />} />
           <Route path='/closet' element={<Closet />} />
           <Route path='/closet/add' element={<AddClothing />} />
-<<<<<<< Updated upstream
-          <Route path='/locker' element={<Outfits />} />
-          <Route path='/model/edit' element={<EditModel />} />
-          <Route path='/profile' element={<Profile />} />
-=======
           <Route path='/locker' element={<Outfits />}/>
           <Route path='/profile' element={<Profile />} />
+          <Route path='/search' element={<ToBeMade />} />
           <Route path='/model' element={<Model />} />
-          <Route path='/model/edit' element={<ToBeMade />} />
+          <Route path='/model/edit' element={<EditModel />} />
           <Route path='/model/create' element={<CreateModel />} />
           <Route path='/toBeMade' element={<ToBeMade />} />
           <Route path='/' element={<Navigate to="/signup" />} />
 
->>>>>>> Stashed changes
         </Routes>
       </BrowserRouter>
     </div>

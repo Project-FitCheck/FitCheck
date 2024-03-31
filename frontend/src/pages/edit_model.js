@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/editModel.css";
 import { Button } from "@mui/base";
 import ModelViewer from "../components/model_viewer"
+import ModelNav from '../components/ModelNav';
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 
@@ -62,45 +63,39 @@ function EditModel() {
         navigate("/model");
     }
 
-    return (
-        <div className="EditModel">
-<<<<<<< Updated upstream
-            <div className="ModelSettings">
-                <ul>
-                    <li className="gender-setting">
-                        <Button className={active} variant="contained" onClick={() => handleGender("male")}>Male</Button>
-                        <Button className={active} variant="contained" onClick={() => handleGender("female")}>Female</Button>
-                    </li>
-                    <li className="head-setting">
-                        <div className="head-icon" />
-                        <Button className={"active" ? active : ""} variant="contained" onClick={() => { setHead("head_svg"); }}>Head</Button>
-                    </li>
-                    <li className="torso-setting">
-                        <div className="torso-icon" />
-                        <Button className={"active" ? active : ""} variant="contained" onClick={() => { setTorso("torso_svg") }}>Torso</Button>
-                    </li>
-                    <li className="arms-setting">
-                        <div className="arms-icon" />
-                        <Button className={"active" ? active : ""} variant="contained" onClick={() => { setLeftArm("left_arm_svg"); setRightArm("right_arm_svg") }}>Arms</Button>
-                    </li>
-                    <li className="legs-setting">
-                        <div className="legs-icon" />
-                        <Button className={"active" ? active : ""} variant="contained" onClick={() => { setLegs("legs_svg") }}>Legs</Button>
-                    </li>
-                    <li className="feet-setting">
-                        <div className="feet-icon" />
-                        <Button className={"active" ? active : ""} variant="contained" onClick={() => { setFeet("feet_svg") }}>Feet</Button>
-                    </li>
-                </ul>
-            </div>
-            <ModelViewer modelData={{gender:gender, head:head, torso:torso, leftArm:leftArm, righttArm:righttArm, legs:legs, feet:feet}} mode={"update"} />
-            <Button className="save-model" onClick={() => saveModel()}>Save Model</Button>
+    return (<div className="EditModel">
+        <ModelNav />
+        <div className="ModelSettings">
+            <ul>
+                <li className="gender-setting">
+                    <Button className={active} variant="contained" onClick={() => handleGender("male")}>Male</Button>
+                    <Button className={active} variant="contained" onClick={() => handleGender("female")}>Female</Button>
+                </li>
+                <li className="head-setting">
+                    <div className="head-icon" />
+                    <Button className={"active" ? active : ""} variant="contained" onClick={() => { setHead("head_svg"); }}>Head</Button>
+                </li>
+                <li className="torso-setting">
+                    <div className="torso-icon" />
+                    <Button className={"active" ? active : ""} variant="contained" onClick={() => { setTorso("torso_svg") }}>Torso</Button>
+                </li>
+                <li className="arms-setting">
+                       <div className="arms-icon" />
+                    <Button className={"active" ? active : ""} variant="contained" onClick={() => { setLeftArm("left_arm_svg"); setRightArm("right_arm_svg") }}>Arms</Button>
+                </li>
+                <li className="legs-setting">
+                    <div className="legs-icon" />
+                    <Button className={"active" ? active : ""} variant="contained" onClick={() => { setLegs("legs_svg") }}>Legs</Button>
+                </li>
+                <li className="feet-setting">
+                    <div className="feet-icon" />
+                    <Button className={"active" ? active : ""} variant="contained" onClick={() => { setFeet("feet_svg") }}>Feet</Button>
+                </li>
+            </ul>
         </div>
-=======
-			
-		</div>
->>>>>>> Stashed changes
-    );
+        <ModelViewer modelData={{gender:gender, head:head, torso:torso, leftArm:leftArm, righttArm:righttArm, legs:legs, feet:feet}} mode={"update"} />
+        <Button className="save-model" className="test" onClick={() => saveModel()}>Save Model</Button>
+     </div>);
 }
 
 export default EditModel;

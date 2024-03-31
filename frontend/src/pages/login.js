@@ -3,6 +3,7 @@ import axios from "axios";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom"
 import { useCookies } from "react-cookie"
+import '../styles/Login.css';
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -36,7 +37,7 @@ function Login() {
     };
 
     return (
-        <div className="signup">
+        <div className="login">
             <form onSubmit={onSubmit}>
                 <h2>Login</h2>
                 {error && <div className="error">{error}</div>}
