@@ -8,14 +8,14 @@ function PageNav(props) {
 	let lockerPage = false;
 	if (props.page === 'clothes') {
 		closetPage = true;
-	} else if (props.page === 'outfits') {
+	} else if (props.page === 'outfit') {
 		lockerPage = true;
 	}
 
 	return (<div className='PageNav'>
 		<div className='PageNavButtons'>
 			<a href="/closet/add"><button className='addClothes'>+</button></a>
-			<a href=""><button className='searchButton'>Srch</button></a>
+			<a href="/ToBeMade"><button className='searchButton'>Srch</button></a>
 		</div>
 		<ul>
 			<NavButton name={'CLOTHES'} link={"/closet"} page={closetPage}/>
