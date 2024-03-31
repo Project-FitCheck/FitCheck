@@ -28,6 +28,8 @@ import AddClothing from './pages/add_clothing.js';
 
 import ToBeMade from './pages/toBeMade';
 
+import ToBeMade from './pages/toBeMade';
+
 function App() {
   return (
     <div className="App">
