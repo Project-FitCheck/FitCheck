@@ -48,7 +48,7 @@ For some reason the style doesnt apply from the file so I inlined it
     padding: 0;
     position: absolute;
 }
-
+/* 
 .CreateModel .selectColor {
     position: relative;
     display: block;
@@ -56,6 +56,13 @@ For some reason the style doesnt apply from the file so I inlined it
     width: 245px;
     left: 25%;
     top: 55px;
+}
+ */
+.CreateModel li {
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	left: 10px;
 }
 
 .CreateModel .gender-setting {
