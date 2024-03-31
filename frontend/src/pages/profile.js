@@ -21,6 +21,10 @@ function Profile() {
   const lastName = window.localStorage.getItem("lastName");
   const username = window.localStorage.getItem("username");
 
+  const handleEditModelClick = () => {
+    navigate("../model");
+  };
+
   return (
 
     <div className="profile">
@@ -53,7 +57,7 @@ function Profile() {
       </div>
 
       <div className="edit">
-        <button className="editButton">Edit Model</button>
+        <button className="editButton" onClick={handleEditModelClick}>Edit Model</button>
         <Popup trigger={<button className="password">Change Password</button>}
           modal nested> {
             close => (
