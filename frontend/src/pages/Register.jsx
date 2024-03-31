@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
 import { useCookies } from "react-cookie"
+import '../styles/Signup.css'
 
 export default function Register (props) {
     const [firstName, setFirstName] = useState("");

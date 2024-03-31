@@ -1,4 +1,9 @@
-.profile body {
+.profile {
+	width: 75%;
+	float: right;
+}
+
+body {
 	margin: 0px;
 }
 
@@ -96,7 +101,6 @@ td {
 }
 
 .profile .privacy {
-
   margin: auto;
   max-width: 500px;
   text-align: center;

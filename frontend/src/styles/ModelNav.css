@@ -2,7 +2,7 @@
 	height: 14%;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	background-color: white;
 	border-bottom: 1px solid black;
@@ -25,8 +25,12 @@
 	cursor: pointer;
 }
 
-.ModelNavButtons {
-	width: 90%;
+.ModelNav .ModelNavButtons {
+	width: 30%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
+}
+
+.ModelNav .addToCloset {
+	margin-right: 5%;
 }
