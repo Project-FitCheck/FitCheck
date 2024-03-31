@@ -21,6 +21,8 @@ import AddClothing from './pages/add_clothing.js';
 import Profile from "./pages/profile";
 import ToBeMade from './pages/toBeMade';
 
+import ToBeMade from './pages/toBeMade';
+
 function App() {
   return (
     <div className="App">
