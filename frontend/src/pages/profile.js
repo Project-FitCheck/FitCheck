@@ -15,6 +15,12 @@ const options = [
 
 function Profile() {
   const navigate = useNavigate();
+
+  //retrieve user information from local storage
+  const firstName = window.localStorage.getItem("firstName");
+  const lastName = window.localStorage.getItem("lastName");
+  const username = window.localStorage.getItem("username");
+
   return (
 
     <div className="profile">
@@ -36,11 +42,11 @@ function Profile() {
           <tbody>
             <tr>
               <td>Name:</td>
-              <td></td>
+              <td>{firstName} {lastName}</td>
             </tr>
             <tr>
               <td>Username:</td>
-              <td></td>
+              <td>{username}</td>
             </tr>
           </tbody>
         </table>
