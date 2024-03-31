@@ -1,0 +1,9 @@
+.ModelViewer {
+	height: 86%;
+	position: relative;
+}
+
+.ModelViewer svg {
+	margin-top: 50px;
+	margin-left: 100px;
+}
