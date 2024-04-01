@@ -10,12 +10,11 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import ChangePassword from "./pages/change_pw.js";
 
+
 import Home from './pages/Home.jsx';
 import Model from "./pages/model"
 import CreateModel from './pages/create_model';
 import EditModel from './pages/edit_model.js';
-
-
 
 import Closet from './pages/closet.js';
 import Outfits from './pages/locker.js';

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
@@ -20,6 +19,7 @@ function Profile() {
 
   const [UserData, setUserData] = useState("");
 
+
   const handleEditModelClick = () => {
     navigate("../model");
   };
@@ -34,12 +34,14 @@ function Profile() {
         const userId = window.localStorage.getItem("userId");
         const response = await axios.get("http://localhost:3001/user/?userId=" + userId);
         setUserData(response.data);
+
       } catch (error) {
         console.error("Error getting user data: ", error)
       }
     }
     getUserData();
   }, [UserData]);
+
 
   return (
 
@@ -71,6 +73,7 @@ function Profile() {
             <tr>
               <td>Email:</td>
               <td>{UserData.email}</td>
+
             </tr>
           </tbody>
         </table>
@@ -98,6 +101,7 @@ function Profile() {
       </div>
 
     </div>
+
   );
 }
 

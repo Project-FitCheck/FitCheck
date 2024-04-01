@@ -47,6 +47,7 @@
     position: absolute;
 }
 
+/*
 .EditModel .selectColor {
     position: relative;
     display: block;
@@ -55,6 +56,7 @@
     left: 25%;
     top: 55px;
 }
+*/
 
 .EditModel .gender-setting {
     margin-top: 50px;
@@ -143,4 +145,5 @@
 .EditModel Button.active {
     color: #fff;
     background: #3a0ca3;
+
 }

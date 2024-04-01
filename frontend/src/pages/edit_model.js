@@ -88,6 +88,7 @@ function EditModel() {
             </div>
         </div>
     );
+
 }
 
 export default EditModel;

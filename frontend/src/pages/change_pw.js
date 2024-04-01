@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import axios from 'axios';
+
 import "../styles/change_pw.css";
 
 function ChangePassword() {
@@ -34,6 +35,7 @@ function ChangePassword() {
             console.error("Error getting user data: ", error)
             setError("Incorrect Old Password");
           }
+
     };
 
     const handleGoBack = () => {
