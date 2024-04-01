@@ -4,7 +4,6 @@ import { Button } from "@mui/base";
 import ModelViewer from "../components/model_viewer"
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
-import NavBar from '../components/navbar.js';
 import ModelNav from "../components/ModelNav.jsx";
 import { CompactPicker } from "react-color";
 
@@ -54,9 +53,8 @@ function CreateModel() {
 
     return (
         <div className="MainPage">
-            <ModelNav />
+            <ModelNav props={{mode: "create"}}/>
             <div className="EditModel">
-                <NavBar />
                 <div className="ModelSettings">
                     <ul>
                         <li className="gender-setting">
