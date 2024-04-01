@@ -41,7 +41,7 @@ function EditModel() {
         async function getModel() {
             try {
                 const userId = window.localStorage.getItem("userId");
-                const response = await axios.get("http://localhost:3001/model/?userId=" + userId);
+                const response = await axios.get("fhttps://fitcheck-fg37.onrender.com/model/?userId=" + userId);
                 setGender(response.data.gender);
                 setColor(response.data.fullBody)
             } catch (error) {
@@ -60,7 +60,7 @@ function EditModel() {
             userId: userId,
             newModel: { gender, fullBody: body }
         }
-        await axios.put("http://localhost:3001/model/update", updatedModel);
+        await axios.put("fhttps://fitcheck-fg37.onrender.com/model/update", updatedModel);
         navigate("/model");
     }
 

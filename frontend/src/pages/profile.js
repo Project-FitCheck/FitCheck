@@ -32,7 +32,7 @@ function Profile() {
     async function getUserData() {
       try {
         const userId = window.localStorage.getItem("userId");
-        const response = await axios.get("http://localhost:3001/user/?userId=" + userId);
+        const response = await axios.get("https://fitcheck-fg37.onrender.com/user/?userId=" + userId);
         setUserData(response.data);
 
       } catch (error) {

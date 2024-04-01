@@ -18,7 +18,7 @@ export default function Register (props) {
         event.preventDefault();
         console.log(firstName, lastName, username, password, email)
         try {
-            const response = await axios.post("http://localhost:3001/user/signup", {
+            const response = await axios.post("fhttps://fitcheck-fg37.onrender.com/user/signup", {
                 firstName: firstName,
                 lastName: lastName,
                 username: username,
