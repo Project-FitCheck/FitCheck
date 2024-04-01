@@ -1,5 +1,5 @@
 .profile {
-	width: 75%;
+	width: 80%;
 	float: right;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .profile .profileImg,
-p {
+.profile p {
 	margin: auto;
 }
 

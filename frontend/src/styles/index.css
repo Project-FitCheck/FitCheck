@@ -36,8 +36,7 @@ h1 {
 	border: 3px solid lightgray;
 }
 
-.profileImg,
-p {
+.profileImg p {
 	margin: auto;
 }
 
@@ -110,16 +109,4 @@ td {
 
 .privacy h2 {
   margin: 10px 0px 10px 0px;
-}
-
-.logOut{
-  margin: auto;
-  text-align: center;
-  padding: 20px;
-}
-
-.logout, button {
-  margin-top: 10px;
-  border-radius: 12px;
-  cursor: pointer;
 }

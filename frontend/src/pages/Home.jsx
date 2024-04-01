@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../styles/Home.css';
-import  Login  from "./Login"
+import  Login  from "./Login.jsx"
 import  Register  from "./Register";
 
 

@@ -15,7 +15,7 @@
 	margin: auto;
 	height: 100px;
 	width: 100px;
-	font-size: 40px;
+	font-size: 60px;
 	border-radius: 50%;
 	color: var(--purple);
 	border: none;
@@ -42,8 +42,4 @@
 	justify-content: space-around;
 	align-items: center;
 	list-style-type: none;
-}
-
-.PageNav ul>li {
-	/* width: 30%; */
 }

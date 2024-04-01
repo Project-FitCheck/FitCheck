@@ -4,12 +4,14 @@ import './styles/index.css';
 import './styles/App.css';
 import './styles/Home.css';
 import './styles/NavBar.css';
-
+import './styles/navigation.css';
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+
 import Regsiter from './pages/Register.jsx';
 import Login from './pages/Login.jsx';
+
 import Profile from "./pages/profile.js";
 import ChangePassword from "./pages/change_pw.js";
 import EditModel from "./pages/edit_model.js";

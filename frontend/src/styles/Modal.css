@@ -1,0 +1,82 @@
+.Modal {
+	position:absolute;
+	width: 40%;
+	height: 60%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	padding: 50px;
+}
+
+.ModalBackground {
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ModalClose {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 60px;
+	height: 60px;
+	font-size: 2em;
+	border: 2px solid black;
+	border-radius: 50%;
+}
+
+.ModalClose:hover {
+	cursor: pointer;
+}
+
+.ModalLike {
+	color: var(--orange);
+	font-size: 5em;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	width: 100px;
+	height: 100px;
+	border: 2px solid black;
+	border-radius: 50%;
+}
+
+.ModalMain {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.ModalImage {
+	width: 65%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ClosetModalBody, .OutfitModalBody {
+	height: 100%;
+	width: 35%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 10px;
+}
+
+
+.ModalPic {}
+
+.ModalHeading {}
+
+.ModalPara {}
