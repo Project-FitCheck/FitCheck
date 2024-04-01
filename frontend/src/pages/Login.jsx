@@ -13,7 +13,7 @@ export default function Login (props) {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("fhttps://fitcheck-fg37.onrender.com/user/login", {
+            const response = await axios.post("https://fitcheck-fg37.onrender.com/user/login", {
                 username: username,
                 password: password,
             });
