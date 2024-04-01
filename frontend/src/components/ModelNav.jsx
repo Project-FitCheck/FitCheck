@@ -3,7 +3,6 @@ import '../styles/ModelNav.css';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 
-
 function ModelNav({ props }) {
 	if (props.mode === "edit") {
 		console.log("edit mode");
