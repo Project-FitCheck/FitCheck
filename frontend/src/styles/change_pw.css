@@ -26,11 +26,13 @@
 .submitBtn {
     margin-right: 10px;
     padding: 5px;
+    border-radius: 20px;
 }
 
 .goBackBtn {
     margin-left: 10px;
     padding: 5px;
+    border-radius: 20px;
 }
 
 .messagePopup, h2, p, .closeBtn {

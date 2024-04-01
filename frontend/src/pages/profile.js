@@ -1,7 +1,5 @@
 import {React} from 'react';
 
-import React from 'react';
-
 import {useNavigate} from 'react-router-dom';
 import Switch from '@mui/material/Switch';
 import Select from 'react-select';
