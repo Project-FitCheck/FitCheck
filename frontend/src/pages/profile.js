@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-import { React } from 'react';
-=======
+
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
-import { useNavigate } from 'react-router-dom';
->>>>>>> 98e914b (update profile UI (#41))
 import Switch from '@mui/material/Switch';
 import Select from 'react-select';
 import 'reactjs-popup/dist/index.css';
@@ -22,7 +18,7 @@ const options = [
 function Profile() {
   const navigate = useNavigate();
 
-  const {UserData, setUserData} = useState("");
+  const [UserData, setUserData] = useState("");
 
   const handleEditModelClick = () => {
     navigate("../model");
@@ -36,14 +32,14 @@ function Profile() {
     async function getUserData() {
       try {
         const userId = window.localStorage.getItem("userId");
-        const response = axios.get("http://localhost:3001/user")
-        setUserData(response.data)
+        const response = await axios.get("http://localhost:3001/user/?userId=" + userId);
+        setUserData(response.data);
       } catch (error) {
         console.error("Error getting user data: ", error)
       }
     }
     getUserData();
-  }, []);
+  }, [UserData]);
 
   return (
 
@@ -71,6 +67,10 @@ function Profile() {
             <tr>
               <td>Username:</td>
               <td>{UserData.username}</td>
+            </tr>
+            <tr>
+              <td>Email:</td>
+              <td>{UserData.email}</td>
             </tr>
           </tbody>
         </table>

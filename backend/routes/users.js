@@ -82,7 +82,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.put("/update", async (req, res) => {
-    const { userid, fieldToBeUpdated, updatedValue } = req.body;
+    const { userid, fieldToBeUpdated, updatedValue, oldValue } = req.body;
     try {
         const user = await UserModel.findById(userid);
         if (!user) {
@@ -91,6 +91,23 @@ router.put("/update", async (req, res) => {
 
         if (typeof updatedValue !== typeof user[fieldToBeUpdated]) {
             return res.status(400).json({ message: `${fieldToBeUpdated} cannot be set to this value` });
+        }
+
+        if (updatedValue === user[fieldToBeUpdated]) {
+            return res.status(400).json({ message: `${fieldToBeUpdated} is already this value` })
+        }
+
+        if (fieldToBeUpdated === "password") {
+            const validPassword = await bcrypt.compare(oldValue, user.password);
+
+            if (!validPassword) {
+                return res.status(401).json({ message: "Incorrect password" });
+            }
+            
+            const newPassword = await bcrypt.hash(updatedValue, 10);
+            user.set(fieldToBeUpdated, newPassword);
+            await user.save();
+            return res.json({ message: `${fieldToBeUpdated} has been updated` });
         }
 
         user.set(fieldToBeUpdated, updatedValue);
@@ -103,13 +120,13 @@ router.put("/update", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-    const { userid } = req.body;
+    const { userId } = req.query;
     try {
-        const user = await UserModel.findById(userid);
+        const user = await UserModel.findById(userId);
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
-        res.status(200).json(user);
+        return res.status(200).json(user);
     } catch (error) {
         console.error("Error getting user Data: ", error);
         return res.status(500).json({ message: "Internal Server error" });
