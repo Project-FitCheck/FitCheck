@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Popup from 'reactjs-popup';
 import "../styles/change_pw.css";
 
 function ChangePassword() {
@@ -9,6 +10,7 @@ function ChangePassword() {
     const [oldPW, setOldPW] = useState('');
     const [newPW, setNewPW] = useState('');
     const [error, setError] = useState('');
+    const [showPopup, setShowPopup] = useState(false);
 
     const handleChange = (e) => {
         setError('');
@@ -24,8 +26,9 @@ function ChangePassword() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (oldPW === "currentPasswordFromLocalStorage") {
+        if (oldPW === "1234") {
             window.localStorage.setItem("password", newPW);
+            setShowPopup(true);
         } else {
             setError("Incorrect old password. Please try again.");
         }
@@ -54,6 +57,14 @@ function ChangePassword() {
                     <button type="button" className="goBack" onClick={handleGoBack}>Go back</button>
                 </div>
             </form>
+
+            <Popup open={showPopup} closeOnDocumentClick onClose={() => showPopup(false)}>
+                <div>
+                    <h2>Password Changed</h2>
+                    <p>Your password has been successfully changed.</p>
+                    <button onClick={handleGoBack}>Close</button>
+                </div>
+            </Popup>
         </div>
     );
 }
