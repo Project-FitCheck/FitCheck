@@ -1,6 +1,7 @@
-import {React} from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Switch from '@mui/material/Switch';
 import Select from 'react-select';
 import 'reactjs-popup/dist/index.css';
@@ -16,10 +17,7 @@ const options = [
 function Profile() {
   const navigate = useNavigate();
 
-  //retrieve user information from local storage
-  const firstName = window.localStorage.getItem("firstName");
-  const lastName = window.localStorage.getItem("lastName");
-  const username = window.localStorage.getItem("username");
+  const {UserData, setUserData} = useState("");
 
   const handleEditModelClick = () => {
     navigate("../model");
@@ -28,6 +26,19 @@ function Profile() {
   const handleChangePWclick = () => {
     navigate("/change-password");
   };
+
+  useEffect(() => {
+    async function getUserData() {
+      try {
+        const userId = window.localStorage.getItem("userId");
+        const response = axios.get("http://localhost:3001/user")
+        setUserData(response.data)
+      } catch (error) {
+        console.error("Error getting user data: ", error)
+      }
+    }
+    getUserData();
+  }, []);
 
   return (
 
@@ -50,11 +61,11 @@ function Profile() {
           <tbody>
             <tr>
               <td>Name:</td>
-              <td>{firstName} {lastName}</td>
+              <td>{UserData.firstName} {UserData.lastName}</td>
             </tr>
             <tr>
               <td>Username:</td>
-              <td>{username}</td>
+              <td>{UserData.username}</td>
             </tr>
           </tbody>
         </table>
@@ -78,7 +89,7 @@ function Profile() {
       </div>
 
       <div className="logOut">
-        <button className="logOutBtn" onClick={()=>{window.localStorage.removeItem("userId");navigate("/")}}>Logout</button>
+        <button className="logOutBtn" onClick={() => { window.localStorage.removeItem("userId"); navigate("/") }}>Logout</button>
       </div>
 
     </div>

@@ -35,9 +35,7 @@ export default function Register (props) {
                 password: password,
                 email: email
             });
-            window.localStorage.setItem("firstName", firstName);
-            window.localStorage.setItem("lastName", lastName);
-            window.localStorage.setItem("username", username);
+
             // Optionally reset the form fields after successful submission
             setFirstName("");
             setLastName("");
