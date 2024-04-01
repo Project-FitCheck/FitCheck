@@ -13,6 +13,14 @@
 	position: relative;
 	left: 30%;
 	width: fit-content;
+	margin-top: -5%;
+}
+
+.Model .chevron-left{
+	height: 15px;
+}
+.Model .chevron-right{
+	height: 15px;
 }
 
 .Model .viewModel{
@@ -35,4 +43,5 @@
 	transition: .2s ease all;
 	width: 60%;
 	margin-left: 20%;
+	min-height: 95%;
 }

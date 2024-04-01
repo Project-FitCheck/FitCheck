@@ -2,12 +2,12 @@ import React, { useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
 import { useCookies } from "react-cookie"
-import '../styles/Login.css'
+import '../styles/login.css'
 
 export default function Login (props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [, setError] = useState('');
     const [,setCookies] = useCookies (["access_token"]);
     const navigate = useNavigate();
     const handleSubmit = async(e) => {
