@@ -15,7 +15,7 @@ function PageNav(props) {
 	return (<div className='PageNav'>
 		<div className='PageNavButtons'>
 			<a href="/closet/add"><button className='addClothes'>+</button></a>
-			<a href="/ToBeMade"><button className='searchButton'><img src="/icons/icons8-search-purple.svg"></img></button></a>
+			<a href="/ToBeMade"><button className='searchButton'>Srch</button></a>
 		</div>
 		<ul>
 			<NavButton name={'CLOTHES'} link={"/closet"} page={closetPage}/>

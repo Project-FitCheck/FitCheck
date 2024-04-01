@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
-import { useNavigate } from 'react-router-dom';
 import Switch from '@mui/material/Switch';
 import Select from 'react-select';
 import 'reactjs-popup/dist/index.css';
 import "../styles/profile.css"
 import NavBar from '../components/navbar.js';
+import { useNavigate } from "react-router-dom"
 
 const options = [
   { value: 'light', label: 'Light (Default)' },
@@ -17,7 +17,8 @@ const options = [
 function Profile() {
   const navigate = useNavigate();
 
-  const {UserData, setUserData} = useState("");
+  const [UserData, setUserData] = useState("");
+
 
   const handleEditModelClick = () => {
     navigate("../model");
@@ -31,14 +32,16 @@ function Profile() {
     async function getUserData() {
       try {
         const userId = window.localStorage.getItem("userId");
-        const response = axios.get("http://localhost:3001/user")
-        setUserData(response.data)
+        const response = await axios.get("http://localhost:3001/user/?userId=" + userId);
+        setUserData(response.data);
+
       } catch (error) {
         console.error("Error getting user data: ", error)
       }
     }
     getUserData();
-  }, []);
+  }, [UserData]);
+
 
   return (
 
@@ -67,6 +70,11 @@ function Profile() {
               <td>Username:</td>
               <td>{UserData.username}</td>
             </tr>
+            <tr>
+              <td>Email:</td>
+              <td>{UserData.email}</td>
+
+            </tr>
           </tbody>
         </table>
       </div>
@@ -89,7 +97,7 @@ function Profile() {
       </div>
 
       <div className="logOut">
-        <button className="logOutBtn" onClick={() => { window.localStorage.removeItem("userId"); navigate("/") }}>Logout</button>
+        <button onClick={() => { window.localStorage.removeItem("userId"); navigate("/") }}>Logout</button>
       </div>
 
     </div>

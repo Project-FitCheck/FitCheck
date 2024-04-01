@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ReactComponent as MaleModel } from "../assets/FitCheck_male_template/male_body.svg";
 import { ReactComponent as FemaleModel } from "../assets/FitCheck_female_template/female_body.svg";
 import axios from "axios";
-import '../styles/ModelViewer.css';
 
-
-function ModelViewer({ modelData, mode }) {
+function ModelViewer({ props }) {
     const [model, setModel] = useState(null);
     const [modelGender, setModelGender] = useState(null)
 
@@ -14,8 +12,6 @@ function ModelViewer({ modelData, mode }) {
             try {
                 const userId = window.localStorage.getItem("userId");
                 const response = await axios.get("http://localhost:3001/model/?userId=" + userId);
-				response.data.fullBody.replace(/"/g, '');
-
                 setModel(response.data.fullBody);
                 setModelGender(response.data.gender);
             } catch (error) {
@@ -26,37 +22,36 @@ function ModelViewer({ modelData, mode }) {
     }, []);
 
 
-	if (mode === "view") {
-		return (<div className="ModelViewer" dangerouslySetInnerHTML={{__html: model}}>
-		</div>);
-	} else if (mode === "create") {
-        if (modelData.gender === "male") {
+
+    if (props.mode === "create") {
+        if (props.gender === "male") {
             return (<div className="ModelViewer">
-                <MaleModel />
+                <MaleModel style={{ 'fill': props.color }} />
             </div>);
-		} else if (model === "female") {
+        } else if (props.gender === "female") {
             return (<div className="ModelViewer">
-            	<FemaleModel />
-        	</div>);
+                <FemaleModel style={{ 'fill': props.color }} />
+            </div>);
         }
-        else {
-            return (<div className="ModelViewer">
-                <FemaleModel />
-            </div>)
-        }
+    } else if (props.mode === "view") {
+        <div className="ModelViewer">
+            {model}
+        </div>
     } else {
+        console.log(props.color);
+        console.log(modelGender);
         return (
             <div className="ModelViewer">
-                {(modelGender === modelData.gender) ? (
-                    ("male" === modelData.gender) ? (
-                        <MaleModel />
+                {(modelGender === props.gender) ? (
+                    ("male" === props.gender) ? (
+                        <MaleModel style={{ 'fill': props.color }} />
                     ) : (
-                        <FemaleModel />
+                        <FemaleModel style={{ 'fill': props.color }} />
                     )) : (
-                    ("female" === modelData.gender) ? (
-                        <FemaleModel />
+                    ("female" === props.gender) ? (
+                        <FemaleModel style={{ 'fill': props.color }} />
                     ) : (
-                        <MaleModel />
+                        <MaleModel style={{ 'fill': props.color }} />
                     ))}
             </div>
         );

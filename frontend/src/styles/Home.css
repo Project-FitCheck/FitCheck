@@ -1,50 +1,54 @@
 .Home {
-    text-align: center;
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(79deg, #fcfced, #c37ed4 48%, #f0bf56);
-  }
-  
-  .Home .auth-form-containter, .login-form, .register-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .Home label {
-    text-align: left;
-    padding: 0.25rem 0;
-  }
-  
-  @media screen and (min-width: 600px){
-    
-  }
-  
-  .Home .auth-form-containter{
-    padding: 5px;
-    border: 2px solid white;
-    border-radius: 10px;
-    margin: 0.5rem;
-  }
-  
-  .Home input{
-    margin: 0.5rem 0;
-    padding: 1rem;
-    border: none;
-    border-radius: 15px;
-  }
-  
-  .Home button {
-    border: none;
-    background-color: #f0bf56;
-    padding: 20px;
-    border-radius: 15px;
-    cursor: pointer;
-  }
-  
-  .Home .link-btn {
-    background: none;
-    color:white;
-    text-decoration: underline;
-  }
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(79deg, #fcfced, #c37ed4 48%, #f0bf56);
+}
+
+.Home .auth-form-containter,
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Home label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+@media screen and (min-width: 600px) {}
+
+.Home .auth-form-containter {
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+
+.Home input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 15px;
+}
+
+.Home button {
+  border: none;
+  background-color: #f0bf56;
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.Home .link-btn {
+  background: none;
+  color: white;
+  text-decoration: underline;
+}
+
+.Home h1{
+  color: black;
+}

@@ -25,24 +25,6 @@ const UserSchema = new mongoose.Schema({
         gender: {
             type: String
         },
-        head: {
-            type: String
-        },
-        leftArm: {
-            type: String
-        },
-        rightArm: {
-            type: String
-        },
-        torso: {
-            type: String
-        },
-        legs: {
-            type: String
-        },
-        feet: {
-            type: String
-        },
         fullBody: {
             type: String
         },

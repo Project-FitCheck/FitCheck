@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import axios from 'axios';
+
 import "../styles/change_pw.css";
 
 function ChangePassword() {
@@ -23,15 +25,17 @@ function ChangePassword() {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
-        if (oldPW === "1234") {
-            window.localStorage.setItem("password", newPW);
+        try {
+            const userid = window.localStorage.getItem("userId");
+            await axios.put("http://localhost:3001/user/update", {userid, fieldToBeUpdated: "password", updatedValue:newPW, oldValue:oldPW});
             setShowPopup(true);
-        } else {
-            setError("Incorrect old password. Please try again.");
-        }
+          } catch (error) {
+            console.error("Error getting user data: ", error)
+            setError("Incorrect Old Password");
+          }
+
     };
 
     const handleGoBack = () => {

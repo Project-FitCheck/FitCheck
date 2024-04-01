@@ -18,12 +18,6 @@ router.post("/signup", async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const model = {
             gender: "tba",
-            head: "tba",
-            leftArm: "tba",
-            rightArm: "tba",
-            torso: "tba",
-            legs: "tba",
-            feet: "tba",
             fullBody: "tba",
         }; //  replace with svg of model*/
 
@@ -56,7 +50,7 @@ router.post("/signup", async (req, res) => {
             locker: locker._id
         });
         await newUser.save();
-        
+
         const token = jwt.sign({ userId: newUser._id }, "secret");
         return res.json({ token, message: "User created successfully, logging in\n Successfully logged in", userId: newUser._id, userDetails: newUser });
     } catch (error) {
@@ -74,7 +68,7 @@ router.post("/login", async (req, res) => {
         }
 
         const validPassword = await bcrypt.compare(password, user.password);
-      
+
         if (!validPassword) {
             return res.status(401).json({ message: "Incorrect password" });
         }
@@ -88,7 +82,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.put("/update", async (req, res) => {
-    const { userid, fieldToBeUpdated, updatedValue } = req.body;
+    const { userid, fieldToBeUpdated, updatedValue, oldValue } = req.body;
     try {
         const user = await UserModel.findById(userid);
         if (!user) {
@@ -99,6 +93,23 @@ router.put("/update", async (req, res) => {
             return res.status(400).json({ message: `${fieldToBeUpdated} cannot be set to this value` });
         }
 
+        if (updatedValue === user[fieldToBeUpdated]) {
+            return res.status(400).json({ message: `${fieldToBeUpdated} is already this value` })
+        }
+
+        if (fieldToBeUpdated === "password") {
+            const validPassword = await bcrypt.compare(oldValue, user.password);
+
+            if (!validPassword) {
+                return res.status(401).json({ message: "Incorrect password" });
+            }
+            
+            const newPassword = await bcrypt.hash(updatedValue, 10);
+            user.set(fieldToBeUpdated, newPassword);
+            await user.save();
+            return res.json({ message: `${fieldToBeUpdated} has been updated` });
+        }
+
         user.set(fieldToBeUpdated, updatedValue);
         await user.save();
         return res.json({ message: `${fieldToBeUpdated} has been updated` });
@@ -107,5 +118,19 @@ router.put("/update", async (req, res) => {
         return res.status(500).json({ message: "Internal server error" });
     }
 });
+
+router.get("/", async (req, res) => {
+    const { userId } = req.query;
+    try {
+        const user = await UserModel.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+        return res.status(200).json(user);
+    } catch (error) {
+        console.error("Error getting user Data: ", error);
+        return res.status(500).json({ message: "Internal Server error" });
+    }
+})
 
 export { router as userRouter };

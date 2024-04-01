@@ -10,7 +10,8 @@ const clothesSchema = new mongoose.Schema({
     //brand: String,
     //price: Number,
     //fit: String,
-    style: String
+    style: String,
+    image: Buffer,
 });
 
 const ClothesModel = mongoose.model('Clothe', clothesSchema);

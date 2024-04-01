@@ -1,5 +1,7 @@
 .ModelNav {
 	height: 14%;
+	width: 93.8%;
+	left:25%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -11,26 +13,33 @@
 	z-index: 1;
 }
 
-.ModelNav button {
+.ModelNav Button {
+	position: relative;
 	margin: auto;
-	height: 100px;
-	width: 100px;
-	font-size: 40px;
+	height: fit-content;
+	width:fit-content;
 	border-radius: 50%;
 	color: var(--purple);
-	border: none;
+	border: 1px;
 }
 
 .ModelNav button:hover {
 	cursor: pointer;
 }
 
-.ModelNav .ModelNavButtons {
-	width: 30%;
-	display: flex;
-	justify-content: space-evenly;
+.ModelNav .editModel{
+	margin-left: 10%;
+	border-radius: 50%;
 }
 
-.ModelNav .addToCloset {
-	margin-right: 5%;
+.ModelNav .navBack {
+	font-size: 40px;
+	margin-left: 10%;
+	color: var(--purple);
+	border-radius: 50%;
+}
+
+.ModelNav .addFromCloset {
+	margin-right: 10%;
+	border-radius: 50%;
 }
