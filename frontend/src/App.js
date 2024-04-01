@@ -8,10 +8,14 @@ import './styles/NavBar.css';
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+
+import ChangePassword from "./pages/change_pw.js";
+
 import Home from './pages/Home.jsx';
 import Model from "./pages/model"
 import CreateModel from './pages/create_model';
 import EditModel from './pages/edit_model.js';
+
 
 
 import Closet from './pages/closet.js';
@@ -37,6 +41,7 @@ function App() {
           <Route path='/closet/add' element={<AddClothing />} />
           <Route path='/locker' element={<Outfits />}/>
           <Route path='/profile' element={<Profile />} />
+          <Route path='/change-password' element={<ChangePassword />} />
           <Route path='/search' element={<ToBeMade />} />
           <Route path='/model' element={<Model />} />
           <Route path='/model/edit' element={<EditModel />} />

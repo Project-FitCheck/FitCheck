@@ -78,6 +78,14 @@ td {
 .profile .editButton {
 	border-radius: 12px;
 	cursor: pointer;
+	padding: 5px;
+}
+
+.profile .changePWbutton {
+	border-radius: 12px;
+	margin-left: 20px;
+	cursor: pointer;
+	padding: 5px;
 }
 
 .profile .password {
@@ -119,8 +127,9 @@ td {
 	padding: 20px;
   }
   
-.profile .logout, button {
+.profile .logout, .logOutBtn {
 	margin-top: 10px;
 	border-radius: 12px;
 	cursor: pointer;
+	padding: 5px;
   }

@@ -92,47 +92,47 @@
 
 
 .EditModel Button {
-    --color: #560bad;
-    font-family: inherit;
-    display: inline-block;
-    width: 8em;
-    height: 2.6em;
-    line-height: 2.5em;
-    margin: 20px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid var(--color);
-    transition: color .5s;
-    z-index: 1;
-    font-size: 17px;
-    border-radius: 6px;
-    font-weight: 500;
-    color: var(--color);
+  --color: #560bad;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
 }
 
 .EditModel Button:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: var(--color);
-    height: 300px;
-    width: 400px;
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 300px;
+  width: 400px;
+  border-radius: 50%;
 }
 
 .EditModel Button:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .EditModel Button:before {
-    top: 100%;
-    left: 100%;
-    transition: all .7s;
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
 }
 
 .EditModel Button:hover:before {
-    top: -50px;
-    left: -50px;
+  top: -50px;
+  left: -50px;
 }
 
 .EditModel Button:active:before {

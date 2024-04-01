@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import { React } from 'react';
+=======
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
+
+import { useNavigate } from 'react-router-dom';
+>>>>>>> 98e914b (update profile UI (#41))
 import Switch from '@mui/material/Switch';
 import Select from 'react-select';
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import "../styles/profile.css"
 import NavBar from '../components/navbar.js';
@@ -15,6 +21,30 @@ const options = [
 
 function Profile() {
   const navigate = useNavigate();
+
+  const {UserData, setUserData} = useState("");
+
+  const handleEditModelClick = () => {
+    navigate("../model");
+  };
+
+  const handleChangePWclick = () => {
+    navigate("/change-password");
+  };
+
+  useEffect(() => {
+    async function getUserData() {
+      try {
+        const userId = window.localStorage.getItem("userId");
+        const response = axios.get("http://localhost:3001/user")
+        setUserData(response.data)
+      } catch (error) {
+        console.error("Error getting user data: ", error)
+      }
+    }
+    getUserData();
+  }, []);
+
   return (
 
     <div className="profile">
@@ -36,38 +66,19 @@ function Profile() {
           <tbody>
             <tr>
               <td>Name:</td>
-              <td></td>
+              <td>{UserData.firstName} {UserData.lastName}</td>
             </tr>
             <tr>
               <td>Username:</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>DOB:</td>
-              <td></td>
+              <td>{UserData.username}</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div className="edit">
-        <button className="editButton">Edit Model</button>
-        <Popup trigger={<button className="password">Change Password</button>} modal nested> {
-          close => (
-            <div className="modal">
-              <div className="oldPass">
-                <h1>Old Password</h1>
-              </div>
-              <div className="newPass">
-                <h1>New Password</h1>
-              </div>
-              <div>
-                <button onclick={() => close()}>Submit</button>
-              </div>
-            </div>
-          )
-        }
-        </Popup>
+        <button className="editButton" onClick={handleEditModelClick}>Edit Model</button>
+        <button className="changePWbutton" onClick={handleChangePWclick}>Change Password</button>
       </div>
 
       <div className="themes">
