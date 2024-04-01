@@ -9,7 +9,7 @@ import connectDB from './config/db.js';
 
 const app = express();
 const corsOptions = {
-    origin: "", // frontend URI (ReactJS)
+    origin: "https://fitcheck.onrender.com", // frontend URI (ReactJS)
 }
 app.use(cors(corsOptions));
 app.use(express.json());
