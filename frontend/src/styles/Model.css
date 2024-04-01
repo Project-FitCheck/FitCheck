@@ -5,6 +5,34 @@
 	position: relative;
 }
 
-.Model svg{
-    height: 700px;
+.Model svg {
+	height: 700px;
+}
+
+.Model .ModelViewer {
+	position: relative;
+	left: 30%;
+	width: fit-content;
+}
+
+.Model .viewModel{
+	--dark-grey: #353535;
+	--middle-grey: #767676;
+	--lightest-grey: linear-gradient(#fafafa, #ebebeb);
+	--shadow: 0 5px 15px 0 #00000026;
+	--shadow-active: 0 5px 5px 0 #00000026;
+	--border-radius-main: 10px;
+	--border-radius-icon: 50px;
+	align-items: center;
+	cursor: default;
+	color: var(--dark-grey);
+	opacity: .9;
+	padding: 1.5rem;
+	font-weight: 600;
+	background: var(--lightest-grey);
+	border-radius: var(--border-radius-main);
+	box-shadow: var(--shadow);
+	transition: .2s ease all;
+	width: 60%;
+	margin-left: 20%;
 }

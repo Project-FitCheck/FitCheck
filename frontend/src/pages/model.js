@@ -10,7 +10,7 @@ function Model() {
 	return (<div className='MainPage'>
 		<div className='Model'>
 			<NavBar />
-			<ModelNav />
+			<ModelNav props={{mode: "view"}}/>
 			<div className='viewModel'>
 				<ModelViewer props={{}} />
 			</div>

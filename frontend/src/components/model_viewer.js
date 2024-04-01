@@ -26,11 +26,11 @@ function ModelViewer({ props }) {
     if (props.mode === "create") {
         if (props.gender === "male") {
             return (<div className="ModelViewer">
-                <MaleModel style={{ '--svg-fill-color': props.color }} />
+                <MaleModel style={{ 'fill': props.color }} />
             </div>);
         } else if (props.gender === "female") {
             return (<div className="ModelViewer">
-                <FemaleModel style={{ '--svg-fill-color': props.color }} />
+                <FemaleModel style={{ 'fill': props.color }} />
             </div>);
         }
     } else if (props.mode === "view") {
@@ -44,14 +44,14 @@ function ModelViewer({ props }) {
             <div className="ModelViewer">
                 {(modelGender === props.gender) ? (
                     ("male" === props.gender) ? (
-                        <MaleModel style={{ '--svg-fill-color': props.color }}/>
+                        <MaleModel style={{ 'fill': props.color }} />
                     ) : (
-                        <FemaleModel style={{ '--svg-fill-color': props.color }}/>
+                        <FemaleModel style={{ 'fill': props.color }} />
                     )) : (
                     ("female" === props.gender) ? (
-                        <FemaleModel style={{ '--svg-fill-color': props.color }}/>
+                        <FemaleModel style={{ 'fill': props.color }} />
                     ) : (
-                        <MaleModel style={{ '--svg-fill-color': props.color }}/>
+                        <MaleModel style={{ 'fill': props.color }} />
                     ))}
             </div>
         );

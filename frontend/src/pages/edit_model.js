@@ -43,6 +43,7 @@ function EditModel() {
                 const userId = window.localStorage.getItem("userId");
                 const response = await axios.get("http://localhost:3001/model/?userId=" + userId);
                 setGender(response.data.gender);
+                setColor(response.data.fullBody)
             } catch (error) {
                 console.error("Error fetching model data:", error);
             }
@@ -50,8 +51,6 @@ function EditModel() {
         getModel();
     }, []);
 
-
-    //setModelData({gender, head, torso, leftArm, righttArm, legs, feet})
 
     async function saveModel() {
         const body = document.getElementById("Body").outerHTML;
@@ -67,7 +66,7 @@ function EditModel() {
 
     return (
         <div className="MainPage">
-            <ModelNav />
+            <ModelNav props={{mode: "edit"}} />
             <div className="EditModel">
                 <NavBar />
                 <div className="ModelSettings">
