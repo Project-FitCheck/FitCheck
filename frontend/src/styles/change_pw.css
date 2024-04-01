@@ -1,0 +1,22 @@
+.oldPW {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.newPW {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit {
+    margin-right: 10px;
+}
+
+.goBack {
+    margin-left: 10px;
+}

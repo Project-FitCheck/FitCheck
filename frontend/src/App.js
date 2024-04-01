@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Regsiter from './pages/Register.jsx';
 import Login from './pages/Login.jsx';
 import Profile from "./pages/profile.js";
+import ChangePassword from "./pages/change_pw.js";
 import EditModel from "./pages/edit_model.js";
 
 import Home from './pages/Home.jsx';
@@ -21,8 +22,6 @@ import CreateModel from './pages/create_model';
 import Closet from './pages/closet.js';
 import Outfits from './pages/locker.js';
 import AddClothing from './pages/add_clothing.js';
-
-import ToBeMade from './pages/toBeMade';
 
 import ToBeMade from './pages/toBeMade';
 
@@ -42,6 +41,7 @@ function App() {
           <Route path='/closet/add' element={<AddClothing />} />
           <Route path='/locker' element={<Outfits />}/>
           <Route path='/profile' element={<Profile />} />
+          <Route path='/change-password' element={<ChangePassword />} />
           <Route path='/search' element={<ToBeMade />} />
           <Route path='/model' element={<Model />} />
           <Route path='/model/edit' element={<EditModel />} />

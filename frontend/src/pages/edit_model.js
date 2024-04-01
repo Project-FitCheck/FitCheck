@@ -95,7 +95,7 @@ function EditModel() {
             </ul>
         </div>
         <ModelViewer modelData={{gender:gender, head:head, torso:torso, leftArm:leftArm, righttArm:righttArm, legs:legs, feet:feet}} mode={"update"} />
-        <Button className="save-model" className="test" onClick={() => saveModel()}>Save Model</Button>
+        <Button className="save-model" onClick={() => saveModel()}>Save Model</Button>
      </div>);
 }
 

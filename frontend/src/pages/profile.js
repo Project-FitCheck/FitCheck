@@ -2,7 +2,6 @@ import {React} from 'react';
 import {useNavigate} from 'react-router-dom';
 import Switch from '@mui/material/Switch';
 import Select from 'react-select';
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import "../styles/profile.css"
 import NavBar from '../components/navbar.js';
@@ -23,6 +22,10 @@ function Profile() {
 
   const handleEditModelClick = () => {
     navigate("../model");
+  };
+
+  const handleChangePWclick = () => {
+    navigate("/change-password");
   };
 
   return (
@@ -58,23 +61,7 @@ function Profile() {
 
       <div className="edit">
         <button className="editButton" onClick={handleEditModelClick}>Edit Model</button>
-        <Popup trigger={<button className="password">Change Password</button>}
-          modal nested> {
-            close => (
-              <div className="modal">
-                <div className="oldPass">
-                  <h1>Old Password</h1>
-                </div>
-                <div className="newPass">
-                  <h1>New Password</h1>
-                </div>
-                <div>
-                  <button onclick={() => close()}>Submit</button>
-                </div>
-              </div>
-            )
-          }
-        </Popup>
+        <button className="changePWbutton" onClick={handleChangePWclick}>Change Password</button>
       </div>
 
       <div className="themes">
@@ -94,8 +81,6 @@ function Profile() {
       </div>
 
     </div>
-
-
 
   );
 }
