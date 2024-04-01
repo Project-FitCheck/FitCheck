@@ -18,6 +18,13 @@ function ModelNav({ props }) {
 			<h1>Your Model</h1>
 			<Button component={Link} to={"/toBeMade"} className='addFromCloset'><img src="/icons/icons8-hanger-48.png" alt="Add Clothes to Model"></img></Button>
 		</div>);
+	} else if (props.mode === "create") {
+		console.log("create mode");
+		return (<div className='ModelNav' style={{width: "100%"}}>
+			<Button component={Link} to={"/model/edit"} className='editModel'><img src="/icons/icons8-edit.svg" alt="Edit Model"></img></Button>
+			<h1>Create Model</h1>
+			<Button component={Link} to={"/toBeMade"} className='addFromCloset'><img src="/icons/icons8-hanger-48.png" alt="Add Clothes to Model"></img></Button>
+		</div>);
 	}
 }
 
