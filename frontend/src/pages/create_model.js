@@ -45,7 +45,7 @@ function CreateModel() {
         });
 
         try {
-            await axios.put("fhttps://fitcheck-fg37.onrender.com/model/create", modelData);
+            await axios.put("https://fitcheck-fg37.onrender.com/model/create", modelData);
             navigate("/closet");
         } catch (error) {
             console.log(error)

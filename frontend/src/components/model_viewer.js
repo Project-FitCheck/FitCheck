@@ -11,7 +11,7 @@ function ModelViewer({ props }) {
         async function getModel() {
             try {
                 const userId = window.localStorage.getItem("userId");
-                const response = await axios.get("fhttps://fitcheck-fg37.onrender.com/model/?userId=" + userId);
+                const response = await axios.get("https://fitcheck-fg37.onrender.com/model/?userId=" + userId);
                 setModel(response.data.fullBody);
                 setModelGender(response.data.gender);
             } catch (error) {
