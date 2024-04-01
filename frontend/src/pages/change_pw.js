@@ -40,9 +40,12 @@ function ChangePassword() {
 
     return (
 
-        <div>
+        <div className="changePW">
+
             <h1>Change Password</h1>
+
             <form onSubmit={handleSubmit}>
+
                 <div className="oldPW">
                     <label>Old Password: </label>
                     <input type="password" name="oldPW" value={oldPW} onChange={handleChange} />
@@ -51,20 +54,23 @@ function ChangePassword() {
                     <label>New Password: </label>
                     <input type="password" name="newPW" value={newPW} onChange={handleChange} />
                 </div>
-                {error && <div style={{ color: 'red' }}>{error}</div>}
+
+                {error && <div style={{ color: 'red', textAlign: 'center' }}>{error}</div>}
+
                 <div className="buttons">
-                    <button type="submit" className="submit">Submit</button>
-                    <button type="button" className="goBack" onClick={handleGoBack}>Go back</button>
+                    <button type="submit" className="submitBtn">Submit</button>
+                    <button type="button" className="goBackBtn" onClick={handleGoBack}>Go back</button>
                 </div>
             </form>
 
             <Popup open={showPopup} closeOnDocumentClick onClose={() => showPopup(false)}>
-                <div>
+                <div className="messagePopup">
                     <h2>Password Changed</h2>
                     <p>Your password has been successfully changed.</p>
-                    <button onClick={handleGoBack}>Close</button>
+                    <button className="closeBtn" onClick={handleGoBack}>Close</button>
                 </div>
             </Popup>
+            
         </div>
     );
 }

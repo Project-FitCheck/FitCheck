@@ -1,3 +1,13 @@
+/*.App {
+    background: linear-gradient(90deg, #0062ff, #da61ff);
+    padding-top: 10px;
+}*/
+
+.changePW {
+    /*background: linear-gradient(90deg, #0062ff, #da61ff);*/
+    margin: 200px;
+}
+
 .oldPW {
     text-align: center;
     padding-bottom: 10px;
@@ -13,10 +23,28 @@
     margin-top: 20px;
 }
 
-.submit {
+.submitBtn {
     margin-right: 10px;
+    padding: 5px;
 }
 
-.goBack {
+.goBackBtn {
     margin-left: 10px;
+    padding: 5px;
+}
+
+.messagePopup, h2, p, .closeBtn {
+    text-align: center;
+}
+
+.messagePopup h2 {
+    margin-top: 5px;
+}
+
+.messagePopup p {
+    margin-bottom: 10px;
+}
+
+.messagePopup .closeBtn {
+    margin-bottom: 5px;
 }
