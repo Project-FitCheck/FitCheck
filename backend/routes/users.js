@@ -50,7 +50,7 @@ router.post("/signup", async (req, res) => {
             locker: locker._id
         });
         await newUser.save();
-        
+
         const token = jwt.sign({ userId: newUser._id }, "secret");
         return res.json({ token, message: "User created successfully, logging in\n Successfully logged in", userId: newUser._id, userDetails: newUser });
     } catch (error) {
@@ -68,7 +68,7 @@ router.post("/login", async (req, res) => {
         }
 
         const validPassword = await bcrypt.compare(password, user.password);
-      
+
         if (!validPassword) {
             return res.status(401).json({ message: "Incorrect password" });
         }
@@ -101,5 +101,19 @@ router.put("/update", async (req, res) => {
         return res.status(500).json({ message: "Internal server error" });
     }
 });
+
+router.get("/", async (req, res) => {
+    const { userid } = req.body;
+    try {
+        const user = await UserModel.findById(userid);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+        res.status(200).json(user);
+    } catch (error) {
+        console.error("Error getting user Data: ", error);
+        return res.status(500).json({ message: "Internal Server error" });
+    }
+})
 
 export { router as userRouter };
