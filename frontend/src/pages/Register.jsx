@@ -35,6 +35,7 @@ export default function Register (props) {
                 password: password,
                 email: email
             });
+
             // Optionally reset the form fields after successful submission
             setFirstName("");
             setLastName("");
