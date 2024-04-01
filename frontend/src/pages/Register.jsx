@@ -10,7 +10,7 @@ export default function Register (props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
+    const [, setError] = useState("");
     const [, setCookies] = useCookies(["access_token"]);
     const navigate = useNavigate()
     
