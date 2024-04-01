@@ -192,17 +192,11 @@
 
 }
 
-
-ul{
-
 .EditModel .ModelSettings ul{
 
     list-style-type: none;
     /*padding-left: 20px;*/
 }
-
-
-li{
 
 .EditModel .ModelSettings li{
 
@@ -210,12 +204,8 @@ li{
     display: flex;
 }
 
-
-.gender-setting::before{
-    content: url("../assets/FitCheck_male_template/male_body.svg");
-
 .EditModel .gender-setting::before{
-
+    content: url("../assets/FitCheck_male_template/male_body.svg");
     position: absolute;
     left: 0; /* Align the images to the left of the list items */
     top: 0; /* Align the images with the top of the list items */
@@ -223,15 +213,9 @@ li{
     height: 5px; /* Adjust the height of the images */
     margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
-
-
-
-.head-setting::before{
     
-    content: url("../assets/FitCheck_male_template/male_head.svg");
-
 .EditModel .head-setting::before{
-
+    	content: url("../assets/FitCheck_male_template/male_head.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: px; /* Align the images with the top of the list items */
@@ -241,12 +225,8 @@ li{
     
 }
 
-
-.torso-setting::before{
-    content: url("../assets/FitCheck_male_template/male_torso.svg");
-
 .EditModel .torso-setting::before{
-
+	content: url("../assets/FitCheck_male_template/male_torso.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -255,12 +235,8 @@ li{
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
 
-
-.arms-setting::before{
-    content: url("../assets/FitCheck_male_template/male_leftarm.svg");
-
 .EditModel .arms-setting::before{
-
+	content: url("../assets/FitCheck_male_template/male_leftarm.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -270,11 +246,8 @@ li{
 }
 
 
-.legs-setting::before{
-    content: url("../assets/FitCheck_male_template/male_legs.svg");
-
-.EditModel .legs-setting::before{
-
+.EditModel .legs-setting::before{		
+	content: url("../assets/FitCheck_male_template/male_legs.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -282,12 +255,9 @@ li{
     height: 50px; /* Adjust the height of the images */
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 }
-
-.feet-setting::before{
-    content: url("../assets/FitCheck_male_template/male_feet.svg");
 
 .EditModel .feet-setting::before{
-
+    content: url("../assets/FitCheck_male_template/male_feet.svg");
     position: relative;
     left: 0; /* Align the images to the left of the list items */
     /*top: 0; /* Align the images with the top of the list items */
@@ -296,6 +266,3 @@ li{
     /*margin-top: 4px; /* Adjust the margin to center the images vertically */
 
 }
-
-}
-
