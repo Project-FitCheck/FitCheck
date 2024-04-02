@@ -10,7 +10,7 @@ export default function Register (props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
+    const [, setError] = useState("");
     const [, setCookies] = useCookies(["access_token"]);
     const navigate = useNavigate()
     
@@ -18,7 +18,7 @@ export default function Register (props) {
         event.preventDefault();
         console.log(firstName, lastName, username, password, email)
         try {
-            const response = await axios.post("fhttps://fitcheck-fg37.onrender.com/user/signup", {
+            const response = await axios.post("https://fitcheck-backend-7mo5.onrender.com/user/signup", {
                 firstName: firstName,
                 lastName: lastName,
                 username: username,

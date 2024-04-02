@@ -6,12 +6,14 @@ import axios from "axios";
 function ModelViewer({ props }) {
     const [model, setModel] = useState(null);
     const [modelGender, setModelGender] = useState(null)
+//"http://localhost:3001"; //https://fitcheck-backend-7mo5.onrender.com
 
     useEffect(() => {
         async function getModel() {
             try {
                 const userId = window.localStorage.getItem("userId");
-                const response = await axios.get("fhttps://fitcheck-fg37.onrender.com/model/?userId=" + userId);
+                const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/model/?userId=" + userId);
+                response.data.fullBody.replace(/"/g, '');
                 setModel(response.data.fullBody);
                 setModelGender(response.data.gender);
             } catch (error) {
@@ -34,9 +36,9 @@ function ModelViewer({ props }) {
             </div>);
         }
     } else if (props.mode === "view") {
-        <div className="ModelViewer">
-            {model}
-        </div>
+        console.log("view mode")
+        return (<div className="ModelViewer" dangerouslySetInnerHTML={{__html: model}}>
+        </div>)
     } else {
         console.log(props.color);
         console.log(modelGender);

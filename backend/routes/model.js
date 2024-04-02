@@ -34,14 +34,14 @@ req: {
 }
 */
 router.put("/create", async (req, res) => {
-    const { userId, modelData } = req.body;
+    const { userId, model } = req.body;
     try {
         const user = await UserModel.findById(userId)
         if (!user) {
             console.log("user doesn't exist");
             return res.status(404).json({ message: "User not found" })
         }
-        user.bodyModel = modelData;
+        user.bodyModel = model;
 
         await user.save();
 
@@ -69,7 +69,7 @@ req: {
 */
 router.put("/update", async (req, res) => {
     const { userId, newModel } = req.body;
-    try {
+     try {
         const user = await UserModel.findById(userId)
         if (!user) {
             return res.status(404).json({ message: "user not found" })
