@@ -42,6 +42,7 @@ function CreateModel() {
                 }
             };
             console.log(modelData); // Log before sending request
+
             await axios.put("https://fitcheck-backend-7mo5.onrender.com/model/create", modelData);
             navigate("/closet");
         } catch (error) {
