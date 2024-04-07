@@ -23,13 +23,7 @@ req: {
     userId: userId
     model: {
         gender: MALE | FEMALE
-        head: head_svg_string,
-        leftArm: left_arm_svg_string,
-        rightArm: right_armsvg_string, 
-        torso: torso_svg_string,
-        legs: legs_svg_string,
-        feet: feet_svg_string,
-        fullBody: 
+        fullBody: full_body_svg_string
     }
 }
 */
@@ -57,12 +51,6 @@ req: {
     userid: user_id
     model: {
         gender: MALE | FEMALE
-        head: head_svg_string,
-        leftArm: left_arm_svg_string,
-        rightArm: right_arm_svg_string, 
-        torso: torso_svg_string,
-        legs: legs_svg_string,
-        feet: feet_svg_string,
         fullBody: full_body_svg_string
     }
 }

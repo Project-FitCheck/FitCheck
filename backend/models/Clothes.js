@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const clothesSchema = new mongoose.Schema({
-    productTitle: { type: String, required: true },
-    type: { type: String, required: true },
+    productTitle: String,
+    type: String,
     color: String,
     //size: String,
     description: String,
@@ -11,7 +11,7 @@ const clothesSchema = new mongoose.Schema({
     //price: Number,
     //fit: String,
     style: String,
-    image: Buffer,
+    image: String,
 });
 
 const ClothesModel = mongoose.model('Clothe', clothesSchema);

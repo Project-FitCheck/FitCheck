@@ -26,7 +26,6 @@ router.post("/signup", async (req, res) => {
             clothes: [],
             favClothes: [],
             wishlist: [],
-            owner: username
         });
         await closet.save();
 
@@ -35,7 +34,6 @@ router.post("/signup", async (req, res) => {
             outfits: [],
             favOutfits: [],
             wishlist: [],
-            owner: username
         });
         await locker.save();
 
