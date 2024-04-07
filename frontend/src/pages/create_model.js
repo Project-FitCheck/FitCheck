@@ -42,6 +42,7 @@ function CreateModel() {
                 }
             };
             console.log(modelData); // Log before sending request
+
             await axios.put("https://fitcheck-backend-7mo5.onrender.com/model/create", modelData);
             navigate("/closet");
         } catch (error) {
@@ -74,6 +75,7 @@ function CreateModel() {
                         "width": "12em"
                     }} onClick={() => { createModel() }}>Create Model</Button>
                 {error && <div style={{ position: "relative", top: "410px", color: 'red', textAlign: 'center' }}>{error}</div>}
+
             </div>
             <ModelViewer props={{ gender: gender, color: color.hex, mode: "create" }} />
         </div>
