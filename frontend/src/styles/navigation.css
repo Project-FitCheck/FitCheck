@@ -1,14 +1,15 @@
 .navigation {
-  height: 100%;
-  width: 20%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: var(--gray);
-  overflow-x: hidden;
-  padding-top: 50px;
+	height: 100%;
+	width: 20%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: var(--gray);
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
+
 /* 
 .navigation Link {
   margin-left: 20px;
@@ -19,6 +20,36 @@
   font-size: 25px;
   cursor: pointer;
 } */
+
+.navigation .logo {
+	position: relative;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	color: black;
+	right: 0%;
+	top: 2%;
+}
+
+.navigation .logo img {
+	width: 20%;
+}
+
+.navigation .home {
+	top: -5%;
+}
+
+.navigation .model {
+	top: -10%;
+}
+
+.navigation .catalog {
+	top: -15%;
+}
+
+.navigation .profile {
+	top: -5%;
+}
 
 .navigation div {
 	height: 100%;
