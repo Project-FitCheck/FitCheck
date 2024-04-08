@@ -1,11 +1,11 @@
 import React from 'react';
 import NavBar from '../components/navbar.js';
 
-function ToBeMade() {
-	return (<div className='ToBeMade'>
+function Catalogue() {
+	return (<div className='catalogue'>
 		<NavBar />
 		<h1>Catalogue</h1>
 	</div>);
 }
 
-export default ToBeMade;
+export default Catalogue;
