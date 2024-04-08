@@ -11,9 +11,8 @@ import { CompactPicker } from "react-color";
 
 function CreateModel() {
     const [gender, setGender] = useState("");
-    const [modelData, setModelData] = useState(null);
     const [color, setColor] = useState("");
-
+    const [error, setError] = useState("");
     const navigate = useNavigate()
 
     const skinTones = [
@@ -32,52 +31,52 @@ function CreateModel() {
     ];
 
     const createModel = async () => {
-        const svgFullBody = document.getElementById("Body").outerHTML;
-        const userId = window.localStorage.getItem("userId");
-        console.log(userId);
-        setModelData({
-            userId: userId,
-            modelData: {
-                fullBody: svgFullBody,
-                gender: gender,
-            }
-        });
-
         try {
+            const userId = window.localStorage.getItem("userId");
+            const svgFullBody = document.getElementById("Body").outerHTML;
+            const modelData = {
+                userId: userId,
+                model: {
+                    fullBody: svgFullBody,
+                    gender: gender, // Assuming gender is defined somewhere
+                }
+            };
+            console.log(modelData); // Log before sending request
+
             await axios.put("https://fitcheck-backend-7mo5.onrender.com/model/create", modelData);
             navigate("/closet");
         } catch (error) {
-            console.log(error)
+            setError("Please Create Your Model"); // Handle error
+            console.error(error);
         }
     }
 
     return (
-        <div className="MainPage">
-            <ModelNav props={{mode: "create"}}/>
-            <div className="EditModel">
-                <div className="ModelSettings">
-                    <ul>
-                        <li className="gender-setting">
-                            <div className="male-icon" />
-                            <Button className={gender === "male" ? "active" : ""} variant="contained" onClick={() => setGender("male")}>Male</Button>
-                            <div className="female-icon" />
-                            <Button className={gender === "female" ? "active" : ""} variant="contained" onClick={() => setGender("female")}>Female</Button>
-                        </li>
-                        <li className="selectColor">
-                            <h2> Select Skin Color</h2>
-                            <CompactPicker colors={skinTones} color={color} onChangeComplete={setColor} />
-                        </li>
-                    </ul>
-                    <Button className="create-model" style={
-                        {
-                            "position": "relative",
-                            "top": "400px",
-                            "left": "25%",
-                            "width": "12em"
-                        }} onClick={() => createModel()}>Create Model</Button>
-                </div>
-                <ModelViewer props={{ gender: gender, color: color.hex, mode: "create" }} />
+        <div className="CreateModel">
+            <ModelNav props={{ mode: "create" }} />
+            <div className="ModelSettings">
+                <ul>
+                    <li className="gender-setting">
+                        <div className="male-icon" />
+                        <Button className={gender === "male" ? "active" : ""} variant="contained" onClick={() => { setGender("male"); setError("") }}>Male</Button>
+                        <div className="female-icon" />
+                        <Button className={gender === "female" ? "active" : ""} variant="contained" onClick={() => { setGender("female"); setError("") }}>Female</Button>
+                    </li>
+                    <li className="selectColor">
+                        <h2> Select Skin Color</h2>
+                        <CompactPicker colors={skinTones} color={color} onChangeComplete={setColor} />
+                    </li>
+                </ul>
+                <Button className="create-model" style={
+                    {
+                        "position": "relative",
+                        "top": "400px",
+                        "left": "25%",
+                        "width": "12em"
+                    }} onClick={() => { createModel() }}>Create Model</Button>
+                {error && <div style={{ position: "relative", top: "410px", color: 'red', textAlign: 'center' }}>{error}</div>}
             </div>
+            <ModelViewer props={{ gender: gender, color: color.hex, mode: "create" }} />
         </div>
     );
 }

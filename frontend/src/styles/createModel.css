@@ -1,6 +1,16 @@
 .CreateModel .ModelViewer {
     position: absolute;
     top: 10%;
+    left: 15%;
+}
+
+.CreateModel h1 {
+    margin-left: 40%;
+    margin-right: 40%;
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .CreateModel svg {
@@ -16,7 +26,7 @@
     --border-radius-main: 10px;
     --border-radius-icon: 50px;
     position: relative;
-    left: 35%;
+    left: 50%;
     top: 55px;
     width: 512px;
     height: 512px;
@@ -48,7 +58,7 @@ For some reason the style doesnt apply from the file so I inlined it
     padding: 0;
     position: absolute;
 }
-/* 
+
 .CreateModel .selectColor {
     position: relative;
     display: block;
@@ -57,32 +67,13 @@ For some reason the style doesnt apply from the file so I inlined it
     left: 25%;
     top: 55px;
 }
- */
+
 .CreateModel li {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     left: 10px;
 }
-
-/*.CreateModel .selectColor {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 245px;
-    left: 25%;
-    top: 55px;
-}
- */
-
-/*.CreateModel .selectColor {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 245px;
-    left: 25%;
-    top: 55px;
-}*/
 
 .CreateModel .gender-setting {
     margin-top: 50px;
@@ -146,16 +137,13 @@ For some reason the style doesnt apply from the file so I inlined it
     height: 300px;
     width: 400px;
     border-radius: 50%;
+    transition: all .7s;
+    top: 100%;
+    left: 100%;
 }
 
 .CreateModel Button:hover {
     color: #fff;
-}
-
-.CreateModel Button:before {
-    top: 100%;
-    left: 100%;
-    transition: all .7s;
 }
 
 .CreateModel Button:hover:before {

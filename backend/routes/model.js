@@ -23,25 +23,19 @@ req: {
     userId: userId
     model: {
         gender: MALE | FEMALE
-        head: head_svg_string,
-        leftArm: left_arm_svg_string,
-        rightArm: right_armsvg_string, 
-        torso: torso_svg_string,
-        legs: legs_svg_string,
-        feet: feet_svg_string,
-        fullBody: 
+        fullBody: full_body_svg_string
     }
 }
 */
 router.put("/create", async (req, res) => {
-    const { userId, modelData } = req.body;
+    const { userId, model } = req.body;
     try {
         const user = await UserModel.findById(userId)
         if (!user) {
             console.log("user doesn't exist");
             return res.status(404).json({ message: "User not found" })
         }
-        user.bodyModel = modelData;
+        user.bodyModel = model;
 
         await user.save();
 
@@ -57,19 +51,13 @@ req: {
     userid: user_id
     model: {
         gender: MALE | FEMALE
-        head: head_svg_string,
-        leftArm: left_arm_svg_string,
-        rightArm: right_arm_svg_string, 
-        torso: torso_svg_string,
-        legs: legs_svg_string,
-        feet: feet_svg_string,
         fullBody: full_body_svg_string
     }
 }
 */
 router.put("/update", async (req, res) => {
     const { userId, newModel } = req.body;
-    try {
+     try {
         const user = await UserModel.findById(userId)
         if (!user) {
             return res.status(404).json({ message: "user not found" })

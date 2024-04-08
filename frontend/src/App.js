@@ -5,7 +5,6 @@ import './styles/App.css';
 import './styles/Home.css';
 import './styles/navigation.css';
 
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import ChangePassword from "./pages/change_pw.js";
@@ -22,6 +21,7 @@ import AddClothing from './pages/add_clothing.js';
 
 import Profile from "./pages/profile";
 import ToBeMade from './pages/toBeMade';
+
 
 function App() {
   return (
