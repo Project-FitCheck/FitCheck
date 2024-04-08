@@ -6,7 +6,7 @@ import NavBar from '../components/navbar.js';
 function AddClothing() {
     return (
         <div className='MainPage'>
-            <NavBar />
+            <NavBar page="home"/>
             <PageNav />
             <Add />
         </div>)

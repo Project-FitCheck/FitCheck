@@ -76,6 +76,12 @@
 	justify-content: space-evenly;
 }
 
+@media(max-width: 1000px) {
+	.navigation div a{
+		font-size: 0;
+	}
+}
+
 .navigation div a:hover {
 	background-color: var(--purple);
 }

@@ -46,13 +46,13 @@ function Profile() {
   return (
 
     <div className="profile">
-      <NavBar />
+      <NavBar page="profile"/>
       <div className="settings">
         <h1>SETTINGS</h1>
       </div>
 
       <div className="account">
-        <h1>ACCOUNT INFORMATION</h1>
+        <h2>ACCOUNT INFORMATION</h2>
       </div>
 
       <div className="profileImg">
@@ -85,13 +85,13 @@ function Profile() {
       </div>
 
       <div className="themes">
-        <h2>THEMES</h2>
+        <h3>THEMES</h3>
         <p>Customize the theme of your FitCheck</p>
         <Select options={options} />
       </div>
 
       <div className="privacy">
-        <h2>PRIVACY</h2>
+        <h3>PRIVACY</h3>
         <p>Make your account public or private. It's public by default.</p>
         <Switch />
       </div>
