@@ -3,7 +3,7 @@ import './styles/index.css';
 
 import './styles/App.css';
 import './styles/Home.css';
-import './styles/NavBar.css';
+import './styles/navigation.css';
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -40,7 +40,7 @@ function App() {
           <Route path='/locker' element={<Outfits />}/>
           <Route path='/profile' element={<Profile />} />
           <Route path='/change-password' element={<ChangePassword />} />
-          <Route path='/search' element={<ToBeMade />} />
+          <Route path='/catalog' element={<ToBeMade />} />
           <Route path='/model' element={<Model />} />
           <Route path='/model/edit' element={<EditModel />} />
           <Route path='/model/create' element={<CreateModel />} />

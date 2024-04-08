@@ -75,7 +75,6 @@ function CreateModel() {
                         "width": "12em"
                     }} onClick={() => { createModel() }}>Create Model</Button>
                 {error && <div style={{ position: "relative", top: "410px", color: 'red', textAlign: 'center' }}>{error}</div>}
-
             </div>
             <ModelViewer props={{ gender: gender, color: color.hex, mode: "create" }} />
         </div>
