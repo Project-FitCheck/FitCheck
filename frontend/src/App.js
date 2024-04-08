@@ -21,7 +21,7 @@ import Outfits from './pages/locker.js';
 import AddClothing from './pages/add_clothing.js';
 
 import Profile from "./pages/profile";
-import ToBeMade from './pages/toBeMade';
+import Catalogue from './pages/catalogue';
 
 function App() {
   return (
@@ -40,11 +40,11 @@ function App() {
           <Route path='/locker' element={<Outfits />}/>
           <Route path='/profile' element={<Profile />} />
           <Route path='/change-password' element={<ChangePassword />} />
-          <Route path='/search' element={<ToBeMade />} />
+          <Route path='/search' element={<Catalogue />} />
           <Route path='/model' element={<Model />} />
           <Route path='/model/edit' element={<EditModel />} />
           <Route path='/model/create' element={<CreateModel />} />
-          <Route path='/toBeMade' element={<ToBeMade />} />
+          <Route path='/catalogue' element={<Catalogue />} />
           <Route path='/' element={<Navigate to="/signup" />} />
 
         </Routes>
