@@ -97,7 +97,7 @@ function Profile() {
       </div>
 
       <div className="logOut">
-        <button onClick={() => { window.localStorage.removeItem("userId"); navigate("/") }}>Logout</button>
+        <button className="logOutBtn" onClick={() => { window.localStorage.removeItem("userId"); navigate("/") }}>Logout</button>
       </div>
 
     </div>
