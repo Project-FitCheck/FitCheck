@@ -16,10 +16,11 @@ const NavBar = (props) => {
 
     return (
         <div className="navigation">
-            <div className='logo'>
+            
+            <a className='logo' href="/closet">
                 <img src='/fitcheck_logo_192_v2.png' alt="fitcheck logo"></img>
                 <h1>FitCheck</h1>
-            </div>
+            </a>
 
             <Stack spacing={2} direction="column">
                 <Navb page={home} link="/closet" img="/icons/icons8-home-logo.svg" name="HOME"/>
