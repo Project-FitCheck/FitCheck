@@ -9,7 +9,7 @@ function Model() {
 	//const [modelData, setModelData] = useState({gender: "", head: "", torso: "", leftArm: "", righttArm: "", legs: "", feet: "", fullBody: ""});
 	return (<div className='MainPage'>
 		<div className='Model'>
-			<NavBar />
+			<NavBar page="model"/>
 			<ModelNav props={{ mode: "view" }} />
 			<div className='viewModel'>
 				<ModelViewer props={{mode: "view"}} />

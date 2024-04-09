@@ -9,3 +9,9 @@ h1 {
 	color: var(--orange);
 	font-weight: normal;
 }
+
+h2 {
+	color: var(--orange);
+	font-weight: normal;
+	font-size: 2em;
+}

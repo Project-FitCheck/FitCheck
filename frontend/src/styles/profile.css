@@ -1,5 +1,5 @@
 .profile {
-	width: 75%;
+	width: 80%;
 	float: right;
 }
 
@@ -15,14 +15,16 @@
 	margin: auto;
 	text-align: center;
 	padding: 10px;
-	background-color: lightgray;
+	background-color: white;
+	border-bottom: solid black 1px;
 }
 
 .profile .account {
 	margin: auto;
 	max-width: 500px;
 	text-align: center;
-	background-color: lightgray;
+	/* 	background-color: ;
+ */
 	border-radius: 8px;
 }
 
@@ -37,8 +39,7 @@
 	border: 3px solid lightgray;
 }
 
-.profile .profileImg
-p {
+.profile .profileImg p {
 	margin: auto;
 }
 
@@ -102,38 +103,39 @@ p {
 
 .profile .themes h2 {
 	margin: 10px 0px 10px 0px;
-  }
-  
-  .profile .themes p {
-	padding-bottom: 10px;
-  }
+}
 
-.profile Select{
-  height: 2x;
+.profile .themes p {
+	padding-bottom: 10px;
+}
+
+.profile Select {
+	height: 2x;
 }
 
 .profile .privacy {
-  margin: auto;
-  max-width: 500px;
-  text-align: center;
-  border-radius: 8px;
-  padding-top: 1px;
-  background-color: lightgray;
+	margin: auto;
+	max-width: 500px;
+	text-align: center;
+	border-radius: 8px;
+	padding-top: 1px;
+	background-color: lightgray;
 }
 
 .profile .privacy h2 {
 	margin: 10px 0px 10px 0px;
-  }
+}
 
-.profile .logOut{
+.profile .logOut {
 	margin: auto;
 	text-align: center;
 	padding: 20px;
-  }
-  
-.profile .logout, .logOutBtn {
+}
+
+.profile .logout,
+.logOutBtn {
 	margin-top: 10px;
 	border-radius: 12px;
 	cursor: pointer;
 	padding: 5px;
-  }
+}
