@@ -2,6 +2,8 @@ import React from 'react';
 import '../styles/PageNav.css';
 import '../styles/Highlight.css';
 import NavButton from './NavButton';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 function PageNav(props) {
 	let closetPage = false;
@@ -14,8 +16,8 @@ function PageNav(props) {
 
 	return (<div className='PageNav'>
 		<div className='PageNavButtons'>
-			<a href="/closet/add"><button className='addClothes'>+</button></a>
-			<a href="/ToBeMade"><button className='searchButton'><img src="/icons/icons8-search-purple.svg" alt="closet search"></img></button></a>
+			<Button className='addClothes' component={Link} to="/closet/add">+</Button>
+			<Button className='searchButton' component={Link} to="/ToBeMade"><img src="/icons/icons8-search-purple.svg" alt="closet search"></img></Button>
 		</div>
 		<ul>
 			<NavButton name={'CLOTHES'} link={"/closet"} page={closetPage}/>
