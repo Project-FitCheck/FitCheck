@@ -4,6 +4,8 @@ import { userRouter } from "./routes/users.js";
 import { lockerRouter } from './routes/locker.js';
 import { closetRouter } from './routes/closet.js';
 import { modelRouter } from './routes/model.js';
+import { clothesRouter } from './routes/clothes.js';
+import { outfitsRouter } from './routes/outfits.js';
 import connectDB from './config/db.js';
 
 
@@ -16,6 +18,8 @@ app.use("/user", userRouter);
 app.use("/closet", closetRouter);
 app.use("/locker", lockerRouter);
 app.use("/model", modelRouter);
+app.use("/clothes", clothesRouter);
+app.use("/outfits", outfitsRouter)
 
 const port = process.env.PORT || 3001;
 connectDB();
