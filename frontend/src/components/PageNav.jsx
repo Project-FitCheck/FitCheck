@@ -13,17 +13,30 @@ function PageNav(props) {
 	} else if (props.page === 'outfit') {
 		lockerPage = true;
 	}
-
-	return (<div className='PageNav'>
+	if(props.page === "clothes") {
+		return (<div className='PageNav'>
 		<div className='PageNavButtons'>
 			<Button className='addClothes' component={Link} to="/closet/add">+</Button>
-			<Button className='searchButton' component={Link} to="/ToBeMade"><img src="/icons/icons8-search-purple.svg" alt="closet search"></img></Button>
+			<Button className='searchButton' component={Link} to="/closet/search"><img src="/icons/icons8-search-purple.svg" alt="closet search"></img></Button>
 		</div>
 		<ul>
 			<NavButton name={'CLOTHES'} link={"/closet"} page={closetPage}/>
 			<NavButton name={'OUTFITS'} link={"/locker"} page={lockerPage}/>
 		</ul>
 	</div>);
+	}else if(props.page === "outfit") {
+		return (<div className='PageNav'>
+		<div className='PageNavButtons'>
+			<Button className='addClothes addOutfit' component={Link} to="/model">+</Button>
+			<Button className='searchButton' component={Link} to="/locker/search"><img src="/icons/icons8-search-purple.svg" alt="closet search"></img></Button>
+		</div>
+		<ul>
+			<NavButton name={'CLOTHES'} link={"/closet"} page={closetPage}/>
+			<NavButton name={'OUTFITS'} link={"/locker"} page={lockerPage}/>
+		</ul>
+	</div>);
+	}
+	
 }
 
 export default PageNav;
