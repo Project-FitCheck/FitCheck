@@ -6,7 +6,7 @@ import OutfitCard from './OutfitCard';
 import axios from 'axios';
 
 const Outfits = () => {
-	const [outfit, updateOutfit] = useState(/* [
+	const [outfit, updateOutfit] = useState([]/* [
 		{id: 1, fitName: "gym", pic: "/images/testImage-locker.png", description: "This is my gym outfit"},
 		{id: 2, fitName: "work", pic: "/images/testImage-locker.png", description: "This is my work outfit"},
 		{id: 3, fitName: "fun", pic: "/images/testImage-locker.png", description: "This is my fun outfit"},
