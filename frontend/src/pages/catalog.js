@@ -35,7 +35,7 @@ function Catalog() {
 		<div className="catalog">
 			<NavBar />
 
-			<h1>Catalogue</h1>
+			<h1>Catalog</h1>
 			<form>
 				<div className="search">
 					<label>What are you looking for?</label>

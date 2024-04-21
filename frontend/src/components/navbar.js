@@ -19,9 +19,9 @@ const NavBar = () => {
                     className={location.pathname === isActive('/model') ? 'active' : 'inactive'}
                     variant="contained"><img src="/icons/icons8-user-50.png" alt="model icon"></img> Model </Button>
 
-                <Button component={Link} to={"/search"}
-                    className={location.pathname === isActive('/search') ? 'active' : 'inactive'}
-                    variant="contained"><img src="/icons/icons8-search.svg" alt="search icon"></img> Search</Button>
+                <Button component={Link} to={"/catalog"}
+                    className={location.pathname === isActive('/catalog') ? 'active' : 'inactive'}
+                    variant="contained"><img src="/icons/icons8-search.svg" alt="search icon"></img> Catalog</Button>
 
                 <Button component={Link} to={"/profile"}
                     className={location.pathname === isActive('/profile') ? 'active' : 'inactive'}
