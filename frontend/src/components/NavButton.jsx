@@ -1,5 +1,7 @@
 import React from "react";
 import '../styles/NavButton.css';
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 function NavButton(props) {
 	let isHighlighted;
@@ -8,7 +10,7 @@ function NavButton(props) {
 	} else {
 		isHighlighted = "noHighlight";
 	}
-	return (<li className="NavButton"><a className={isHighlighted} href={props.link}>{props.name}</a></li>);
+	return (<li className="NavButton"><Button className={isHighlighted} component={Link} to={props.link}>{props.name}</Button></li>);
 }
 
 export default NavButton;

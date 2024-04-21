@@ -3,8 +3,7 @@ import './styles/index.css';
 
 import './styles/App.css';
 import './styles/Home.css';
-import './styles/NavBar.css';
-
+import './styles/navigation.css';
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -22,6 +21,7 @@ import AddClothing from './pages/add_clothing.js';
 
 import Profile from "./pages/profile";
 import Catalog from './pages/catalog.js';
+
 
 function App() {
   return (
@@ -41,6 +41,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/change-password' element={<ChangePassword />} />
           <Route path='/search' element={<Catalog />} />
+          <Route path='/catalog' element={<ToBeMade />} />
           <Route path='/model' element={<Model />} />
           <Route path='/model/edit' element={<EditModel />} />
           <Route path='/model/create' element={<CreateModel />} />
