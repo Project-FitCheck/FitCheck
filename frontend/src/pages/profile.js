@@ -91,8 +91,8 @@ function Profile() {
       </div>
 
       <div className="privacy">
-        <h2>PRIVACY</h2>
-        <p>Make your account public or private. It's public by default.</p>
+        <h2>PRIVATE MODE</h2>
+        <p>Toggle this to make your account private.</p>
         <Switch />
       </div>
 

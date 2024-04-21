@@ -1,0 +1,32 @@
+.catalog {
+    width: 75%;
+    float: right;
+}
+
+.search {
+    text-align: center;
+    padding: 15px;
+    color: #F98D5F;
+    font-size: large;
+}
+
+.search input {
+    padding: 10px;
+    margin-top: 15px;
+    width: 25%;
+}
+
+.srchButton {
+    text-align: center;
+}
+
+.srchButton button {
+    cursor: pointer;
+    background-color: #4A4B9C;
+    color: #F98D5F;
+    border: none;
+    border-radius: 15px;
+    padding: 14px 20px;
+    width: 25%;
+    font-size: large;
+}
