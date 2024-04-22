@@ -16,6 +16,8 @@ function Catalog() {
 		{ value: 'blue', label: 'Blue' },
 		{ value: 'yellow', label: 'Yellow' },
 		{ value: 'green', label: 'Green' },
+		{ value: 'pink', label: 'Pink' },
+		{ value: 'purple', label: 'Purple'}
 	]
 	const type = [
 		{ value: 'all', label: 'All' },
@@ -26,12 +28,18 @@ function Catalog() {
 		{ value: 'shorts', label: 'Shorts' },
 		{ value: 'jeans', label: 'Jeans' },
 		{ value: 'sweatpants', label: 'Sweatpants' },
+		{ value: 'longpants', label: 'Long pants' },
+		{ value: 'dress', label: 'Dress' }
 	]
 	const style = [
 		{ value: 'all', label: 'All' },
 		{ value: 'casual', label: 'Casual' },
 		{ value: 'streetwear', label: 'Streetwear' },
-		{ value: 'formal', label: 'Formal' }
+		{ value: 'formal', label: 'Formal' },
+		{ value: 'business', label: 'Business' },
+		{ value: 'gym', label: 'Gym' },
+		{ value: 'fun', label: 'Fun' },
+		{ value: 'lazy', label: 'Lazy' }
 	]
 
 	const [catalog, updateCatalog] = useState([
