@@ -12,11 +12,13 @@
 .oldPW {
     text-align: center;
     padding-bottom: 10px;
+    color: orange;
 }
 
 .newPW {
     text-align: center;
     padding-top: 10px;
+    color: orange;
 }
 
 .buttons {
