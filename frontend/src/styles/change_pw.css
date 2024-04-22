@@ -30,12 +30,14 @@
     margin-right: 10px;
     padding: 5px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .goBackBtn {
     margin-left: 10px;
     padding: 5px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .messagePopup, h2, p, .closeBtn {
