@@ -32,7 +32,10 @@ function Catalog() {
 		<div className="catalog">
 			<NavBar />
 
-			<h1>Catalog</h1>
+			<div className="title">
+				<h1>Catalog</h1>
+			</div>
+
 			<form>
 				<div className="search">
 					<label>What are you looking for?</label>
