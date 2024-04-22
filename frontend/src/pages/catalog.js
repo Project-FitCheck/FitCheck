@@ -8,17 +8,37 @@ import '../styles/CardArea.css';
 
 function Catalog() {
 
-	const options = [
-		{ value: 'color', label: 'Color' },
-		{ value: 'type', label: 'Type' },
-		{ value: 'style', label: 'Style' }
-	  ]
+	const color = [
+		{ value: 'all', label: 'All' },
+		{ value: 'black', label: 'Black' },
+		{ value: 'white', label: 'White' },
+		{ value: 'red', label: 'Red' },
+		{ value: 'blue', label: 'Blue' },
+		{ value: 'yellow', label: 'Yellow' },
+		{ value: 'green', label: 'Green' },
+	]
+	const type = [
+		{ value: 'all', label: 'All' },
+		{ value: 't-shirt', label: 'T-shirt' },
+		{ value: 'long-sleeve', label: 'Long-sleeve' },
+		{ value: 'sweater', label: 'Sweater' },
+		{ value: 'jacket', label: 'Jacket' },
+		{ value: 'shorts', label: 'Shorts' },
+		{ value: 'jeans', label: 'Jeans' },
+		{ value: 'sweatpants', label: 'Sweatpants' },
+	]
+	const style = [
+		{ value: 'all', label: 'All' },
+		{ value: 'casual', label: 'Casual' },
+		{ value: 'streetwear', label: 'Streetwear' },
+		{ value: 'formal', label: 'Formal' }
+	]
 
 	const [catalog, updateCatalog] = useState([
-		{id: 1, fitName: "gym", pic: "/images/testImage-locker.png", description: "This is my gym outfit"},
-		{id: 2, fitName: "work", pic: "/images/testImage-locker.png", description: "This is my work outfit"},
-		{id: 3, fitName: "fun", pic: "/images/testImage-locker.png", description: "This is my fun outfit"},
-		{id: 4, fitName: "lazy", pic: "/images/testImage-locker.png", description: "This is my lazy outfit"},
+		{ id: 1, fitName: "gym", pic: "/images/testImage-locker.png", description: "This is my gym outfit" },
+		{ id: 2, fitName: "work", pic: "/images/testImage-locker.png", description: "This is my work outfit" },
+		{ id: 3, fitName: "fun", pic: "/images/testImage-locker.png", description: "This is my fun outfit" },
+		{ id: 4, fitName: "lazy", pic: "/images/testImage-locker.png", description: "This is my lazy outfit" },
 	]);
 
 	useEffect(() => {
@@ -43,15 +63,38 @@ function Catalog() {
 				<h1>Catalog</h1>
 			</div>
 
-			<form>
-				<div className="list">
-					<h2>What are you looking for?</h2>
-					<Select options={options}/>
+			<div className="greeting">
+				<h2>What are you looking for?</h2>
+			</div>
+
+			<div className="list-container">
+
+				<div className="search">
+					<input type="text" placeholder="Enter keyword"></input>
 				</div>
-			</form>
+
+				<div className="listColor">
+					<h3>Color</h3>
+					<Select options={color} />
+				</div>
+
+				<div className="listType">
+					<h3>Type</h3>
+					<Select options={type} />
+				</div>
+
+				<div className="listStyle">
+					<h3>Style</h3>
+					<Select options={style} />
+				</div>
+
+				<div className="filterBtn">
+					<button className="filter">Filter</button>
+				</div>
+			</div>
 
 			<div className="CardArea">
-				{catalog.map(catalog=> {
+				{catalog.map(catalog => {
 					return (<ClothesCard
 						key={catalog._id}
 						id={catalog._id}

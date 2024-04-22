@@ -56,7 +56,6 @@ function App() {
           <Route path='/model' element={<Model />} />
           <Route path='/model/edit' element={<EditModel />} />
           <Route path='/model/create' element={<CreateModel />} />
-          <Route path='/toBeMade' element={<ToBeMade />} />
 
         </Routes>
       </BrowserRouter>

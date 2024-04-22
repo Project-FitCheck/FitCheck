@@ -86,7 +86,7 @@ function Profile() {
 
       <div className="privacy">
         <h3>PRIVATE MODE</h3>
-        <p>Toggle this to make your account private.</p>
+        <p>Toggle this to make your account private</p>
         <Switch />
       </div>
 
