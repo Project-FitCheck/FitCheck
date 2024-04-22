@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
             return res.status(404).json({ message: "User's locker doesn't exist" });
         }
         const outfits = await locker.get("outfits");
-        return res.status(200).json({ outfits });
+        return res.status(200).json(outfits);
     } catch (err) {
         console.log(err);
         return res.status(500).json({ message: "Internal server error: " + err });
