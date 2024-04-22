@@ -1,0 +1,13 @@
+.SearchFilters{
+    display: flex;
+    flex-direction: row;
+}
+
+.SearchFilters .dropdown{
+    padding: 20px;
+}
+
+.dropdown-menu{
+    display: flex;
+    flex-direction: column;
+}

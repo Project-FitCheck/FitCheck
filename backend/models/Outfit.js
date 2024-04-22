@@ -10,6 +10,8 @@ const OutfitSchema = new mongoose.Schema({
     jewelery: [ClothesModel.schema],
     tags: [String],
     image: Buffer,
+    fitName: String,
+    description: String
 });
 
 const OutfitModel = mongoose.model('Outfit', OutfitSchema);
