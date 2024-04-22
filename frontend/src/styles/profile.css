@@ -107,6 +107,8 @@
 
 .profile .themes p {
 	padding-bottom: 10px;
+	font-size: large;
+	margin: 0px;
 }
 
 .profile Select {
