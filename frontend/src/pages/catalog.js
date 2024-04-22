@@ -43,10 +43,13 @@ function Catalog() {
 	]
 
 	const [catalog, updateCatalog] = useState([
-		{ id: 1, fitName: "gym", pic: "/images/testImage-locker.png", description: "This is my gym outfit" },
-		{ id: 2, fitName: "work", pic: "/images/testImage-locker.png", description: "This is my work outfit" },
-		{ id: 3, fitName: "fun", pic: "/images/testImage-locker.png", description: "This is my fun outfit" },
-		{ id: 4, fitName: "lazy", pic: "/images/testImage-locker.png", description: "This is my lazy outfit" },
+		{ id: 1, itemName: "redShirt1", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt"},
+		{ id: 2, itemName: "bluePant1", pic: "/images/panttestImage-closet.png", description: "This is a blue pant", color: "Blue", type: "pant"},
+		{ id: 3, itemName: "redShirt2", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt"},
+		{ id: 4, itemName: "bluePant2", pic: "/images/panttestImage-closet.png", description: "This is a blue pant", color: "Blue", type: "pant"},
+		{ id: 5, itemName: "redShirt3", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt"},
+		{ id: 6, itemName: "bluePant3", pic: "/images/panttestImage-closet.png", description: "This is a blue pant", color: "Blue", type: "pant"},
+		{ id: 7, itemName: "redShirt4", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt"}
 	]);
 
 	useEffect(() => {
