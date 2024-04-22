@@ -3,8 +3,7 @@ import './styles/index.css';
 
 import './styles/App.css';
 import './styles/Home.css';
-import './styles/NavBar.css';
-
+import './styles/navigation.css';
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 

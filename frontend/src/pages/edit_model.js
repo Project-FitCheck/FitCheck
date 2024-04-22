@@ -42,7 +42,6 @@ function EditModel() {
             try {
                 const userId = window.localStorage.getItem("userId");
                 const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/model/?userId=" + userId);
-
                 setGender(response.data.gender);
                 setColor(response.data.fullBody)
             } catch (error) {
@@ -69,7 +68,7 @@ function EditModel() {
         <div className="MainPage">
             <ModelNav props={{mode: "edit"}} />
             <div className="EditModel">
-                <NavBar />
+                <NavBar page="model"/>
                 <div className="ModelSettings">
                     <ul>
                         <li className="gender-setting">

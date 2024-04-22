@@ -5,7 +5,7 @@ import NavBar from '../components/navbar.js';
 
 function Locker() {
 	return <div className='MainPage'>
-		<NavBar />
+		<NavBar page="home"/>
 		<PageNav page={'outfit'} />
 		<Outfits />
 	</div>
