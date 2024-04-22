@@ -12,5 +12,28 @@ router.get("/", async (req, res) => {
         return res.status(500).json({ message: "Internal server error: " + err });
     }
 });
+/*
+req{
+    clothing: {
+        productTitle: ,
+        type: ,
+        color: ,
+        description: ,
+        style: ,
+        gender: ,
+        image: ,
+    }
+}
+*/
+router.post("/", async (req, res) => {
+    const clothing = req.body;
+    try {
+        //const clothes = ClothesModel;
+        await ClothesModel.create(clothing);
+        res.status(200).json({message: "successfully added clothing to catalog"})
+    } catch (err) {
+        res.json(500).json({ message: "internal server error" });
+    }
+})
 
 export { router as clothesRouter }

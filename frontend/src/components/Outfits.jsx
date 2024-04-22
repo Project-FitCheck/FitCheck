@@ -18,7 +18,7 @@ const Outfits = () => {
             try {
                 const userId = window.localStorage.getItem("userId");
                 const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/locker/?userId=" + userId);
-                updateOutfit(response);
+                updateOutfit(response.data);
             } catch (error) {
                 console.error("Error fetching outfits from locker:", error);
             }

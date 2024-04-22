@@ -18,7 +18,7 @@ function EditModel() {
     const skinTones = [
         "#F9E4D6",
         "#F3D9C6",
-        "#ffdbc5", // Lightest
+        "#ffdbc5",
         "#EBCBB6",
         "#DEBFA7",
         "#e0ac69",
