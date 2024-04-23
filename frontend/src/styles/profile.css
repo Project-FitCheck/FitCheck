@@ -15,7 +15,7 @@
 	margin: auto;
 	text-align: center;
 	padding: 10px;
-	background-color: white;
+	background-color: var(--gray);
 	border-bottom: solid black 1px;
 }
 
@@ -107,6 +107,8 @@
 
 .profile .themes p {
 	padding-bottom: 10px;
+	font-size: large;
+	margin: 0px;
 }
 
 .profile Select {
@@ -126,12 +128,16 @@
 	margin: 10px 0px 10px 0px;
 }
 
+.profile .privacy p {
+	font-size: large;
+}
+
 .profile .logOut {
 	margin: auto;
 	text-align: center;
 	padding: 20px;
 }
-
+  
 .profile .logOut .logOutBtn {
 	margin-top: 10px;
 	border-radius: 12px;

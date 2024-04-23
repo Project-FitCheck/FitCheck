@@ -21,7 +21,7 @@ import Outfits from './pages/locker.js';
 import AddClothing from './pages/add_clothing.js';
 
 import Profile from "./pages/profile";
-import ToBeMade from './pages/toBeMade';
+import Catalog from './pages/catalog';
 import SearchLocker from './pages/search_outfits.js';
 
 
@@ -47,13 +47,15 @@ function App() {
 
           <Route path='/profile' element={<Profile />} />
           <Route path='/change-password' element={<ChangePassword />} />
-
-          <Route path='/catalog' element={<ToBeMade />} />
+          <Route path='/catalog' element={<Catalog />} />
+          <Route path='/model' element={<Model />} />
+          <Route path='/model/edit' element={<EditModel />} />
+          <Route path='/model/create' element={<CreateModel />} />
+          <Route path='/' element={<Navigate to="/signup" />} />
 
           <Route path='/model' element={<Model />} />
           <Route path='/model/edit' element={<EditModel />} />
           <Route path='/model/create' element={<CreateModel />} />
-          <Route path='/toBeMade' element={<ToBeMade />} />
 
         </Routes>
       </BrowserRouter>
