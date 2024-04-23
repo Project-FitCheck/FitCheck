@@ -128,6 +128,10 @@
 	margin: 10px 0px 10px 0px;
 }
 
+.profile .privacy p {
+	font-size: large;
+}
+
 .profile .logOut {
 	margin: auto;
 	text-align: center;

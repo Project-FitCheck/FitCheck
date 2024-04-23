@@ -42,25 +42,17 @@ function Catalog() {
 		{ value: 'lazy', label: 'Lazy' }
 	]
 
-	/*const [colorFilter, setColorFilter] = useState('All');
-	const [typeFilter, setTypeFilter] = useState('All');
-	const [styleFilter, setStyleFilter] = useState('All');*/
+	/*const [colorFilters, setColorFilters] = useState([]);
+	const [typeFilters, setTypeFilters] = useState([]);
+	const [styleFilters, setStyleFilters] = useState([]);*/
 
-	const [catalog, updateCatalog] = useState([
-		{ id: 1, itemName: "redShirt1", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt" },
-		{ id: 2, itemName: "bluePant1", pic: "/images/panttestImage-closet.png", description: "This is a blue pant", color: "Blue", type: "pant" },
-		{ id: 3, itemName: "redShirt2", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt" },
-		{ id: 4, itemName: "bluePant2", pic: "/images/panttestImage-closet.png", description: "This is a blue pant", color: "Blue", type: "pant" },
-		{ id: 5, itemName: "redShirt3", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt" },
-		{ id: 6, itemName: "bluePant3", pic: "/images/panttestImage-closet.png", description: "This is a blue pant", color: "Blue", type: "pant" },
-		{ id: 7, itemName: "redShirt4", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt" }
-	]);
+	const [catalog, updateCatalog] = useState([]);
 
 	useEffect(() => {
 		async function getCatalog() {
 			try {
 				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
-				const response = await axios.get("https://localhost:3001/");
+				const response = await axios.get("https://localhost:3001/clothes/");
 				updateCatalog(response);
 				console.log(response);
 			} catch (error) {
@@ -71,20 +63,38 @@ function Catalog() {
 	}, []);
 
 	/*const applyFilters = () => {
-		let filteredCatalog = catalog.filter(item => {
-			console.log("Color Filter:", colorFilter);
-			console.log("Type Filter:", typeFilter);
-			console.log("Style Filter:", styleFilter);
-			console.log("Item Color:", item.color);
-			console.log("Item Type:", item.type);
-			console.log("Item Style:", item.style);
+		var temp = [];
+		var temp2 = [];
+		var i, j;
+		//check filter color first
+		for (i = 0; i < catalog.length; i++) {
+			for (j = 0; j < colorFilters.length; j++) {
+				if (outfits[i].color === colorFilters[j]) {
+					temp.push(outfits[i]);
+				}
+			}
+		}
 
-			return (colorFilter === 'All' || item.color === colorFilter.value) &&
-				   (typeFilter === 'All' || item.type === typeFilter.value) &&
-				   (styleFilter === 'All' || item.style === styleFilter.value);
-		});
-		updateCatalog(filteredCatalog);
-	};*/
+		//check filter type next
+		for (i = 0; i < temp.length; i++) {
+			for (j = 0; j < typeFilters.length; j++) {
+				if (temp[i].type === typeFilters[j]) {
+					temp2.push(temp[i]);
+				}
+			}
+		}
+		temp = [];
+		//check filter style last
+		for (i = 0; i < temp2.length; i++) {
+			for (j = 0; j < styleFilters.length; j++) {
+				if (temp2[i].type === styleFilters[j]) {
+					temp.push(temp2[i]);
+				}
+			}
+		}
+
+		setFilteredClothes(temp);
+	}*/
 
 	return (
 		<div className="catalog">
@@ -106,19 +116,19 @@ function Catalog() {
 
 				<div className="listColor">
 					<h3>Color</h3>
-					{/*<Select options={color} onChange={(selectedOption) => setColorFilter(selectedOption.value)} />*/}
+					{/*<Select options={color} onChange={(selectedOption) => setColorFilters(selectedOption.value)} />*/}
 					<Select options={color} />
 				</div>
 
 				<div className="listType">
 					<h3>Type</h3>
-					{/*<Select options={type} onChange={(selectedOption) => setTypeFilter(selectedOption.value)} />*/}
+					{/*<Select options={type} onChange={(selectedOption) => setTypeFilters(selectedOption.value)} />*/}
 					<Select options={type} />
 				</div>
 
 				<div className="listStyle">
 					<h3>Style</h3>
-					{/*<Select options={style} onChange={(selectedOption) => setStyleFilter(selectedOption.value)} />*/}
+					{/*<Select options={style} onChange={(selectedOption) => setStyleFilters(selectedOption.value)} />*/}
 					<Select options={style} />
 				</div>
 
