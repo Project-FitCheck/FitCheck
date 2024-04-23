@@ -42,9 +42,10 @@ function Catalog() {
 		{ value: 'lazy', label: 'Lazy' }
 	]
 
-	/*const [colorFilters, setColorFilters] = useState([]);
+	const [colorFilters, setColorFilters] = useState([]);
 	const [typeFilters, setTypeFilters] = useState([]);
-	const [styleFilters, setStyleFilters] = useState([]);*/
+	const [styleFilters, setStyleFilters] = useState([]);
+	const [filteredClothes, setFilteredClothes] = useState([]);
 
 	const [catalog, updateCatalog] = useState([]);
 
@@ -53,8 +54,8 @@ function Catalog() {
 			try {
 				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
 				const response = await axios.get("https://localhost:3001/clothes/");
-				updateCatalog(response);
-				console.log(response);
+				updateCatalog(response.data);
+				console.log(response.data);
 			} catch (error) {
 				console.error("Error fetching clothes from closet:", error);
 			}
@@ -62,15 +63,15 @@ function Catalog() {
 		getCatalog();
 	}, []);
 
-	/*const applyFilters = () => {
+	const applyFilters = () => {
 		var temp = [];
 		var temp2 = [];
 		var i, j;
 		//check filter color first
 		for (i = 0; i < catalog.length; i++) {
 			for (j = 0; j < colorFilters.length; j++) {
-				if (outfits[i].color === colorFilters[j]) {
-					temp.push(outfits[i]);
+				if (catalog[i].color === colorFilters[j]) {
+					temp.push(catalog[i]);
 				}
 			}
 		}
@@ -94,7 +95,7 @@ function Catalog() {
 		}
 
 		setFilteredClothes(temp);
-	}*/
+	}
 
 	return (
 		<div className="catalog">
@@ -116,25 +117,25 @@ function Catalog() {
 
 				<div className="listColor">
 					<h3>Color</h3>
-					{/*<Select options={color} onChange={(selectedOption) => setColorFilters(selectedOption.value)} />*/}
-					<Select options={color} />
+					<Select options={color} onChange={(selectedOption) => setColorFilters(selectedOption.value)} />
+					{/*<Select options={color} />*/}
 				</div>
 
 				<div className="listType">
 					<h3>Type</h3>
-					{/*<Select options={type} onChange={(selectedOption) => setTypeFilters(selectedOption.value)} />*/}
-					<Select options={type} />
+					<Select options={type} onChange={(selectedOption) => setTypeFilters(selectedOption.value)} />
+					{/*<Select options={type} />*/}
 				</div>
 
 				<div className="listStyle">
 					<h3>Style</h3>
-					{/*<Select options={style} onChange={(selectedOption) => setStyleFilters(selectedOption.value)} />*/}
-					<Select options={style} />
+					<Select options={style} onChange={(selectedOption) => setStyleFilters(selectedOption.value)} />
+					{/*<Select options={style} />*/}
 				</div>
 
 				<div className="filterBtn">
-					{/*<button className="filter" onClick={applyFilters}>Filter</button>*/}
-					<button className="filter">Filter</button>
+					<button className="filter" onClick={applyFilters}>Filter</button>
+					{/*<button className="filter">Filter</button>*/}
 				</div>
 			</div>
 
