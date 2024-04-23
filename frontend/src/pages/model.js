@@ -6,6 +6,7 @@ import ModelViewer from '../components/model_viewer';
 import NavBar from '../components/navbar.js';
 import axios from 'axios';
 import { Button } from '@mui/material';
+import OutfitSettingsModal from '../components/OutfitSettingsModal.jsx';
 
 var SHIRT, PANTS, SHOES;
 
@@ -41,10 +42,15 @@ function Clothes(props) {
 		setShoes(clothing.filter((x) => x.type === "shoes"));
 	}, [clothing]); // Run whenever clothing state changes
 
-/* 	useEffect(() => {
-		setRerender({});
-	},[shirtIndex, pantsIndex, shoesIndex])
- */
+	useEffect(() => {
+		SHIRT = shirts[shirtIndex.current];
+		PANTS = pants[pantsIndex.current];
+		SHOES = shoes[shoesIndex.current];
+	}, [shirts, pants, shoes, shirtIndex, pantsIndex, shoesIndex, clothing]);
+	/* 	useEffect(() => {
+			setRerender({});
+		},[shirtIndex, pantsIndex, shoesIndex])
+	 */
 	function cycleShirt() {
 		shirtIndex.current = (shirtIndex.current + 1) % shirts.length;
 	}
@@ -57,22 +63,49 @@ function Clothes(props) {
 		shoesIndex.current = (shoesIndex.current + 1) % shoes.length;
 	}
 
-	SHIRT = shirts[shirtIndex.current];
-	PANTS = pants[pantsIndex.current];
-	SHOES = shoes[shoesIndex.current];
+	const maleShirtStyle = {
+		height: 'fit-content',
+		width: 'fit-content',
+		top: '145px',
+		left: '-1.25%',
+		margin: 'inherit',
+		zIndex: '2',
+		position: 'relative'
+	};
+
+	const malePantStyle = {
+		height: 'fit-content',
+		width: 'fit-content',
+		top: '100px',
+		left: '-1%',
+		margin: '0 auto',
+		zIndex: '1',
+		position: 'relative'
+	};
+
+	const maleShoeStyle = {
+		height: 'fit-content',
+		width: 'fit-content',
+		top: '80px',
+		margin: 'inherit',
+		zIndex: '1',
+		position: 'relative'
+	}
 
 	if (props.gender === "male") {
 		return (
 			<>
-			{console.log(shirtIndex.current)}
 				{shirts.length > 0 && (
-					<div className='male_shirt' onClick={cycleShirt()} dangerouslySetInnerHTML={{ __html: shirts[shirtIndex.current]?.image }} />
+					<div className='male_shirt' onClick={cycleShirt()} dangerouslySetInnerHTML={{ __html: shirts[shirtIndex.current]?.image }}
+						style={maleShirtStyle} />
 				)}
 				{pants.length > 0 && (
-					<div className='male_pants' onClick={cyclePants()} dangerouslySetInnerHTML={{ __html: pants[pantsIndex.current]?.image }} />
+					<div className='male_pants' onClick={cyclePants()} dangerouslySetInnerHTML={{ __html: pants[pantsIndex.current]?.image }}
+						style={malePantStyle} />
 				)}
 				{shoes.length > 0 && (
-					<div className='male_shoes' onClick={cycleShoes()} dangerouslySetInnerHTML={{ __html: shoes[shoesIndex.current]?.image }} />
+					<div className='male_shoes' onClick={cycleShoes()} dangerouslySetInnerHTML={{ __html: shoes[shoesIndex.current]?.image }}
+						style={maleShoeStyle} />
 				)}
 			</>
 		);
@@ -96,12 +129,10 @@ function Clothes(props) {
 function Model() {
 	const [model, setModel] = useState("");
 	const [modelGender, setModelGender] = useState("");
-	const [description, setDescription] = useState("");
-	const [fitName, setFitName] = useState("");
-	const [shirt, setShirt] = useState("")
-	const [pants, setPants] = useState("")
-	const [shoes, setShoes] = useState("")
-
+	const [shirt, setShirt] = useState("");
+	const [pants, setPants] = useState("");
+	const [shoes, setShoes] = useState("");
+	const [showModal, setShowModal] = useState(false);
 	const ref = useRef(null);
 
 	const [image, takeScreenshot] = useScreenshot();
@@ -124,26 +155,14 @@ function Model() {
 		getModel();
 	}, []);
 
+
 	console.log(SHIRT)
 	console.log(PANTS)
 	console.log(SHOES)
-/*  	setShirt(SHIRT);
-	setPants(PANTS);
-	setShoes(SHOES); */
 
 
-	async function saveOutfit() {
-		getImage();
-		try {
-			const userId = window.localStorage.getItem("userId");
-			const Outfit = { torso: SHIRT, legs: PANTS, shoes: SHOES, image: image };
-			console.log(image);
-			await axios.post(/* "https://fitcheck-backend-7mo5.onrender.com */"http://localhost:3001/locker/add", { userId, Outfit })
+	const handleClose = () => { setShowModal(false) };
 
-		} catch (err) {
-			console.error(err);
-		}
-	}
 
 	return (<div className='MainPage'>
 		<div className='Model'>
@@ -153,16 +172,14 @@ function Model() {
 				<Clothes gender={modelGender} />
 				<ModelViewer props={{ mode: "view", model: model }} />
 			</div>
-			<div className='outfitSettings'>
-				<div className='shirtContainer' >Top: {shirt}</div>
-				<div className='pantsContainer' >Pants: {pants}</div>
-				<div className='shoesContainer' >Shoes: {shoes}</div>
-				<label htmlFor>Fit Name</label>
-				<input value={fitName} onChange={(e) => setFitName(e.target.value)} name="fitName" id="fitName" placeholder="..." />
-				<label htmlFor>Description</label>
-				<input value={description} onChange={(e) => setDescription(e.target.value)} name="description" id="description" placeholder="..." />
-				<Button onClick={saveOutfit}>Save Outfit</Button>
-			</div>
+			<Button onClick={() => {
+				setShowModal(true);
+				getImage();
+				setShirt(SHIRT.productTitle);
+				setPants(PANTS.productTitle);
+				setShoes(SHOES.productTitle);
+			}}>Save Outfit</Button>
+			{showModal && <OutfitSettingsModal pic={image} shirt={shirt} pants={pants} shoes={shoes} handleClose={handleClose} />}
 		</div>
 	</div>);
 }

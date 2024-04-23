@@ -9,7 +9,7 @@ const OutfitSchema = new mongoose.Schema({
     shoes: ClothesModel.schema,
     jewelery: [ClothesModel.schema],
     tags: [String],
-    image: Buffer,
+    image: String,
     fitName: String,
     description: String
 });

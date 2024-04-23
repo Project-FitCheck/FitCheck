@@ -14,6 +14,7 @@
 	position: relative;
 	width: fit-content;
 	margin: 0 auto;
+	margin-top: -600px;
 }
 
 .outfit{
@@ -26,8 +27,6 @@
 	display: flex;
 	flex-direction: column ;
 	max-width: fit-content;
-	margin-top: -40%;
-	margin-left: 70%;
 }
 
 .outfit .female_shirt{
@@ -60,35 +59,35 @@
 	position: absolute;
 }
 
-.outfit .male_shirt{
+/* .outfit .male_shirt{
 	height: 205px;
-	width: 185px;
+	width: fit-content;
 	top: 230px;
 	left: 42.6%;
 	margin: inherit;
 	z-index: 2;
-	position: absolute;
-}
-
+	position: relative;
+} */
+/* 
 .outfit .male_pants{
 	height: 300px;
-	width: 8%;
+	width: fit-content;
 	top: 415px;
 	left: 45.75%;
 	margin: inherit;
 	z-index: 1;
-	position: absolute;
-}
+	position: relative;
+} */
 
-.outfit .male_shoes{
+/* .outfit .male_shoes{
 	height: 70px;
-	width: 6.5%;
-	top: 705px;
-	left: 46.5%;
+	width: fit-content;
+	top: 110px;
+	right: -1%;
 	margin: inherit;
 	z-index: 1;
-	position: absolute;
-}
+	position: relative;
+} */
 
 .Model .chevron-left{
 	height: 15px;
