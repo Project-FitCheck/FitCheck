@@ -1,13 +1,23 @@
 .Add {
+	width: 80%;
 	height: 86%;
 	margin: 0;
 	padding: 0;
+	top: 14%;
+	position: fixed;
+}
+
+.Add .FindAddItem {
+	display: flex;
+	justify-content: space-evenly;
+	height: 100%;
 }
 
 .Add form {
-	padding: 50px;
-	margin: 0 auto;
+	margin: 8% 0;
 	width: 20%;
+	padding: 50px;
+	height: 47%;
 	display: flex;
 	flex-direction: column;
 	font-size: 1.5em;
@@ -35,12 +45,21 @@
 	border-radius: 5px;
 }
 
-.Add button {
-	font-size: 1em;
+.Add form button {
+	width: 50%;
+	font-size: 20px;
 	color: var(--orange);
 	margin: 0 auto;
 	padding: 10px;
 	background-color: var(--purple);
-	width: 50%;
 	border-radius: 5px;
+}
+
+.Add .clothingFromCatalog {
+	/* outline: 1px solid red; */
+	width: 50%;
+	height: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

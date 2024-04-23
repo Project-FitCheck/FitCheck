@@ -1,0 +1,38 @@
+.AddClothingItem, .NoItemsFound{
+	/* outline: 1px solid blue; */
+	width: 60%;
+	height: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: var(--gray);
+	border-radius: 20px;
+}
+
+.NoItemsFound {
+	color: var(--orange);
+	font-size: 150%;
+}
+
+.AddClothingItem button {
+	font-size: 20px;
+	color: var(--orange);
+	margin: 0 auto;
+	padding: 10px;
+	background-color: var(--purple);
+	border-radius: 5px;
+	width: 25%;
+	margin-top: 20px;
+}
+
+.clothingItem {
+	height: 50%;
+}
+
+.clothingItem svg {
+	height: 100%;
+	width: auto;
+}
