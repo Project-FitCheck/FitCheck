@@ -12,11 +12,13 @@
 .oldPW {
     text-align: center;
     padding-bottom: 10px;
+    color: orange;
 }
 
 .newPW {
     text-align: center;
     padding-top: 10px;
+    color: orange;
 }
 
 .buttons {
@@ -28,12 +30,14 @@
     margin-right: 10px;
     padding: 5px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .goBackBtn {
     margin-left: 10px;
     padding: 5px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .messagePopup, h2, p, .closeBtn {

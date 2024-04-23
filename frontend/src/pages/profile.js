@@ -2,17 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
 import Switch from '@mui/material/Switch';
-import Select from 'react-select';
 import 'reactjs-popup/dist/index.css';
 import "../styles/profile.css"
 import NavBar from '../components/navbar.js';
 import { useNavigate } from "react-router-dom"
-
-const options = [
-  { value: 'light', label: 'Light (Default)' },
-  { value: 'dark', label: 'Dark' },
-  { value: 'midnight', label: 'Midnight' }
-]
+import DarkMode from '../components/DarkMode.jsx';
 
 function Profile() {
   const navigate = useNavigate();
@@ -85,19 +79,19 @@ function Profile() {
       </div>
 
       <div className="themes">
-        <h3>THEMES</h3>
-        <p>Customize the theme of your FitCheck</p>
-        <Select options={options} />
+        <h3>DARK MODE</h3>
+        <p>Toggle this to enable dark mode</p>
+        <DarkMode />
       </div>
 
       <div className="privacy">
-        <h3>PRIVACY</h3>
-        <p>Make your account public or private. It's public by default.</p>
+        <h3>PRIVATE MODE</h3>
+        <p>Toggle this to make your account private</p>
         <Switch />
       </div>
 
       <div className="logOut">
-        <button onClick={() => { window.localStorage.removeItem("userId"); navigate("/") }}>Logout</button>
+        <button className="logOutBtn" onClick={() => { window.localStorage.removeItem("userId"); navigate("/") }}>Logout</button>
       </div>
 
     </div>

@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 const Clothes = () => {
-	const [clothing, updateClothing] = useState([]/* [
+	const [clothing, updateClothing] = useState( [
 		{ id: 1, itemName: "redShirt1", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt"},
 		{ id: 2, itemName: "bluePant1", pic: "/images/panttestImage-closet.png", description: "This is a blue pant", color: "Blue", type: "pant"},
 		{ id: 3, itemName: "redShirt2", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt"},
@@ -16,7 +16,7 @@ const Clothes = () => {
 		{ id: 5, itemName: "redShirt3", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt"},
 		{ id: 6, itemName: "bluePant3", pic: "/images/panttestImage-closet.png", description: "This is a blue pant", color: "Blue", type: "pant"},
 		{ id: 7, itemName: "redShirt4", pic: "/images/shirttestImage-closet.png", description: "This is a red shirt", color: "Red", type: "shirt"}
-	] */)
+	] )
 
 	useEffect(() => {
         async function getClothes() {
