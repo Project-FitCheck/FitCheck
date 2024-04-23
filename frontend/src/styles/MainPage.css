@@ -8,3 +8,8 @@
 	position: sticky;
 	top: 0;
 }
+
+.MainPage h1 {
+	margin: 0;
+	padding: 20px 0;
+}

@@ -7,7 +7,7 @@ function AddClothing() {
     return (
         <div className='MainPage'>
             <NavBar page="home"/>
-            <PageNav />
+            <PageNav page={'clothes'} />
             <Add />
         </div>)
 }
