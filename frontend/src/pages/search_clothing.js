@@ -58,7 +58,6 @@ const SearchCloset = () => {
                 }
             }
         }
-
         setFilteredClothing(temp);
     }
 
