@@ -14,32 +14,33 @@ function Catalog() {
 		{ value: 'white', label: 'White' },
 		{ value: 'red', label: 'Red' },
 		{ value: 'blue', label: 'Blue' },
-		{ value: 'yellow', label: 'Yellow' },
+		{ value: 'gray', label: 'Gray' },
 		{ value: 'green', label: 'Green' },
-		{ value: 'pink', label: 'Pink' },
-		{ value: 'purple', label: 'Purple' }
+		{ value: 'tan', label: 'Tan' },
+		{ value: 'cottoncandy', label: 'Cotton Candy' }
 	]
 	const type = [
 		{ value: 'all', label: 'All' },
-		{ value: 't-shirt', label: 'T-shirt' },
-		{ value: 'long-sleeve', label: 'Long-sleeve' },
+		{ value: 'shirt', label: 'Shirt' },
+		/*{ value: 'long-sleeve', label: 'Long-sleeve' },
 		{ value: 'sweater', label: 'Sweater' },
-		{ value: 'jacket', label: 'Jacket' },
+		{ value: 'jacket', label: 'Jacket' },*/
 		{ value: 'shorts', label: 'Shorts' },
-		{ value: 'jeans', label: 'Jeans' },
-		{ value: 'sweatpants', label: 'Sweatpants' },
-		{ value: 'longpants', label: 'Long pants' },
-		{ value: 'dress', label: 'Dress' }
+		/*{ value: 'jeans', label: 'Jeans' },
+		{ value: 'sweatpants', label: 'Sweatpants' },*/
+		{ value: 'pants', label: 'Pants' },
+		/*{ value: 'dress', label: 'Dress' },*/
+		{ value: 'shoes', label: 'Shoes' }
 	]
 	const style = [
 		{ value: 'all', label: 'All' },
 		{ value: 'casual', label: 'Casual' },
 		{ value: 'streetwear', label: 'Streetwear' },
-		{ value: 'formal', label: 'Formal' },
+		/*{ value: 'formal', label: 'Formal' },
 		{ value: 'business', label: 'Business' },
 		{ value: 'gym', label: 'Gym' },
 		{ value: 'fun', label: 'Fun' },
-		{ value: 'lazy', label: 'Lazy' }
+		{ value: 'lazy', label: 'Lazy' }*/
 	]
 
 	const [colorFilters, setColorFilters] = useState([]);
@@ -52,8 +53,8 @@ function Catalog() {
 	useEffect(() => {
 		async function getCatalog() {
 			try {
-				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
-				const response = await axios.get("https://localhost:3001/clothes/");
+				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
+				//const response = await axios.get("https://localhost:3001/clothes/");
 				updateCatalog(response.data);
 				console.log(response.data);
 			} catch (error) {
@@ -63,38 +64,60 @@ function Catalog() {
 		getCatalog();
 	}, []);
 
-	const applyFilters = () => {
+	const applyFilters = (e) => {
+		console.log(colorFilters)
+		console.log(typeFilters)
+		console.log(styleFilters)
+		console.log(genderFilters)
+
+		e.preventDefault();
+		setIsInitial(false);
 		var temp = [];
 		var temp2 = [];
-		var i, j;
+		var temp3 = [];
+		var temp4 = [];
+		var i;
 		//check filter color first
 		for (i = 0; i < catalog.length; i++) {
-			for (j = 0; j < colorFilters.length; j++) {
-				if (catalog[i].color === colorFilters[j]) {
-					temp.push(catalog[i]);
-				}
+			if (catalog[i].color === colorFilters) {
+				temp.push(catalog[i]);
 			}
 		}
-
+		console.log(temp);
 		//check filter type next
 		for (i = 0; i < temp.length; i++) {
-			for (j = 0; j < typeFilters.length; j++) {
-				if (temp[i].type === typeFilters[j]) {
-					temp2.push(temp[i]);
-				}
+			console.log(i, temp[i].type);
+			if (temp[i].type === typeFilters) {
+				console.log("TRUE");
+				temp2.push(temp[i]);
+			} else {
+				console.log("FALSE");
+				console.log(temp[i].type, "and", typeFilters);
 			}
 		}
-		temp = [];
-		//check filter style last
+		console.log(temp2);
+		//check filter style next
 		for (i = 0; i < temp2.length; i++) {
-			for (j = 0; j < styleFilters.length; j++) {
-				if (temp2[i].type === styleFilters[j]) {
-					temp.push(temp2[i]);
-				}
+			if (temp2[i].style === styleFilters) {
+				temp3.push(temp2[i]);
 			}
 		}
+		console.log(temp3);
 
-		setFilteredClothes(temp);
+		//check gender style next
+		for (i = 0; i < temp3.length; i++) {
+			if (temp3[i].gender === genderFilters) {
+				temp4.push(temp3[i]);
+			}
+		}
+		console.log(temp4);
+
+		if (temp4.length < 1) {
+			setIsActive(false)
+			return null;
+		}
+		setIsActive(true);
+		return setFilteredClothes(temp4[0]);
 	}
 
 	return (
@@ -140,16 +163,16 @@ function Catalog() {
 			</div>
 
 			<div className="CardArea">
-				{catalog.map(catalog => {
+				{filteredClothes.map(filteredClothes => {
 					return (<ClothesCard
-						key={catalog._id}
-						id={catalog._id}
-						itemName={catalog.productTitle}
-						pic={catalog.image}
-						description={catalog.description}
-						color={catalog.color}
-						type={catalog.type}
-						style={catalog.style}
+						key={filteredClothes._id}
+						id={filteredClothes._id}
+						itemName={filteredClothes.productTitle}
+						pic={filteredClothes.image}
+						description={filteredClothes.description}
+						color={filteredClothes.color}
+						type={filteredClothes.type}
+						style={filteredClothes.style}
 					/>)
 				}
 				)}
