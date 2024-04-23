@@ -14,15 +14,12 @@ function AddClothingItem(props) {
 				style: props.style,
 				image: props.image
 			}
-			await axios.post("http://localhost:3001/closet/add", {userId, clothingItem});
+			await axios.post("https://fitcheck-backend-7mo5.onrender.com/closet/add", {userId, clothingItem});
 		} catch (error) {
 			console.error(error);
 		}
 	}
-	console.log(props.initial)
-	if (props.initial === true) {
-		return null;
-	}
+	if (props.initial === true) { return null; }
 	if (props.show === false) {
 		return (
 			<div className='NoItemsFound'>
@@ -33,10 +30,7 @@ function AddClothingItem(props) {
 	} else {
 		return (
 			<div className='AddClothingItem'>
-				<div className='clothingItem' dangerouslySetInnerHTML={{__html: props.image}}>
-					{/* {svgLink} */}
-					{/* <img src={props.image} alt={props.description}></img> */}
-				</div>
+				<div className='clothingItem' dangerouslySetInnerHTML={{__html: props.image}}></div>
 				<button onClick={addToCloset}>ADD</button>
 			</div>
 		);

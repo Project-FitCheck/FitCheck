@@ -17,7 +17,7 @@ function Add() {
     useEffect(() => {
         async function getClothes() {
             try {
-                const response = await axios.get("http://localhost:3001/clothes/");
+                const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
                 updateClothing(response.data);
             } catch (error) {
                 console.error("Error fetching clothes from closet:", error);
@@ -27,11 +27,6 @@ function Add() {
     }, []);
 
 	const applyFilters = (e) => {
-		console.log(colorFilters)
-		console.log(typeFilters)
-		console.log(styleFilters)
-		console.log(genderFilters)
-
         e.preventDefault();
 		setIsInitial(false);
 		var temp = [];
@@ -45,35 +40,24 @@ function Add() {
                 temp.push(clothing[i]);
             }
         }
-		console.log(temp);
         //check filter type next
         for (i = 0; i < temp.length; i++) {
-			console.log(i, temp[i].type);
             if (temp[i].type === typeFilters) {
-				console.log("TRUE");
                 temp2.push(temp[i]);
-            } else {
-				console.log("FALSE");
-				console.log(temp[i].type, "and", typeFilters);
-			}
+            }
         }
-		console.log(temp2);
         //check filter style next
         for (i = 0; i < temp2.length; i++) {
             if(temp2[i].style === styleFilters) {
                 temp3.push(temp2[i]);
             }
         }
-		console.log(temp3);
-
 		//check gender style next
 		for (i = 0; i < temp3.length; i++) {
             if(temp3[i].gender === genderFilters) {
                 temp4.push(temp3[i]);
             }
         }
-		console.log(temp4);
-
 		if (temp4.length < 1) {
 			setIsActive(false)
 			return null;
