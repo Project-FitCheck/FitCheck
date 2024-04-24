@@ -16,17 +16,15 @@ function Clothes(props) {
 	const [pants, setPants] = useState([]);
 	const [shoes, setShoes] = useState([]);
 
-	const [, setRerender] = useState();
-
-	const shirtIndex = useRef(0);
-	const pantsIndex = useRef(0)
-	const shoesIndex = useRef(0);
+	const [shirtIndex, setShirtIndex] = useState(0);
+	const [pantsIndex, setPantsIndex] = useState(0)
+	const [shoesIndex, setShoesIndex] = useState(0);
 
 	useEffect(() => {
 		async function getClothing() {
 			try {
 				const userId = window.localStorage.getItem("userId");
-				const response = await axios.get(/* "https://fitcheck-backend-7mo5.onrender.com */ "http://localhost:3001/closet/?userId=" + userId);
+				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/closet/?userId=" + userId);
 				setClothing(response.data);
 			} catch (error) {
 				console.error(error);
@@ -37,37 +35,46 @@ function Clothes(props) {
 
 	useEffect(() => {
 		// Filter clothing after it has been updated
-		setShirts(clothing.filter((x) => x.type === "shirt"));
-		setPants(clothing.filter((x) => x.type === "pants"));
-		setShoes(clothing.filter((x) => x.type === "shoes"));
-	}, [clothing]); // Run whenever clothing state changes
+		setShirts(clothing.filter((x) => (x.type === "shirt") && (x.gender === props.gender)));
+		setPants(clothing.filter((x) => (x.type === "pants") && (x.gender === props.gender)));
+		setShoes(clothing.filter((x) => (x.type === "shoes") && (x.gender === props.gender)));
+	}, [clothing, props.gender]); // Run whenever clothing state changes
 
 	useEffect(() => {
-		SHIRT = shirts[shirtIndex.current];
-		PANTS = pants[pantsIndex.current];
-		SHOES = shoes[shoesIndex.current];
+		SHIRT = shirts[shirtIndex];
+		PANTS = pants[pantsIndex];
+		SHOES = shoes[shoesIndex];
 	}, [shirts, pants, shoes, shirtIndex, pantsIndex, shoesIndex, clothing]);
-	/* 	useEffect(() => {
-			setRerender({});
-		},[shirtIndex, pantsIndex, shoesIndex])
-	 */
-	function cycleShirt() {
-		shirtIndex.current = (shirtIndex.current + 1) % shirts.length;
+
+	function cycleShirtLeft() {
+		setShirtIndex(Math.abs(shirtIndex - 1) % shirts.length);
 	}
 
-	function cyclePants() {
-		pantsIndex.current = (pantsIndex.current + 1) % pants.length;
+	function cyclePantsLeft() {
+		setPantsIndex(Math.abs(pantsIndex - 1) % pants.length);
 	}
 
-	function cycleShoes() {
-		shoesIndex.current = (shoesIndex.current + 1) % shoes.length;
+	function cycleShoesLeft() {
+		setShoesIndex(Math.abs(shoesIndex - 1) % shoes.length);
+	}
+
+	function cycleShirtRight() {
+		setShirtIndex((shirtIndex + 1) % shirts.length);
+	}
+
+	function cyclePantsRight() {
+		setPantsIndex((pantsIndex + 1) % pants.length);
+	}
+
+	function cycleShoesRight() {
+		setShoesIndex((shoesIndex + 1) % shoes.length);
 	}
 
 	const maleShirtStyle = {
 		height: 'fit-content',
 		width: 'fit-content',
 		top: '145px',
-		left: '-1.25%',
+		left: '66%',
 		margin: 'inherit',
 		zIndex: '2',
 		position: 'relative'
@@ -77,7 +84,7 @@ function Clothes(props) {
 		height: 'fit-content',
 		width: 'fit-content',
 		top: '100px',
-		left: '-1%',
+		left: '72.5%',
 		margin: '0 auto',
 		zIndex: '1',
 		position: 'relative'
@@ -88,6 +95,7 @@ function Clothes(props) {
 		width: 'fit-content',
 		top: '80px',
 		margin: 'inherit',
+		left: "92.5%",
 		zIndex: '1',
 		position: 'relative'
 	};
@@ -95,8 +103,8 @@ function Clothes(props) {
 	const femaleShirtStyle = {
 		height: 'fit-content',
 		width: 'fit-content',
-		top: '145px',
-		left: '-1.25%',
+		top: '108px',
+		left: "72.5%",
 		margin: 'inherit',
 		zIndex: '2',
 		position: 'relative'
@@ -105,8 +113,8 @@ function Clothes(props) {
 	const femalePantStyle = {
 		height: 'fit-content',
 		width: 'fit-content',
-		top: '100px',
-		left: '-1%',
+		top: '90px',
+		left: "75%",
 		margin: '0 auto',
 		zIndex: '1',
 		position: 'relative'
@@ -115,46 +123,86 @@ function Clothes(props) {
 	const femaleShoeStyle = {
 		height: 'fit-content',
 		width: 'fit-content',
-		top: '80px',
+		top: '70px',
+		left: "92.5%",
 		margin: 'inherit',
 		zIndex: '1',
 		position: 'relative'
 	}
 
+	useEffect(() => {
+		var isShorts = document.getElementById('gray');
+		if (isShorts != null) {
+			isShorts.style["top"] = "-50px";
+		}
+		console.log(isShorts);
+	}, [pants])
+
+
 	if (props.gender === "male") {
 		return (
-			
 			<>
-				{shirts.length > 0 && (
-					<div className='male_shirt' onClick={cycleShirt()} dangerouslySetInnerHTML={{ __html: shirts[shirtIndex.current]?.image }}
-						style={maleShirtStyle} />
-				)}
-				{pants.length > 0 && (
-					<div className='male_pants' onClick={cyclePants()} dangerouslySetInnerHTML={{ __html: pants[pantsIndex.current]?.image }}
-						style={malePantStyle} />
-				)}
-				{shoes.length > 0 && (
-					<div className='male_shoes' onClick={cycleShoes()} dangerouslySetInnerHTML={{ __html: shoes[shoesIndex.current]?.image }}
-						style={maleShoeStyle} />
-				)}
+				<div className='ModelViewerContainer'>
+					<div className='leftButtons'>
+						<Button className='cycleShirtLeft' onClick={cycleShirtLeft}>&#60;</Button>
+						<Button className='cyclePantsLeft' onClick={cyclePantsLeft}>&#60;</Button>
+						<Button className='cycleShoesLeft' onClick={cycleShoesLeft}>&#60;</Button>
+					</div>
+					<div className='middle'>
+						{shirts.length > 0 && (
+							<div className='male_shirt' dangerouslySetInnerHTML={{ __html: shirts[shirtIndex]?.image }}
+								style={maleShirtStyle} />
+						)}
+						{pants.length > 0 && (
+							<div className='male_pants' dangerouslySetInnerHTML={{ __html: pants[pantsIndex]?.image }}
+								style={malePantStyle} />
+						)}
+						{shoes.length > 0 && (
+							<div className='male_shoes' dangerouslySetInnerHTML={{ __html: shoes[shoesIndex]?.image }}
+								style={maleShoeStyle} />
+						)}
+					</div>
+					<div className='rightButtons'>
+						<Button className='cycleShirtRight' onClick={cycleShirtRight}>&#62;</Button>
+						<Button className='cyclePantsRight' onClick={cyclePantsRight}>&#62;</Button>
+						<Button className='cycleShoesRight' onClick={cycleShoesRight}>&#62;</Button>
+					</div>
+				</div>
 			</>
 		);
 	} else {
 		return (
 			<>
+				<div className='ModelViewerContainer'>
+					<div className='leftButtons'>
+						<Button className='cycleShirtLeft' onClick={cycleShirtLeft}>&#60;</Button>
+						<Button className='cyclePantsLeft' onClick={cyclePantsLeft}>&#60;</Button>
+						<Button className='cycleShoesLeft' onClick={cycleShoesLeft}>&#60;</Button>
+					</div>
+					<div className='middle'>
+						{shirts.length > 0 && (
+							<div className='female_shirt' dangerouslySetInnerHTML={{ __html: shirts[shirtIndex]?.image }}
+								style={femaleShirtStyle} />
+						)}
+						{pants.length > 0 && (
+							<div className='female_pants' dangerouslySetInnerHTML={{ __html: pants[pantsIndex]?.image }}
+								style={femalePantStyle} />
+						)}
+						{shoes.length > 0 && (
+							<div className='female_shoes' dangerouslySetInnerHTML={{ __html: shoes[shoesIndex]?.image }}
+								style={femaleShoeStyle} />
+						)}
+					</div>
+					<div className='rightButtons'>
+						<Button className='cycleShirtRight' onClick={cycleShirtRight}>&#62;</Button>
+						<Button className='cyclePantsRight' onClick={cyclePantsRight}>&#62;</Button>
+						<Button className='cycleShoesRight' onClick={cycleShoesRight}>&#62;</Button>
+					</div>
+				</div>
 
-				{shirts.length > 0 && (
-					<div className='female_shirt' onClick={cycleShirt} dangerouslySetInnerHTML={{ __html: shirts[shirtIndex.current]?.image }} 
-					style={femaleShirtStyle}/>
-				)}
-				{pants.length > 0 && (
-					<div className='female_pants' onClick={cyclePants} dangerouslySetInnerHTML={{ __html: pants[pantsIndex.current]?.image }} 
-					style={femalePantStyle}/>
-				)}
-				{shoes.length > 0 && (
-					<div className='female_shoes' onClick={cycleShoes} dangerouslySetInnerHTML={{ __html: shoes[shoesIndex.current]?.image }} 
-					style={femaleShoeStyle}/>
-				)}
+
+
+
 			</>
 		);
 	}
@@ -177,7 +225,7 @@ function Model() {
 		async function getModel() {
 			try {
 				const userId = window.localStorage.getItem("userId");
-				const response = await axios.get(/* "https://fitcheck-backend-7mo5.onrender.com */"http://localhost:3001/model/?userId=" + userId);
+				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/model/?userId=" + userId);
 				response.data.fullBody.replace(/"/g, '');
 				setModel(response.data.fullBody);
 				setModelGender(response.data.gender);
@@ -191,21 +239,20 @@ function Model() {
 
 	const handleClose = () => { setShowModal(false) };
 
-
 	return (<div className='MainPage'>
+		<NavBar page="model" />
+		<ModelNav props={{ mode: "view" }} />
 		<div className='Model'>
-			<NavBar page="model" />
-			<ModelNav props={{ mode: "view" }} />
 			<div className='outfit' ref={ref}>
 				<Clothes gender={modelGender} />
 				<ModelViewer props={{ mode: "view", model: model }} />
 			</div>
-			<Button onClick={() => {
+			<Button className="saveFit" onClick={() => {
 				setShowModal(true);
 				getImage();
-				setShirt(SHIRT.productTitle);
-				setPants(PANTS.productTitle);
-				setShoes(SHOES.productTitle);
+				setShirt(SHIRT);
+				setPants(PANTS);
+				setShoes(SHOES);
 			}}>Save Outfit</Button>
 			{showModal && <OutfitSettingsModal pic={image} shirt={shirt} pants={pants} shoes={shoes} handleClose={handleClose} />}
 		</div>

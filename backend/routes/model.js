@@ -32,8 +32,7 @@ router.put("/create", async (req, res) => {
     try {
         const user = await UserModel.findById(userId)
         if (!user) {
-            console.log("user doesn't exist");
-            return res.status(404).json({ message: "User not found" })
+             return res.status(404).json({ message: "User not found" })
         }
         user.bodyModel = model;
 

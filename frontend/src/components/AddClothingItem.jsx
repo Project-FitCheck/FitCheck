@@ -9,15 +9,16 @@ function AddClothingItem(props) {
 		try {
 			const userId = window.localStorage.getItem("userId");
 			const clothingItem = {
-				productTitle: props.color + " " + props.type,
+				productTitle: props.gender + " " + props.color + " " + props.type,
 				type: props.type,
 				color: props.color,
 				description: props.description,
 				style: props.style,
-				image: props.image
+				image: props.image,
+				gender: props.gender
 			}
-			await axios.post("https://fitcheck-backend-7mo5.onrender.com/closet/add", {userId, clothingItem});
-			navigate("/closet")
+			await axios.post("https://fitcheck-backend-7mo5.onrender.com/closet/add", { userId, clothingItem });
+			navigate("/closet");
 		} catch (error) {
 			console.error(error);
 		}
@@ -33,7 +34,7 @@ function AddClothingItem(props) {
 	} else {
 		return (
 			<div className='AddClothingItem'>
-				<div className='clothingItem' dangerouslySetInnerHTML={{__html: props.image}}></div>
+				<div className='clothingItem' dangerouslySetInnerHTML={{ __html: props.image }}></div>
 				<button onClick={addToCloset}>ADD</button>
 			</div>
 		);

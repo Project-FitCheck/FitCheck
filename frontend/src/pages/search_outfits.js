@@ -44,7 +44,7 @@ const SearchLocker = () => {
         //check filter type next
         for (i = 0; i < temp.length; i++) {
             for (j = 0; j < typeFilters.length; j++) {
-                if(temp[i].type === typeFilters[j]) {
+                if (temp[i].type === typeFilters[j]) {
                     temp2.push(temp[i]);
                 }
             }
@@ -53,7 +53,7 @@ const SearchLocker = () => {
         //check filter style last
         for (i = 0; i < temp2.length; i++) {
             for (j = 0; j < styleFilters.length; j++) {
-                if(temp2[i].type === styleFilters[j]) {
+                if (temp2[i].type === styleFilters[j]) {
                     temp.push(temp2[i]);
                 }
             }

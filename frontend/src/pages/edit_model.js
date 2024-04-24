@@ -55,7 +55,6 @@ function EditModel() {
     async function saveModel() {
         const body = document.getElementById("Body").outerHTML;
         const userId = window.localStorage.getItem("userId");
-        console.log(body);
         const updatedModel = {
             userId: userId,
             newModel: { gender, fullBody: body }
@@ -66,9 +65,9 @@ function EditModel() {
 
     return (
         <div className="MainPage">
-            <ModelNav props={{mode: "edit"}} />
+            <ModelNav props={{ mode: "edit" }} />
             <div className="EditModel">
-                <NavBar page="model"/>
+                <NavBar page="model" />
                 <div className="ModelSettings">
                     <ul>
                         <li className="gender-setting">

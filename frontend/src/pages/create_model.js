@@ -41,7 +41,6 @@ function CreateModel() {
                     gender: gender, // Assuming gender is defined somewhere
                 }
             };
-            console.log(modelData); // Log before sending request
 
             await axios.put("https://fitcheck-backend-7mo5.onrender.com/model/create", modelData);
             navigate("/closet");

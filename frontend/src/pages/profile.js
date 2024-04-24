@@ -40,7 +40,7 @@ function Profile() {
   return (
 
     <div className="profile">
-      <NavBar page="profile"/>
+      <NavBar page="profile" />
       <div className="settings">
         <h1>SETTINGS</h1>
       </div>

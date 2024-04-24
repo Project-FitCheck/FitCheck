@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
     try {
         //const clothes = ClothesModel;
         await ClothesModel.create(clothing);
-        res.status(200).json({message: "successfully added clothing to catalog"})
+        res.status(200).json({ message: "successfully added clothing to catalog" })
     } catch (err) {
         res.json(500).json({ message: "internal server error" });
     }

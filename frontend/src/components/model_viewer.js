@@ -4,7 +4,7 @@ import { ReactComponent as FemaleModel } from "../assets/FitCheck_female_templat
 
 function ModelViewer({ props }) {
     const [modelGender] = useState(null)
-//"http://localhost:3001"; //https://fitcheck-backend-7mo5.onrender.com
+    //"http://localhost:3001"; //https://fitcheck-backend-7mo5.onrender.com
 
     if (props.mode === "create") {
         if (props.gender === "male") {
@@ -17,7 +17,7 @@ function ModelViewer({ props }) {
             </div>);
         }
     } else if (props.mode === "view") {
-        return (<div className="ModelViewer" dangerouslySetInnerHTML={{__html: props.model}}>
+        return (<div className="ModelViewer" dangerouslySetInnerHTML={{ __html: props.model }}>
         </div>)
     } else {
         return (

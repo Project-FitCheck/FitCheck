@@ -1,20 +1,33 @@
 .catalog {
     width: 80%;
     float: right;
+    position: relative;
 }
 
-.title {
-    margin: auto;
+.catalog .title {
     background-color: white;
     border-bottom: solid black 1px;
-    padding: 10px;
-}
-
-.list-container {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: fixed;
+    height: 14%;
+    width: 80%;
+    z-index: 1;
 }
 
-.listColor, .listType, .listStyle {
+.catalog .title h1 {
+    margin: auto;
+}
+
+.catalog .list-container {
+    display: flex;
+    margin-top: 50px;
+}
+
+.catalog .listColor,
+.catalog .listType,
+.catalog .listStyle {
     margin-right: 25px;
     width: 20%;
     text-align: center;
@@ -23,14 +36,14 @@
     font-size: large;
 }
 
-.filterBtn {
+.catalog .filterBtn {
     margin-right: 10px;
     width: 20%;
     text-align: center;
     padding: 15px;
 }
 
-.filter {
+.catalog .filter {
     margin-top: 70px;
     height: 30%;
     background-color: lightgray;
@@ -42,17 +55,17 @@
     border-radius: 10px;
 }
 
-.filter:hover {
-	background-color: var(--purple);
+.catalog .filter:hover {
+    background-color: var(--purple);
 }
 
-.search {
+.catalog .search {
     margin-right: 10px;
     width: 25%;
     padding: 15px;
 }
 
-.search input {
+.catalog .search input {
     margin-top: 70px;
     height: 30%;
     width: 75%;

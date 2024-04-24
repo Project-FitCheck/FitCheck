@@ -40,10 +40,10 @@ function App() {
 
           <Route path='/closet' element={<Closet />} />
           <Route path='/closet/add' element={<AddClothing />} />
-          <Route path='/closet/search' element={<SearchCloset/>}/>
+          <Route path='/closet/search' element={<SearchCloset />} />
 
-          <Route path='/locker' element={<Outfits />}/>
-          <Route path='/locker/search' element={<SearchLocker/>}/>
+          <Route path='/locker' element={<Outfits />} />
+          <Route path='/locker/search' element={<SearchLocker />} />
 
           <Route path='/profile' element={<Profile />} />
           <Route path='/change-password' element={<ChangePassword />} />

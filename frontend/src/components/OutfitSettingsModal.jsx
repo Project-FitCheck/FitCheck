@@ -11,8 +11,9 @@ const OutfitSettingsModal = ({ pic, shirt, pants, shoes, handleClose }) => {
 	async function saveOutfit() {
 		try {
 			const userId = window.localStorage.getItem("userId");
-			const Outfit = { torso: shirt, legs: pants, shoes: shoes, image: pic };
-			await axios.post(/* "https://fitcheck-backend-7mo5.onrender.com */"http://localhost:3001/locker/add", { userId, Outfit })
+			const Outfit = { head: {}, torso: { shirt }, legs: { pants }, socks: {}, shoes: { shoes }, tags: [""], image: pic, fitName: fitName, description: description };
+			await axios.post("https://fitcheck-backend-7mo5.onrender.com/locker/add", { userId, Outfit });
+			handleClose();
 
 		} catch (err) {
 			console.error(err);
@@ -21,22 +22,29 @@ const OutfitSettingsModal = ({ pic, shirt, pants, shoes, handleClose }) => {
 
 	return (
 		<div className='ModalBackground'>
-			{console.log(pic)}
 			<div className='Modal'>
 				<button className="ModalClose" onClick={() => handleClose()}>x</button>
 				<div className="ModalMain">
-					<div className="ModalImage">
-						<img src={pic} width={280} alt="" className="ModalPic" />
+					<div className="ModalImage" style={{ overflow: "hidden" }}>
+						<img src={pic} width={500} alt="" className="ModalPic" />
 					</div>
 					<div className='outfitSettings'>
-						<div className='shirtContainer' >Top: {shirt}</div>
-						<div className='pantsContainer' >Pants: {pants}</div>
-						<div className='shoesContainer' >Shoes: {shoes}</div>
+						<div className='shirtContainer' >Top: {shirt.productTitle}
+							<div dangerouslySetInnerHTML={{ __html: shirt.image }} />
+						</div>
+
+						<div className='pantsContainer' >Pants: {pants.productTitle}
+							<div dangerouslySetInnerHTML={{ __html: pants.image }} />
+						</div>
+
+						<div className='shoesContainer' >Shoes: {shoes.productTitle}
+							<div dangerouslySetInnerHTML={{ __html: shoes.image }} />
+						</div>
 						<label htmlFor>Fit Name</label>
 						<input value={fitName} onChange={(e) => setFitName(e.target.value)} name="fitName" id="fitName" placeholder="..." />
 						<label htmlFor>Description</label>
 						<input value={description} onChange={(e) => setDescription(e.target.value)} name="description" id="description" placeholder="..." />
-						<Button onClick={saveOutfit}>Confirm Save Outfit</Button>
+						<Button class="confirmSave" onClick={saveOutfit}>Confirm Save Outfit</Button>
 					</div>
 					<button className="ModalLike">&hearts;</button>
 				</div>

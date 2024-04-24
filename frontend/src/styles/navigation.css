@@ -56,7 +56,7 @@
 	top: -5%;
 }
 
-.navigation div{
+.navigation div {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -81,16 +81,16 @@
 	justify-content: space-evenly;
 }
 
-.navigation div a:hover{
+.navigation div a:hover {
 	cursor: pointer;
 }
 
-.nagivation span{
+.nagivation span {
 	display: none;
 }
 
 @media(max-width: 1000px) {
-	.navigation div a{
+	.navigation div a {
 		font-size: 0;
 	}
 }

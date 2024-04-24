@@ -54,8 +54,9 @@ function Catalog() {
 		async function getCatalog() {
 			try {
 				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
-				//const response = await axios.get("https://localhost:3001/clothes/");
+				//const response = await axios.get("http://localhost:3001/clothes/");
 				updateCatalog(response.data);
+				setFilteredClothes(response.data);
 			} catch (error) {
 				console.error("Error fetching clothes from closet:", error);
 			}
@@ -103,63 +104,64 @@ function Catalog() {
 	}
 
 	return (
-		<div className="catalog">
+		<>
 			<NavBar />
+			<div className="catalog">
+				<div className="title">
+					<h1>Catalog</h1>
+				</div>
 
-			<div className="title">
-				<h1>Catalog</h1>
+				<div className="greeting">
+					<h2>What are you looking for?</h2>
+				</div>
+
+				<div className="list-container">
+
+					<div className="search">
+						<input type="text" placeholder="Enter keyword"></input>
+					</div>
+
+					<div className="listColor">
+						<h3>Color</h3>
+						<Select options={color} onChange={(selectedOption) => setColorFilters(selectedOption.value)} />
+						{/*<Select options={color} />*/}
+					</div>
+
+					<div className="listType">
+						<h3>Type</h3>
+						<Select options={type} onChange={(selectedOption) => setTypeFilters(selectedOption.value)} />
+						{/*<Select options={type} />*/}
+					</div>
+
+					<div className="listStyle">
+						<h3>Style</h3>
+						<Select options={style} onChange={(selectedOption) => setStyleFilters(selectedOption.value)} />
+						{/*<Select options={style} />*/}
+					</div>
+
+					<div className="filterBtn">
+						<button className="filter" onClick={applyFilters}>Filter</button>
+						{/*<button className="filter">Filter</button>*/}
+					</div>
+				</div>
+
+				<div className="CardArea">
+					{filteredClothes.map(filteredClothes => {
+						return (<ClothesCard
+							key={filteredClothes._id}
+							id={filteredClothes._id}
+							itemName={filteredClothes.productTitle}
+							pic={filteredClothes.image}
+							description={filteredClothes.description}
+							color={filteredClothes.color}
+							type={filteredClothes.type}
+							style={filteredClothes.style}
+						/>)
+					}
+					)}
+				</div>
 			</div>
-
-			<div className="greeting">
-				<h2>What are you looking for?</h2>
-			</div>
-
-			<div className="list-container">
-
-				<div className="search">
-					<input type="text" placeholder="Enter keyword"></input>
-				</div>
-
-				<div className="listColor">
-					<h3>Color</h3>
-					<Select options={color} onChange={(selectedOption) => setColorFilters(selectedOption.value)} />
-					{/*<Select options={color} />*/}
-				</div>
-
-				<div className="listType">
-					<h3>Type</h3>
-					<Select options={type} onChange={(selectedOption) => setTypeFilters(selectedOption.value)} />
-					{/*<Select options={type} />*/}
-				</div>
-
-				<div className="listStyle">
-					<h3>Style</h3>
-					<Select options={style} onChange={(selectedOption) => setStyleFilters(selectedOption.value)} />
-					{/*<Select options={style} />*/}
-				</div>
-
-				<div className="filterBtn">
-					<button className="filter" onClick={applyFilters}>Filter</button>
-					{/*<button className="filter">Filter</button>*/}
-				</div>
-			</div>
-
-			<div className="CardArea">
-				{filteredClothes.map(filteredClothes => {
-					return (<ClothesCard
-						key={filteredClothes._id}
-						id={filteredClothes._id}
-						itemName={filteredClothes.productTitle}
-						pic={filteredClothes.image}
-						description={filteredClothes.description}
-						color={filteredClothes.color}
-						type={filteredClothes.type}
-						style={filteredClothes.style}
-					/>)
-				}
-				)}
-			</div>
-		</div>
+		</>
 	);
 }
 

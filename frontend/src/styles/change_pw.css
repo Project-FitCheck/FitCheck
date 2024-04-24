@@ -5,7 +5,7 @@
     padding-top: 300px;
 }
 
-.changePW h1{
+.changePW h1 {
     margin-top: 0;
 }
 
@@ -40,7 +40,10 @@
     cursor: pointer;
 }
 
-.messagePopup, h2, p, .closeBtn {
+.messagePopup,
+h2,
+p,
+.closeBtn {
     text-align: center;
 }
 

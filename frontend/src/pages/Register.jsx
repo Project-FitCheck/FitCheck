@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { useCookies } from "react-cookie"
 import '../styles/Signup.css'
 
-export default function Register (props) {
+export default function Register(props) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [username, setUsername] = useState("");
@@ -13,7 +13,7 @@ export default function Register (props) {
     const [, setError] = useState("");
     const [, setCookies] = useCookies(["access_token"]);
     const navigate = useNavigate()
-    
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(firstName, lastName, username, password, email)
@@ -51,28 +51,29 @@ export default function Register (props) {
             setError("An error occurred. Please try again later.");
         }
     };
-    
-    return(
+
+    return (
         <div className="auth-from-container">
+            <img src='/fitcheck_logo_192_v2.png' alt="fitcheck logo"></img>
             <h1>FitCheck</h1>
-        <form className ="register-form"onSubmit={handleSubmit}>
-            <label htmlFor>First name</label>
-            <input value ={firstName} onChange ={(e)=> setFirstName(e.target.value)}name="firstname" id="firstname" placeholder="first name"/>
+            <form className="register-form" onSubmit={handleSubmit}>
+                <label htmlFor>First name</label>
+                <input value={firstName} onChange={(e) => setFirstName(e.target.value)} name="firstname" id="firstname" placeholder="first name" />
 
-            <label htmlFor>Last name</label>
-            <input value ={lastName} onChange ={(e)=> setLastName(e.target.value)}name="lastname" id="lastname" placeholder="last name"/>
+                <label htmlFor>Last name</label>
+                <input value={lastName} onChange={(e) => setLastName(e.target.value)} name="lastname" id="lastname" placeholder="last name" />
 
-            <label htmlFor>username</label>
-            <input value ={username} onChange ={(e)=> setUsername(e.target.value)}name="username" id="username" placeholder="username"/>
+                <label htmlFor>username</label>
+                <input value={username} onChange={(e) => setUsername(e.target.value)} name="username" id="username" placeholder="username" />
 
-            <label htmlFor="email"> Email </label>
-            <input value={email} onChange ={(e)=> setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email"/>
-           
-            <label htmlFor="password"> Password </label>
-            <input value={password} onChange ={(e)=> setPassword(e.target.value)} type="password" placeholder="**********" id="password" name="password"/>
-            <button type="submit">Create</button>
-        </form>
-        <button className="link-btn" onClick={()=> props.onFormSwitch('login')}>Already have an account? Login here</button>
+                <label htmlFor="email"> Email </label>
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
+
+                <label htmlFor="password"> Password </label>
+                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="**********" id="password" name="password" />
+                <button type="submit">Create</button>
+            </form>
+            <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here</button>
         </div>
     )
 }

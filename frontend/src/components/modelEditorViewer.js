@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import '../styles/modelEditor.css';
 import PartViewer from './partViewer';
 
-function ModelEditor({prop}) {
+function ModelEditor({ prop }) {
     const ref = useRef(null);
     const part = prop;
 

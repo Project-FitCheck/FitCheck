@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom"
 import { useCookies } from "react-cookie"
 import '../styles/Login.css'
 
-export default function Login (props) {
+export default function Login(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [, setError] = useState('');
-    const [,setCookies] = useCookies (["access_token"]);
+    const [, setCookies] = useCookies(["access_token"]);
     const navigate = useNavigate();
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post("https://fitcheck-backend-7mo5.onrender.com/user/login", {
@@ -33,18 +33,19 @@ export default function Login (props) {
             setError("An error occurred. Please try again later.");
         }
     }
-    return(
+    return (
         <div className="auth-from-container">
+            <img src='/fitcheck_logo_192_v2.png' alt="fitcheck logo"></img>
             <h1>FitCheck</h1>
-        <form className ="login-form" onSubmit={handleSubmit}>
-            <label htmlFor="Username"> Username </label>
-            <input value={username} onChange ={(e)=> setUsername(e.target.value)}type="username" placeholder="username" id="username" name="username"/>
-           
-            <label htmlFor="password"> Password </label>
-            <input value={password} onChange ={(e)=> setPassword(e.target.value)}type="password" placeholder="**********" id="password" name="password"/>
-            <button type="submit">Login</button>
-        </form>
-        <button className="link-btn" onClick={()=> props.onFormSwitch('register')}>Don't have an account? Register here</button>
+            <form className="login-form" onSubmit={handleSubmit}>
+                <label htmlFor="Username"> Username </label>
+                <input value={username} onChange={(e) => setUsername(e.target.value)} type="username" placeholder="username" id="username" name="username" />
+
+                <label htmlFor="password"> Password </label>
+                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="**********" id="password" name="password" />
+                <button type="submit">Login</button>
+            </form>
+            <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here</button>
         </div>
     )
 }

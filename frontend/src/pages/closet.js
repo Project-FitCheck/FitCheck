@@ -6,7 +6,7 @@ import NavBar from '../components/navbar.js';
 function Closet() {
 	return (
 		<div className='MainPage'>
-			<NavBar page="home"/>
+			<NavBar page="home" />
 			<PageNav page={'clothes'} />
 			<Clothes />
 		</div>)
