@@ -1,11 +1,13 @@
 .EditModel .ModelViewer {
     position: absolute;
     top: 10%;
-    left: 12%;
+    left: 3%;
 }
 
 .EditModel svg {
-    height: 90vh;
+    height: 80vh;
+    margin-top: 10%;
+    max-width: 443px;
 }
 
 .EditModel .ModelSettings {

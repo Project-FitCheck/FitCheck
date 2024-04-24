@@ -1,5 +1,6 @@
-import { Button, Stack } from '@mui/material';
-import { Link, useLocation } from 'react-router-dom';
+import { Stack } from '@mui/material';
+import { useLocation } from 'react-router-dom';
+
 import { Navb } from './navb';
 
 const NavBar = (props) => {
@@ -33,23 +34,7 @@ const NavBar = (props) => {
                 <Navb page={home} link="/closet" img="/icons/icons8-home-logo.svg" name="HOME" />
                 <Navb page={model} link="/model" img="/icons/icons8-user-50.png" name="MODEL" />
                 <Navb page={catalog} link="/catalog" img="/icons/icons8-search.svg" name="CATALOG" />
-    			<Navb page={profile} link="/profile" img="/icons/icons8-cog.svg" name="PROFILE" />	
-
-                <Button component={Link} to={"/closet"}
-                    className="home" {...location.pathname === ('/closet') ? 'active' : 'inactive'}
-                    variant="contained"><img src="/icons/icons8-home-logo.svg" alt="home icon"></img> Home </Button>
-
-                <Button component={Link} to={"/model"}
-                    className="model" {...location.pathname === isActive('/model') ? 'active' : 'inactive'}
-                    variant="contained"><img src="/icons/icons8-user-50.png" alt="model icon"></img> Model </Button>
-
-                <Button component={Link} to={"/catalog"}
-                    className={location.pathname === isActive('/catalog') ? 'active' : 'inactive'}
-                    variant="contained"><img src="/icons/icons8-search.svg" alt="search icon"></img> Catalog</Button>
-
-                <Button component={Link} to={"/profile"}
-                    className={location.pathname === isActive('/profile') ? 'active' : 'inactive'}
-                    variant="contained"><img src="/icons/icons8-cog.svg" alt="setting icon"></img> Profile</Button>
+    			      <Navb page={profile} link="/profile" img="/icons/icons8-cog.svg" name="PROFILE" />	
             </Stack>
         </div>
     );

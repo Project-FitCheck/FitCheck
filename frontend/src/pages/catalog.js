@@ -56,7 +56,6 @@ function Catalog() {
 				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
 				//const response = await axios.get("https://localhost:3001/clothes/");
 				updateCatalog(response.data);
-				console.log(response.data);
 			} catch (error) {
 				console.error("Error fetching clothes from closet:", error);
 			}
@@ -71,21 +70,33 @@ function Catalog() {
 		var temp3 = [];
 		var i;
 		//check filter color first
-		for (i = 0; i < catalog.length; i++) {
-			if (catalog[i].color === colorFilters) {
-				temp.push(catalog[i]);
+		if (colorFilters === "all") {
+			temp = catalog;
+		} else {
+			for (i = 0; i < catalog.length; i++) {
+				if (catalog[i].color === colorFilters) {
+					temp.push(catalog[i]);
+				}
 			}
 		}
 		//check filter type next
-		for (i = 0; i < temp.length; i++) {
-			if (temp[i].type === typeFilters) {
-				temp2.push(temp[i]);
+		if (typeFilters === "all") {
+			temp2 = temp;
+		} else {
+			for (i = 0; i < temp.length; i++) {
+				if (temp[i].type === typeFilters) {
+					temp2.push(temp[i]);
+				}
 			}
 		}
 		//check filter style next
-		for (i = 0; i < temp2.length; i++) {
-			if (temp2[i].style === styleFilters) {
-				temp3.push(temp2[i]);
+		if (styleFilters === "all") {
+			temp3 = temp2;
+		} else {
+			for (i = 0; i < temp2.length; i++) {
+				if (temp2[i].style === styleFilters) {
+					temp3.push(temp2[i]);
+				}
 			}
 		}
 		return setFilteredClothes(temp3);

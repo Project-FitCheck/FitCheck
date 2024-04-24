@@ -5,7 +5,7 @@
 
 .title {
     margin: auto;
-    background-color: var(--gray);
+    background-color: white;
     border-bottom: solid black 1px;
     padding: 10px;
 }

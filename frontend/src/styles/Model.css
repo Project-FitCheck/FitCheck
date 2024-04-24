@@ -5,15 +5,89 @@
 	position: relative;
 }
 
-.Model svg {
+.Model .ModelViewer svg {
 	height: 700px;
+	z-index: 0;
 }
 
 .Model .ModelViewer {
 	position: relative;
 	width: fit-content;
 	margin: 0 auto;
+	margin-top: -600px;
 }
+
+.outfit{
+	z-index: 3;
+	width: 25%;
+	margin: 0 auto;
+}
+
+.Model .outfitSettings{
+	display: flex;
+	flex-direction: column ;
+	max-width: fit-content;
+}
+
+/* .outfit .female_shirt{
+	height: 200px;
+	width: 12%;
+	top: 240px;
+	left: 44.1%;
+	margin: inherit;
+	z-index: 2;
+	position: absolute;
+}
+
+.outfit .female_pants{
+	height: 310px;
+	width: 9%;
+	top: 400px;
+	left: 45.5%;
+	margin: inherit;
+	z-index: 1;
+	position: absolute;
+}
+
+.outfit .female_shoes{
+	height: 70px;
+	width: 6%;
+	top: 695px;
+	left: 47%;
+	margin: inherit;
+	z-index: 1;
+	position: absolute;
+}
+ */
+/* .outfit .male_shirt{
+	height: 205px;
+	width: fit-content;
+	top: 230px;
+	left: 42.6%;
+	margin: inherit;
+	z-index: 2;
+	position: relative;
+} */
+/* 
+.outfit .male_pants{
+	height: 300px;
+	width: fit-content;
+	top: 415px;
+	left: 45.75%;
+	margin: inherit;
+	z-index: 1;
+	position: relative;
+} */
+
+/* .outfit .male_shoes{
+	height: 70px;
+	width: fit-content;
+	top: 110px;
+	right: -1%;
+	margin: inherit;
+	z-index: 1;
+	position: relative;
+} */
 
 .Model .chevron-left{
 	height: 15px;
