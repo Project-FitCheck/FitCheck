@@ -65,6 +65,17 @@
 	align-items: center;
 }
 
+.ModalImage div {
+	height: 80%;
+	display: flex;
+	align-items: center;
+}
+
+.ModalImage div svg {
+	height: 70%;
+	width: auto;
+}
+
 .ClosetModalBody, .OutfitModalBody {
 	height: 100%;
 	width: 35%;

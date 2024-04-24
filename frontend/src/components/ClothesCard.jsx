@@ -11,7 +11,7 @@ const ClothesCard = ({ id, itemName, gender, pic, description, color, type, styl
 	return (
 		<>
 			<div className='ClothesCard' onClick={() => setShowModal(true)}>
-				<div className='picDiv' dangerouslySetInnerHTML={{ __html: pic }}></div>
+				<div className="picDiv" dangerouslySetInnerHTML={{__html: pic}}></div>
 				<p>{itemName}</p>
 			</div>
 			{showModal && <ClosetModal id={id} itemName={itemName} gender={gender} pic={pic} description={description} color={color} style={style} type={type} handleClose={handleClose} />}

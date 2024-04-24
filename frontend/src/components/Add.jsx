@@ -83,7 +83,6 @@ function Add() {
 						<option value="tan">Tan</option>
 						<option value="blue">Blue</option>
 						<option value="white">White</option>
-						{/* <option value="black">Black</option> */}
 						<option value="gray">Grey</option>
 						<option value="cottoncandy">Cotton Candy</option>
 						<option value="green">Green</option>

@@ -26,7 +26,7 @@ const NavBar = (props) => {
                 <Navb page={home} link="/closet" img="/icons/icons8-home-logo.svg" name="HOME" />
                 <Navb page={model} link="/model" img="/icons/icons8-user-50.png" name="MODEL" />
                 <Navb page={catalog} link="/catalog" img="/icons/icons8-search.svg" name="CATALOG" />
-    			      <Navb page={profile} link="/profile" img="/icons/icons8-cog.svg" name="PROFILE" />	
+    			<Navb page={profile} link="/profile" img="/icons/icons8-cog.svg" name="PROFILE" />	
             </Stack>
         </div>
     );
