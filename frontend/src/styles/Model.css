@@ -1,5 +1,4 @@
 .Model {
-	height: 86%;
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -21,7 +20,7 @@
 	z-index: 3;
 	width: 60%;
 	margin: 0 auto;
-	height: 806.680px;
+	height: 100%;
 }
 
 .Model .outfitSettings {
@@ -122,9 +121,7 @@
 	font-weight: 500;
 	color: var(--color);
 	left: 42.5%;
-	margin-bottom: 100%;
 	width: 15%;
-	top: -90px;
 	font-size: x-large;
 }
 
