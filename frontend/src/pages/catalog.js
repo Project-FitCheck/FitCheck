@@ -53,8 +53,8 @@ function Catalog() {
 	useEffect(() => {
 		async function getCatalog() {
 			try {
-				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
-				const response = await axios.get("http://localhost:3001/clothes/");
+				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
+				//const response = await axios.get("http://localhost:3001/clothes/");
 				updateCatalog(response.data);
 				setFilteredClothes(response.data);
 			} catch (error) {

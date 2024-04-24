@@ -24,7 +24,7 @@ function Clothes(props) {
 		async function getClothing() {
 			try {
 				const userId = window.localStorage.getItem("userId");
-				const response = await axios.get(/* "https://fitcheck-backend-7mo5.onrender.com */ "http://localhost:3001/closet/?userId=" + userId);
+				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/closet/?userId=" + userId);
 				setClothing(response.data);
 			} catch (error) {
 				console.error(error);
@@ -232,7 +232,7 @@ function Model() {
 		async function getModel() {
 			try {
 				const userId = window.localStorage.getItem("userId");
-				const response = await axios.get(/* "https://fitcheck-backend-7mo5.onrender.com */"http://localhost:3001/model/?userId=" + userId);
+				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/model/?userId=" + userId);
 				response.data.fullBody.replace(/"/g, '');
 				setModel(response.data.fullBody);
 				setModelGender(response.data.gender);
