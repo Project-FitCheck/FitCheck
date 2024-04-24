@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import '../styles/AddClothingItem.css';
 
 function AddClothingItem(props) {
+	const navigate = useNavigate();
 	async function addToCloset() {
 		try {
 			const userId = window.localStorage.getItem("userId");
@@ -15,6 +17,7 @@ function AddClothingItem(props) {
 				image: props.image
 			}
 			await axios.post("https://fitcheck-backend-7mo5.onrender.com/closet/add", {userId, clothingItem});
+			navigate("/closet")
 		} catch (error) {
 			console.error(error);
 		}
