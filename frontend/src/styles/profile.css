@@ -15,7 +15,7 @@
 	margin: auto;
 	text-align: center;
 	padding: 10px;
-	background-color: white;
+	background-color: var(--gray);
 	border-bottom: solid black 1px;
 }
 
