@@ -22,7 +22,6 @@ const OutfitSettingsModal = ({ pic, shirt, pants, shoes, handleClose }) => {
 
 	return (
 		<div className='ModalBackground'>
-			{console.log(pic)}
 			<div className='Modal'>
 				<button className="ModalClose" onClick={() => handleClose()}>x</button>
 				<div className="ModalMain">

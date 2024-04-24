@@ -38,7 +38,6 @@ function Clothes(props) {
 		setShirts(clothing.filter((x) => (x.type === "shirt") && (x.gender === props.gender)));
 		setPants(clothing.filter((x) => (x.type === "pants") && (x.gender === props.gender)));
 		setShoes(clothing.filter((x) => (x.type === "shoes") && (x.gender === props.gender)));
-		console.log(clothing);
 	}, [clothing, props.gender]); // Run whenever clothing state changes
 
 	useEffect(() => {
@@ -49,32 +48,26 @@ function Clothes(props) {
 
 	function cycleShirtLeft() {
 		setShirtIndex(Math.abs(shirtIndex - 1) % shirts.length);
-		console.log(shirtIndex)
 	}
 
 	function cyclePantsLeft() {
 		setPantsIndex(Math.abs(pantsIndex - 1) % pants.length);
-		console.log(pantsIndex)
 	}
 
 	function cycleShoesLeft() {
 		setShoesIndex(Math.abs(shoesIndex - 1) % shoes.length);
-		console.log(shoesIndex)
 	}
 
 	function cycleShirtRight() {
 		setShirtIndex((shirtIndex + 1) % shirts.length);
-		console.log(shirtIndex)
 	}
 
 	function cyclePantsRight() {
 		setPantsIndex((pantsIndex + 1) % pants.length);
-		console.log(pantsIndex)
 	}
 
 	function cycleShoesRight() {
 		setShoesIndex((shoesIndex + 1) % shoes.length);
-		console.log(shoesIndex)
 	}
 
 	const maleShirtStyle = {
