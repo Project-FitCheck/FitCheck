@@ -11,8 +11,7 @@ const OutfitSettingsModal = ({ pic, shirt, pants, shoes, handleClose }) => {
 	async function saveOutfit() {
 		try {
 			const userId = window.localStorage.getItem("userId");
-			const Outfit = { torso: shirt, legs: pants, shoes: shoes, image: document.querySelector("[class='ModalPic']").outerHTML};
-			console.log(pic);
+			const Outfit = { torso: shirt, legs: pants, shoes: shoes, image: pic };
 			await axios.post(/* "https://fitcheck-backend-7mo5.onrender.com */"http://localhost:3001/locker/add", { userId, Outfit })
 
 		} catch (err) {
@@ -22,6 +21,7 @@ const OutfitSettingsModal = ({ pic, shirt, pants, shoes, handleClose }) => {
 
 	return (
 		<div className='ModalBackground'>
+			{console.log(pic)}
 			<div className='Modal'>
 				<button className="ModalClose" onClick={() => handleClose()}>x</button>
 				<div className="ModalMain">

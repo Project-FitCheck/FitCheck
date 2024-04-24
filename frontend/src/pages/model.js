@@ -90,10 +90,40 @@ function Clothes(props) {
 		margin: 'inherit',
 		zIndex: '1',
 		position: 'relative'
+	};
+
+	const femaleShirtStyle = {
+		height: 'fit-content',
+		width: 'fit-content',
+		top: '145px',
+		left: '-1.25%',
+		margin: 'inherit',
+		zIndex: '2',
+		position: 'relative'
+	};
+
+	const femalePantStyle = {
+		height: 'fit-content',
+		width: 'fit-content',
+		top: '100px',
+		left: '-1%',
+		margin: '0 auto',
+		zIndex: '1',
+		position: 'relative'
+	};
+
+	const femaleShoeStyle = {
+		height: 'fit-content',
+		width: 'fit-content',
+		top: '80px',
+		margin: 'inherit',
+		zIndex: '1',
+		position: 'relative'
 	}
 
 	if (props.gender === "male") {
 		return (
+			
 			<>
 				{shirts.length > 0 && (
 					<div className='male_shirt' onClick={cycleShirt()} dangerouslySetInnerHTML={{ __html: shirts[shirtIndex.current]?.image }}
@@ -112,14 +142,18 @@ function Clothes(props) {
 	} else {
 		return (
 			<>
+
 				{shirts.length > 0 && (
-					<div className='female_shirt' onClick={cycleShirt} dangerouslySetInnerHTML={{ __html: shirts[shirtIndex]?.image }} />
+					<div className='female_shirt' onClick={cycleShirt} dangerouslySetInnerHTML={{ __html: shirts[shirtIndex.current]?.image }} 
+					style={femaleShirtStyle}/>
 				)}
 				{pants.length > 0 && (
-					<div className='female_pants' onClick={cyclePants} dangerouslySetInnerHTML={{ __html: pants[pantsIndex]?.image }} />
+					<div className='female_pants' onClick={cyclePants} dangerouslySetInnerHTML={{ __html: pants[pantsIndex.current]?.image }} 
+					style={femalePantStyle}/>
 				)}
 				{shoes.length > 0 && (
-					<div className='female_shoes' onClick={cycleShoes} dangerouslySetInnerHTML={{ __html: shoes[shoesIndex]?.image }} />
+					<div className='female_shoes' onClick={cycleShoes} dangerouslySetInnerHTML={{ __html: shoes[shoesIndex.current]?.image }} 
+					style={femaleShoeStyle}/>
 				)}
 			</>
 		);
@@ -154,12 +188,6 @@ function Model() {
 
 		getModel();
 	}, []);
-
-
-	console.log(SHIRT)
-	console.log(PANTS)
-	console.log(SHOES)
-
 
 	const handleClose = () => { setShowModal(false) };
 

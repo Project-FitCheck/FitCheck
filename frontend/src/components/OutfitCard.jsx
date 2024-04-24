@@ -11,7 +11,8 @@ const OutfitCard = ({id, fitName, pic, description}) => {
 	return (
 		<>
 			<div className='OutfitCard' onClick={() => setShowModal(true)}>
-				<img src={pic} alt="TestImage" />
+				{		console.log(pic.data)}
+				<img src={pic.data} alt="TestImage" />
 				<p>{fitName}</p>
 			</div>
 			{showModal && <OutfitModal id={id} fitName={fitName} pic={pic} description={description} handleClose={handleClose}/>}
