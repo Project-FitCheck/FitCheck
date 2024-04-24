@@ -105,7 +105,7 @@ function Add() {
 				<button onClick={applyFilters}>SUBMIT</button>
 			</form>
 			<div className='clothingFromCatalog'>
-				<AddClothingItem image={filteredItem.image} description={filteredItem.description} color={filteredItem.color} type={filteredItem.type} style={filteredItem.style} show={isActive} initial={isInitial} />
+				<AddClothingItem image={filteredItem.image} description={filteredItem.description} color={filteredItem.color} type={filteredItem.type} style={filteredItem.style} gender={filteredItem.gender} show={isActive} initial={isInitial} />
 			</div>
 		</div>
 	</div>

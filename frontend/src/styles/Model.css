@@ -11,92 +11,50 @@
 }
 
 .Model .ModelViewer {
-	position: relative;
+	position: static;
 	width: fit-content;
 	margin: 0 auto;
 	margin-top: -600px;
 }
 
-.outfit{
+.outfit {
 	z-index: 3;
-	width: 25%;
+	width: 60%;
 	margin: 0 auto;
+	height: 806.680px;
 }
 
-.Model .outfitSettings{
+.Model .outfitSettings {
 	display: flex;
-	flex-direction: column ;
+	flex-direction: column;
 	max-width: fit-content;
 }
 
-/* .outfit .female_shirt{
-	height: 200px;
-	width: 12%;
-	top: 240px;
-	left: 44.1%;
-	margin: inherit;
-	z-index: 2;
-	position: absolute;
+.Model .cycleShirtLeft {
+	right: 100px;
 }
 
-.outfit .female_pants{
-	height: 310px;
-	width: 9%;
-	top: 400px;
-	left: 45.5%;
-	margin: inherit;
-	z-index: 1;
-	position: absolute;
+.Model .cycleShirtRight {
+	left: 335px;
 }
 
-.outfit .female_shoes{
-	height: 70px;
-	width: 6%;
-	top: 695px;
-	left: 47%;
-	margin: inherit;
-	z-index: 1;
-	position: absolute;
-}
- */
-/* .outfit .male_shirt{
-	height: 205px;
-	width: fit-content;
-	top: 230px;
-	left: 42.6%;
-	margin: inherit;
-	z-index: 2;
-	position: relative;
-} */
-/* 
-.outfit .male_pants{
-	height: 300px;
-	width: fit-content;
-	top: 415px;
-	left: 45.75%;
-	margin: inherit;
-	z-index: 1;
-	position: relative;
-} */
-
-/* .outfit .male_shoes{
-	height: 70px;
-	width: fit-content;
-	top: 110px;
-	right: -1%;
-	margin: inherit;
-	z-index: 1;
-	position: relative;
-} */
-
-.Model .chevron-left{
-	height: 15px;
-}
-.Model .chevron-right{
-	height: 15px;
+.Model .cyclePantsLeft {
+	right: 100px;
 }
 
-.Model .viewModel{
+.Model .cyclePantsRight {
+	left: 335px;
+}
+
+.Model .cycleShoesLeft {
+	right: 100px;
+}
+
+.Model .cycleShoesRight {
+	left: 335px;
+}
+
+.Model .viewModel {
 	--dark-grey: #353535;
 	--middle-grey: #767676;
 	--lightest-grey: linear-gradient(#fafafa, #ebebeb);
@@ -117,4 +75,159 @@
 	width: 60%;
 	margin-left: 20%;
 	min-height: 95%;
+}
+
+.Model .leftButtons,
+.Model .rightButtons {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.Model .cyclePantsLeft,
+.Model .cyclePantsRight,
+.Model .cycleShirtLeft,
+.Model .cycleShirtRight,
+.Model .cycleShoesLeft,
+.Model .cycleShoesRight {
+	font-size: 200%;
+}
+
+.Model .middle {
+	width: 20%;
+}
+
+.ModelViewerContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+}
+
+
+.Model .saveFit {
+	--color: #560bad;
+	font-family: inherit;
+	display: inline-block;
+	height: 2.6em;
+	line-height: 2.5em;
+	position: relative;
+	overflow: hidden;
+	border: 2px solid var(--color);
+	transition: color .5s;
+	z-index: 1;
+	font-size: 17px;
+	border-radius: 6px;
+	font-weight: 500;
+	color: var(--color);
+	left: 42.5%;
+	margin-bottom: 100%;
+	width: 15%;
+	top: -90px;
+	font-size: x-large;
+}
+
+.Model .saveFit:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	background: var(--color);
+	height: 300px;
+	width: 400px;
+	border-radius: 50%;
+}
+
+.Model .saveFit:hover {
+	color: #fff;
+}
+
+.Model .saveFit:before {
+	top: 100%;
+	left: 100%;
+	transition: all .7s;
+}
+
+.Model .saveFit:hover:before {
+	top: -50px;
+	left: -50px;
+}
+
+.Model .saveFit:active:before {
+	background: #3a0ca3;
+	transition: background .5s;
+}
+
+.Model .saveFit.active {
+	color: #fff;
+	background: #3a0ca3;
+
+}
+
+.Model .confirmSave {
+	--color: #560bad;
+	font-family: inherit;
+	display: inline-block;
+	height: 2.6em;
+	line-height: 2.5em;
+	position: relative;
+	overflow: hidden;
+	border: 2px solid var(--color);
+	transition: color .5s;
+	z-index: 1;
+	font-size: 17px;
+	border-radius: 6px;
+	font-weight: 500;
+	color: var(--color);
+	width: fit-content;
+	top: 5%;
+	font-size: large;
+}
+
+.Model .confirmSave:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	background: var(--color);
+	height: 300px;
+	width: 400px;
+	border-radius: 50%;
+}
+
+.Model .confirmSave:hover {
+	color: #fff;
+}
+
+.Model .confirmSave:before {
+	top: 100%;
+	left: 100%;
+	transition: all .7s;
+}
+
+.Model .confirmSave:hover:before {
+	top: -50px;
+	left: -50px;
+}
+
+.Model .confirmSave:active:before {
+	background: #3a0ca3;
+	transition: background .5s;
+}
+
+.Model .confirmSave.active {
+	color: #fff;
+	background: #3a0ca3;
+
+}
+.Model .shirtContainer svg{
+	width: 75px;
+	height: 80px;
+}
+.Model .pantsContainer svg{
+	width: 80px;
+	height: 100px;
+}
+.Model .shoesContainer svg{
+	width: 70px;
+	height: 50px;
 }

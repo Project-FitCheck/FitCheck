@@ -7,12 +7,12 @@ const OutfitModal = ({id, fitName, pic, description, handleClose}) => {
 			<div className='Modal'>
 				<button className="ModalClose" onClick={() => handleClose()}>x</button>
 				<div className="ModalMain">
-					<div className="ModalImage">
-						<img src={pic} alt="" className="ModalPic" />
+					<div className="ModalImage" style={{overflow: "hidden"}}>
+						<img src={pic} width="500px" alt="" className="ModalPic" />
 					</div>
 					<div className="OutfitModalBody">
-						<h2 className="ModalHeading">{fitName}</h2>
-						<p className="ModalPara">{description}</p>
+						<h2 className="ModalHeading">Outfit Name: {fitName}</h2>
+						<p className="ModalPara">Description: {description}</p>
 					</div>
 				</div>
 				<button className="ModalLike">&hearts;</button>

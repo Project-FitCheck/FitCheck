@@ -14,7 +14,7 @@ const Clothes = () => {
         async function getClothes() {
             try {
                 const userId = window.localStorage.getItem("userId");
-                const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/closet/?userId=" + userId);
+                const response = await axios.get(/*"https://fitcheck-backend-7mo5.onrender.com*/"http://localhost:3001/closet/?userId=" + userId);
                 updateClothing(response.data);
             } catch (error) {
                 console.error("Error fetching clothes from closet:", error);
@@ -34,6 +34,7 @@ const Clothes = () => {
 						itemName={clothing.productTitle}
 						pic={clothing.image}
 						description={clothing.description}
+						gender={clothing.gender}
 						color={clothing.color}
 						type={clothing.type}
 						style={clothing.style}

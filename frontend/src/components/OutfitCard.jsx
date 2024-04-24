@@ -10,9 +10,9 @@ const OutfitCard = ({id, fitName, pic, description}) => {
 
 	return (
 		<>
-			<div className='OutfitCard' onClick={() => setShowModal(true)}>
-				{		console.log(pic.data)}
-				<img src={pic.data} alt="TestImage" />
+			<div className='OutfitCard' style={{overflow: "hidden"}} onClick={() => setShowModal(true)}>
+				{		console.log(fitName)}
+				<img src={pic} width="350px" alt="TestImage" />
 				<p>{fitName}</p>
 			</div>
 			{showModal && <OutfitModal id={id} fitName={fitName} pic={pic} description={description} handleClose={handleClose}/>}

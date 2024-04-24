@@ -1,15 +1,16 @@
 .OutfitCard {
 	width: 300px;
-	height: 300px;
+	height: 420px;
 	border-radius: 5%;
 	background-color: var(--gray);
 	margin: 30px;
-	border-radius: 0 0 5% 5%;
+	border: 1px black solid;
 }
 
 .OutfitCard img {
 	height: 85%;
-	width: 100%;
+	width: 120%;
+	margin-left: -10%;
 }
 
 .OutfitCard p {

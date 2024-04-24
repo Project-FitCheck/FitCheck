@@ -1,15 +1,7 @@
 import { Stack } from '@mui/material';
-import { useLocation } from 'react-router-dom';
-
 import { Navb } from './navb';
 
 const NavBar = (props) => {
-
-    const location = useLocation();
-
-    const isActive = (path) => {
-        return location.pathname.startsWith(path);
-    };
 
     let home, model, catalog, profile = false;
     if (props.page === "home") {

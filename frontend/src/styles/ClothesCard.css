@@ -1,15 +1,22 @@
 .ClothesCard {
 	width: 300px;
-	height: 300px;
+	height: 420px;
 	border-radius: 5%;
 	background-color: var(--gray);
 	margin: 30px;
-	border-radius: 0 0 5% 5%;
+	border: 1px solid black;
 }
 
 .ClothesCard img {
 	height: 85%;
 	width: 100%;
+}
+
+.ClothesCard .picDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 85%;
 }
 
 .ClothesCard p {
