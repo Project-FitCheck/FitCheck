@@ -5,7 +5,6 @@ import '../styles/AddClothingItem.css';
 
 function AddClothingItem(props) {
 	const navigate = useNavigate();
-
 	async function addToCloset() {
 		try {
 			const userId = window.localStorage.getItem("userId");
