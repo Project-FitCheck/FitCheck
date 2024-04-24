@@ -9,7 +9,6 @@ const ClosetModal = ({id, itemName, pic, description, color, type, style, handle
 				<div className="ModalMain">
 					<div className="ModalImage">
 						<div dangerouslySetInnerHTML={{__html: pic}}></div>
-						<img src={pic} alt="" className="ModalPic" />
 					</div>
 					<div className="ClosetModalBody">
 						<h2 className="ModalHeading">{itemName}</h2>
