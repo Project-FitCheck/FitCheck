@@ -17,8 +17,8 @@ function AddClothingItem(props) {
 				image: props.image,
 				gender: props.gender
 			}
-			await axios.post("https://fitcheck-backend-7mo5.onrender.com/closet/add", {userId, clothingItem});
-			navigate("/closet")
+			console.log(props.gender)
+			await axios.post(/* "https://fitcheck-backend-7mo5.onrender.com */"http://localhost:3001/closet/add", {userId, clothingItem});
 		} catch (error) {
 			console.error(error);
 		}
