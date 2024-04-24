@@ -66,9 +66,9 @@ function EditModel() {
 
     return (
         <div className="MainPage">
-            <ModelNav props={{mode: "edit"}} />
+            <ModelNav props={{ mode: "edit" }} />
             <div className="EditModel">
-                <NavBar page="model"/>
+                <NavBar page="model" />
                 <div className="ModelSettings">
                     <ul>
                         <li className="gender-setting">

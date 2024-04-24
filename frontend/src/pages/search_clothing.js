@@ -108,63 +108,63 @@ function SearchCloset() {
 
     return (
         <>
-        <NavBar page="home"/>
-        <div className="searchCloset">
-            <div className="title">
-                <Button component={Link} to={"/closet"} className='navBack'>&#60;</Button>
-                <h1>Search Closet</h1>
+            <NavBar page="home" />
+            <div className="searchCloset">
+                <div className="title">
+                    <Button component={Link} to={"/closet"} className='navBack'>&#60;</Button>
+                    <h1>Search Closet</h1>
+                </div>
+
+                <div className="greeting">
+                    <h2>What are you looking for?</h2>
+                </div>
+
+                <div className="list-container">
+
+                    <div className="search">
+                        <input type="text" placeholder="Enter keyword"></input>
+                    </div>
+
+                    <div className="listColor">
+                        <h3>Color</h3>
+                        <Select options={color} onChange={(selectedOption) => setColorFilters(selectedOption.value)} />
+                        {/*<Select options={color} />*/}
+                    </div>
+
+                    <div className="listType">
+                        <h3>Type</h3>
+                        <Select options={type} onChange={(selectedOption) => setTypeFilters(selectedOption.value)} />
+                        {/*<Select options={type} />*/}
+                    </div>
+
+                    <div className="listStyle">
+                        <h3>Style</h3>
+                        <Select options={style} onChange={(selectedOption) => setStyleFilters(selectedOption.value)} />
+                        {/*<Select options={style} />*/}
+                    </div>
+
+                    <div className="filterBtn">
+                        <button className="filter" onClick={applyFilters}>Filter</button>
+                        {/*<button className="filter">Filter</button>*/}
+                    </div>
+                </div>
+
+                <div className="CardArea">
+                    {filteredClothes.map(filteredClothes => {
+                        return (<ClothesCard
+                            key={filteredClothes._id}
+                            id={filteredClothes._id}
+                            itemName={filteredClothes.productTitle}
+                            pic={filteredClothes.image}
+                            description={filteredClothes.description}
+                            color={filteredClothes.color}
+                            type={filteredClothes.type}
+                            style={filteredClothes.style}
+                        />)
+                    }
+                    )}
+                </div>
             </div>
-
-            <div className="greeting">
-                <h2>What are you looking for?</h2>
-            </div>
-
-            <div className="list-container">
-
-                <div className="search">
-                    <input type="text" placeholder="Enter keyword"></input>
-                </div>
-
-                <div className="listColor">
-                    <h3>Color</h3>
-                    <Select options={color} onChange={(selectedOption) => setColorFilters(selectedOption.value)} />
-                    {/*<Select options={color} />*/}
-                </div>
-
-                <div className="listType">
-                    <h3>Type</h3>
-                    <Select options={type} onChange={(selectedOption) => setTypeFilters(selectedOption.value)} />
-                    {/*<Select options={type} />*/}
-                </div>
-
-                <div className="listStyle">
-                    <h3>Style</h3>
-                    <Select options={style} onChange={(selectedOption) => setStyleFilters(selectedOption.value)} />
-                    {/*<Select options={style} />*/}
-                </div>
-
-                <div className="filterBtn">
-                    <button className="filter" onClick={applyFilters}>Filter</button>
-                    {/*<button className="filter">Filter</button>*/}
-                </div>
-            </div>
-
-            <div className="CardArea">
-                {filteredClothes.map(filteredClothes => {
-                    return (<ClothesCard
-                        key={filteredClothes._id}
-                        id={filteredClothes._id}
-                        itemName={filteredClothes.productTitle}
-                        pic={filteredClothes.image}
-                        description={filteredClothes.description}
-                        color={filteredClothes.color}
-                        type={filteredClothes.type}
-                        style={filteredClothes.style}
-                    />)
-                }
-                )}
-            </div>
-        </div>
         </>
     );
 }

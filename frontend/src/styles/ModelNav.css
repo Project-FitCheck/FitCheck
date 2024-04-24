@@ -15,7 +15,7 @@
 	position: relative;
 	margin: auto;
 	height: fit-content;
-	width:fit-content;
+	width: fit-content;
 	border-radius: 50%;
 	color: var(--purple);
 	border: 1px;
@@ -25,7 +25,7 @@
 	cursor: pointer;
 }
 
-.ModelNav .editModel{
+.ModelNav .editModel {
 	margin-left: 10%;
 	border-radius: 50%;
 }

@@ -5,10 +5,10 @@
 }
 
 .searchCloset .navBack {
-	font-size: 40px;
-	margin-left: 10%;
-	color: var(--purple);
-	border-radius: 50%;
+    font-size: 40px;
+    margin-left: 10%;
+    color: var(--purple);
+    border-radius: 50%;
 }
 
 .searchCloset .title {
@@ -23,7 +23,7 @@
     z-index: 1;
 }
 
-.searchCloset .title h1{
+.searchCloset .title h1 {
     margin: auto 40% auto auto;
 }
 
@@ -32,7 +32,9 @@
     margin-top: 50px;
 }
 
-.searchCloset .listColor, .listType, .listStyle {
+.searchCloset .listColor,
+.listType,
+.listStyle {
     margin-right: 25px;
     width: 20%;
     text-align: center;
@@ -61,7 +63,7 @@
 }
 
 .searchCloset .filter:hover {
-	background-color: var(--purple);
+    background-color: var(--purple);
 }
 
 .searchCloset .search {

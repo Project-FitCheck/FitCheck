@@ -101,7 +101,7 @@ router.put("/update", async (req, res) => {
             if (!validPassword) {
                 return res.status(401).json({ message: "Incorrect password" });
             }
-            
+
             const newPassword = await bcrypt.hash(updatedValue, 10);
             user.set(fieldToBeUpdated, newPassword);
             await user.save();

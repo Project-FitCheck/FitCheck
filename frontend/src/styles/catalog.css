@@ -16,7 +16,7 @@
     z-index: 1;
 }
 
-.catalog .title h1{
+.catalog .title h1 {
     margin: auto;
 }
 
@@ -25,7 +25,9 @@
     margin-top: 50px;
 }
 
-.catalog .listColor, .catalog .listType, .catalog .listStyle {
+.catalog .listColor,
+.catalog .listType,
+.catalog .listStyle {
     margin-right: 25px;
     width: 20%;
     text-align: center;
@@ -54,7 +56,7 @@
 }
 
 .catalog .filter:hover {
-	background-color: var(--purple);
+    background-color: var(--purple);
 }
 
 .catalog .search {

@@ -2,11 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import Slider from 'react-slider';
 import '../styles/modelEditor.css';
-import {ResponsiveSVG} from '@cutting/svg';
-import {ReactComponent as MaleBody} from "../assets/FitCheck_male_template/male_body.svg"
-import {ReactComponent as FemaleBody} from "../assets/FitCheck_female_template/female_body.svg"
+import { ResponsiveSVG } from '@cutting/svg';
+import { ReactComponent as MaleBody } from "../assets/FitCheck_male_template/male_body.svg"
+import { ReactComponent as FemaleBody } from "../assets/FitCheck_female_template/female_body.svg"
 
-function PartViewer({part}) {
+function PartViewer({ part }) {
 
     const [imgStyleBody, setImgStyleBody] = useState({
         position: "absolute",
@@ -98,11 +98,11 @@ function PartViewer({part}) {
     if (part === "male_body" || part === "female_body") {
         return (
             <div className={part}>
-                <img src={<ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleBody}> 
-                    <MaleBody  />
+                <img src={<ResponsiveSVG preserveAspectRatio="xMidYMid slice" style={imgStyleBody}>
+                    <MaleBody />
                     <FemaleBody />
                 </ResponsiveSVG>} alt="model part" />
-                
+
 
 
                 <div className="sliderX">
@@ -152,8 +152,8 @@ function PartViewer({part}) {
         return (
             <div className={part}>
 
-                <ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleFeet}> 
-                    <MaleBody  />
+                <ResponsiveSVG preserveAspectRatio="xMidYMid slice" style={imgStyleFeet}>
+                    <MaleBody />
                     <FemaleBody />
                 </ResponsiveSVG>
 
@@ -205,8 +205,8 @@ function PartViewer({part}) {
         return (
             <div className={part}>
 
-                <ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleHead}> 
-                    <MaleBody  />
+                <ResponsiveSVG preserveAspectRatio="xMidYMid slice" style={imgStyleHead}>
+                    <MaleBody />
                     <FemaleBody />
                 </ResponsiveSVG>
 
@@ -258,8 +258,8 @@ function PartViewer({part}) {
         return (
             <div className={part}>
 
-                <ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleLeftarm}> 
-                    <MaleBody  />
+                <ResponsiveSVG preserveAspectRatio="xMidYMid slice" style={imgStyleLeftarm}>
+                    <MaleBody />
                     <FemaleBody />
                 </ResponsiveSVG>
 
@@ -311,8 +311,8 @@ function PartViewer({part}) {
         return (
             <div className={part}>
 
-                <ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleLegs}> 
-                    <MaleBody  />
+                <ResponsiveSVG preserveAspectRatio="xMidYMid slice" style={imgStyleLegs}>
+                    <MaleBody />
                     <FemaleBody />
                 </ResponsiveSVG>
 
@@ -364,8 +364,8 @@ function PartViewer({part}) {
         return (
             <div className={part}>
 
-                <ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleRightarm}> 
-                    <MaleBody  />
+                <ResponsiveSVG preserveAspectRatio="xMidYMid slice" style={imgStyleRightarm}>
+                    <MaleBody />
                     <FemaleBody />
                 </ResponsiveSVG>
 
@@ -417,8 +417,8 @@ function PartViewer({part}) {
         return (
             <div className={part}>
 
-                <ResponsiveSVG  preserveAspectRatio="xMidYMid slice" style={imgStyleTorso}> 
-                    <MaleBody  />
+                <ResponsiveSVG preserveAspectRatio="xMidYMid slice" style={imgStyleTorso}>
+                    <MaleBody />
                     <FemaleBody />
                 </ResponsiveSVG>
 

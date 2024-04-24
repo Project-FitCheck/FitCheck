@@ -85,7 +85,7 @@ router.post("/add", async (req, res) => {
             return res.status(404).json({ message: "User's locker doesn't exist" });
         }
         const newOutfit = new OutfitModel(Outfit);
-         locker.outfits.push(newOutfit);
+        locker.outfits.push(newOutfit);
         locker.numOutfits++;
         await locker.save();
         res.status(200).json({ message: "Successfully Added Outfit" })

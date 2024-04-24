@@ -11,24 +11,24 @@ const Clothes = () => {
 	const [clothing, updateClothing] = useState([])
 
 	useEffect(() => {
-        async function getClothes() {
-            try {
-                const userId = window.localStorage.getItem("userId");
-                const response = await axios.get(/*"https://fitcheck-backend-7mo5.onrender.com*/"http://localhost:3001/closet/?userId=" + userId);
-                updateClothing(response.data);
-            } catch (error) {
-                console.error("Error fetching clothes from closet:", error);
-            }
-        }
-        getClothes();
-    }, []);
+		async function getClothes() {
+			try {
+				const userId = window.localStorage.getItem("userId");
+				const response = await axios.get(/*"https://fitcheck-backend-7mo5.onrender.com*/"http://localhost:3001/closet/?userId=" + userId);
+				updateClothing(response.data);
+			} catch (error) {
+				console.error("Error fetching clothes from closet:", error);
+			}
+		}
+		getClothes();
+	}, []);
 
 	return (
 		<div className='Clothes'>
 			<h1>Welcome to your Closet!</h1>
 			<div className="CardArea">
-				{clothing.map(clothing =>{
-					return(<ClothesCard
+				{clothing.map(clothing => {
+					return (<ClothesCard
 						key={clothing._id}
 						id={clothing._id}
 						itemName={clothing.productTitle}

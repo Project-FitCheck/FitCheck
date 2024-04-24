@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/Modal.css';
 
-const OutfitModal = ({id, fitName, pic, description, handleClose}) => {
+const OutfitModal = ({ id, fitName, pic, description, handleClose }) => {
 	return (
 		<div className='ModalBackground'>
 			<div className='Modal'>
 				<button className="ModalClose" onClick={() => handleClose()}>x</button>
 				<div className="ModalMain">
-					<div className="ModalImage" style={{overflow: "hidden"}}>
+					<div className="ModalImage" style={{ overflow: "hidden" }}>
 						<img src={pic} width="500px" alt="" className="ModalPic" />
 					</div>
 					<div className="OutfitModalBody">
@@ -17,7 +17,7 @@ const OutfitModal = ({id, fitName, pic, description, handleClose}) => {
 				</div>
 				<button className="ModalLike">&hearts;</button>
 			</div>
-		</div>	
+		</div>
 	);
 }
 

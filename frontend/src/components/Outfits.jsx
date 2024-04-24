@@ -9,23 +9,23 @@ const Outfits = () => {
 	const [outfit, updateOutfit] = useState([]);
 
 	useEffect(() => {
-        async function getOutfits() {
-            try {
-                const userId = window.localStorage.getItem("userId");
-                const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/locker/?userId=" + userId);
-                updateOutfit(response.data);
-            } catch (error) {
-                console.error("Error fetching outfits from locker:", error);
-            }
-        }
-        getOutfits();
-    }, []);
-	
+		async function getOutfits() {
+			try {
+				const userId = window.localStorage.getItem("userId");
+				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/locker/?userId=" + userId);
+				updateOutfit(response.data);
+			} catch (error) {
+				console.error("Error fetching outfits from locker:", error);
+			}
+		}
+		getOutfits();
+	}, []);
+
 	return (
 		<div className='Outfits'>
 			<h1>Welcome to your Locker!</h1>
 			<div className="CardArea">
-				{outfit.map(outfit =>{
+				{outfit.map(outfit => {
 					return (<OutfitCard
 						key={outfit._id}
 						id={outfit._id}

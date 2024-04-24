@@ -1,4 +1,5 @@
-.AddClothingItem, .NoItemsFound{
+.AddClothingItem,
+.NoItemsFound {
 	/* outline: 1px solid blue; */
 	width: 60%;
 	height: 80%;

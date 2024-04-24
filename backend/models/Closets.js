@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import {ClothesModel} from "./Clothes.js";
+import { ClothesModel } from "./Clothes.js";
 
 const ClosetSchema = new mongoose.Schema({
     numClothes: {

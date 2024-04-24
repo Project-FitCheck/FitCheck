@@ -8,7 +8,7 @@ const ClosetModal = ({ id, itemName, gender, pic, description, color, type, styl
 				<button className="ModalClose" onClick={() => handleClose()}>x</button>
 				<div className="ModalMain">
 					<div className="ModalImage">
-						<div dangerouslySetInnerHTML={{__html: pic}}></div>
+						<div dangerouslySetInnerHTML={{ __html: pic }}></div>
 					</div>
 					<div className="ClosetModalBody">
 						<h2 className="ModalHeading">{itemName}</h2>
