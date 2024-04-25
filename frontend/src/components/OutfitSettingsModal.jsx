@@ -7,14 +7,12 @@ import axios from 'axios';
 const OutfitSettingsModal = ({ pic, shirt, pants, shoes, handleClose }) => {
 	const [fitName, setFitName] = useState("");
 	const [description, setDescription] = useState("");
-
 	async function saveOutfit() {
 		try {
 			const userId = window.localStorage.getItem("userId");
 			const Outfit = { head: {}, torso: { shirt }, legs: { pants }, socks: {}, shoes: { shoes }, tags: [""], image: pic, fitName: fitName, description: description };
 			await axios.post("https://fitcheck-backend-7mo5.onrender.com/locker/add", { userId, Outfit });
 			handleClose();
-
 		} catch (err) {
 			console.error(err);
 		}

@@ -4,7 +4,6 @@ import OutfitModal from './OutfitModal.jsx';
 import '../styles/OutfitCard.css';
 
 const OutfitCard = ({ id, fitName, pic, description }) => {
-
 	const [showModal, setShowModal] = useState(false);
 	const handleClose = () => { setShowModal(false) };
 

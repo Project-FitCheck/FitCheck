@@ -37,12 +37,18 @@ router.delete("/", async (req, res) => {
             return res.status(404).json({ message: "User's locker doesn't exist" });
         }
         const fit = locker.outfits.find((x) => {
-            return (x.productTitle == Outfit.productTitle &&
-                x.type == Outfit.type &&
-                x.color == Outfit.color &&
-                x.description == Outfit.description &&
-                x.style == Outfit.style &&
-                x.image == Outfit.image)
+            return (
+				x.head == Outfit.head &&
+				x.torso == Outfit.torso &&
+				x.legs == Outfit.legs &&
+				x.socks == Outfit.socks &&
+				x.shoes == Outfit.shoes &&
+				x.jewelry == Outfit.jewelry &&
+				x.tags == Outfit.tags &&
+				x.image == Outfit.image &&
+				x.fitName == Outfit.fitName &&
+				x.description == Outfit.description
+			)
         });
         if (!fit) {
             return res.status(404).json({ message: "Failed to find outfit to remove from locker", Outfit });

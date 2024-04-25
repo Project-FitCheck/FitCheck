@@ -16,7 +16,7 @@ export default function Register(props) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(firstName, lastName, username, password, email)
+        // console.log(firstName, lastName, username, password, email)
         try {
             const response = await axios.post("https://fitcheck-backend-7mo5.onrender.com/user/signup", {
                 firstName: firstName,
@@ -28,13 +28,13 @@ export default function Register(props) {
             if (response.status === 500) {
                 return;
             }
-            console.log("User data submitted successfully:", {
-                firstName: firstName,
-                lastName: lastName,
-                username: username,
-                password: password,
-                email: email
-            });
+            // console.log("User data submitted successfully:", {
+            //     firstName: firstName,
+            //     lastName: lastName,
+            //     username: username,
+            //     password: password,
+            //     email: email
+            // });
 
             // Optionally reset the form fields after successful submission
             setFirstName("");

@@ -30,7 +30,8 @@ router.get("/", async (req, res) => {
 });
 
 router.delete("/", async (req, res) => {
-    const { userId, clothingItem } = req.body
+    const { userId, clothingItem } = req.body;
+	console.log(req.body)
     try {
         const user = await UserModel.findById(userId);
         if (!user) {
