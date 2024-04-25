@@ -40,7 +40,7 @@
 
 .ModalLike {
 	color: var(--orange);
-	font-size: 5em;
+	font-size: 1.5em;
 	position: absolute;
 	bottom: 15px;
 	right: 15px;
@@ -48,6 +48,10 @@
 	height: 100px;
 	border: 2px solid black;
 	border-radius: 50%;
+}
+
+.ModalLike:hover {
+	cursor: pointer;
 }
 
 .ModalMain {

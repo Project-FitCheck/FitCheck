@@ -15,7 +15,7 @@ function Profile() {
 
 
   const handleEditModelClick = () => {
-    navigate("../model");
+    navigate("../model/edit");
   };
 
   const handleChangePWclick = () => {

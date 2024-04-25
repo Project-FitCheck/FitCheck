@@ -135,7 +135,6 @@ function Clothes(props) {
 		if (isShorts != null) {
 			isShorts.style["top"] = "-50px";
 		}
-		console.log(isShorts);
 	}, [pants])
 
 
