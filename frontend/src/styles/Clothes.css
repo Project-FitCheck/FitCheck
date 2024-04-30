@@ -1,8 +1,8 @@
 .Clothes {
-	width: 100%;
+	width: 80%;
 	height: 86%;
 	margin: 0;
 	padding: 0;
 	top: 14%;
-	position: relative;
+	position: fixed;
 }
