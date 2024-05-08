@@ -42,7 +42,8 @@ function CreateModel() {
                 }
             };
 
-            await axios.put("https://fitcheck-backend-7mo5.onrender.com/model/create", modelData);
+            //await axios.put("https://fitcheck-backend-7mo5.onrender.com/model/create", modelData);
+            await axios.put("http://localhost:3001/model/create", modelData);
             navigate("/closet");
         } catch (error) {
             setError("Please Create Your Model"); // Handle error

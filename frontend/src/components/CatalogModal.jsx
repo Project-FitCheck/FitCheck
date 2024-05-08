@@ -2,8 +2,8 @@ import React from 'react';
 import axios from "axios";
 import '../styles/Modal.css';
 
-const ClosetModal = ({ id, itemName, gender, pic, description, color, type, style, handleClose }) => {
-	async function removeFromCloset() {
+const CatalogModal = ({ id, itemName, gender, pic, description, color, type, style, handleClose }) => {
+	async function AddToCloset() {
 		try {
 			const userId = window.localStorage.getItem("userId");
 			const clothingItem = {
@@ -15,15 +15,14 @@ const ClosetModal = ({ id, itemName, gender, pic, description, color, type, styl
 				image: pic,
 				gender: gender
 			}
-			//const req = { userId, clothingItem };
-			//await axios.delete("https://fitcheck-backend-7mo5.onrender.com/closet", {data: { userId, clothingItem }});
-			await axios.delete("http://localhost:3001/closet/", {data: { userId, clothingItem }});
+			//await axios.post("https://fitcheck-backend-7mo5.onrender.com/closet/add", { userId, clothingItem });
+			 await axios.post("http://localhost:3001/closet/add", { userId, clothingItem });
 			handleClose();
 		} catch (error) {
 			console.log(error);
 		}
 	}
-
+	
 	return (
 		<div className='ModalBackground'>
 			<div className='Modal'>
@@ -41,10 +40,10 @@ const ClosetModal = ({ id, itemName, gender, pic, description, color, type, styl
 						<p className='ModalPara'>Gender: {gender}</p>
 					</div>
 				</div>
-				<button className="ModalLike" onClick={removeFromCloset}>DEL</button>
+				<button className="ModalLike" onClick={AddToCloset}>ADD</button>
 			</div>
 		</div>
 	);
 }
 
-export default ClosetModal;
+export default CatalogModal;

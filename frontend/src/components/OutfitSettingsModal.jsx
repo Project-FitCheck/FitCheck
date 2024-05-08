@@ -11,6 +11,7 @@ const OutfitSettingsModal = ({ pic, shirt, pants, shoes, handleClose }) => {
 		try {
 			const userId = window.localStorage.getItem("userId");
 			const Outfit = { head: {}, torso: { shirt }, legs: { pants }, socks: {}, shoes: { shoes }, tags: [""], image: pic, fitName: fitName, description: description };
+			//await axios.post("http://localhost:3001/locker/add", { userId, Outfit });
 			await axios.post("https://fitcheck-backend-7mo5.onrender.com/locker/add", { userId, Outfit });
 			handleClose();
 		} catch (err) {

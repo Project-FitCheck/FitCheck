@@ -1,96 +1,154 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import { Button } from "@mui/material";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import NavBar from '../components/navbar.js';
+import Select from 'react-select';
+import "../styles/searchLocker.css";
+import '../styles/CardArea.css';
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import OutfitCard from '../components/OutfitCard.jsx';
 
-import OutfitCard from "../components/OutfitCard";
+function SearchLocker() {
 
+    const color = [
+        { value: 'all', label: 'All' },
+        { value: 'black', label: 'Black' },
+        { value: 'white', label: 'White' },
+        { value: 'red', label: 'Red' },
+        { value: 'blue', label: 'Blue' },
+        { value: 'gray', label: 'Gray' },
+        { value: 'green', label: 'Green' },
+        { value: 'tan', label: 'Tan' },
+        { value: 'cottoncandy', label: 'Cotton Candy' }
+    ]
+    const type = [
+        { value: 'all', label: 'All' },
+        { value: 'shirt', label: 'Shirt' },
+        /*{ value: 'long-sleeve', label: 'Long-sleeve' },
+        { value: 'sweater', label: 'Sweater' },
+        { value: 'jacket', label: 'Jacket' },*/
+        { value: 'shorts', label: 'Shorts' },
+        /*{ value: 'jeans', label: 'Jeans' },
+        { value: 'sweatpants', label: 'Sweatpants' },*/
+        { value: 'pants', label: 'Pants' },
+        /*{ value: 'dress', label: 'Dress' },*/
+        { value: 'shoes', label: 'Shoes' }
+    ]
+    const style = [
+        { value: 'all', label: 'All' },
+        { value: 'casual', label: 'Casual' },
+        { value: 'streetwear', label: 'Streetwear' },
+        /*{ value: 'formal', label: 'Formal' },
+        { value: 'business', label: 'Business' },
+        { value: 'gym', label: 'Gym' },
+        { value: 'fun', label: 'Fun' },
+        { value: 'lazy', label: 'Lazy' }*/
+    ]
 
-const SearchLocker = () => {
-    const [colorFilters, setColorFilters] = useState([]);
-    const [typeFilters, setTypeFilters] = useState([]);
-    const [styleFilters, setStyleFilters] = useState([]);
-    const [outfits, setOutfits] = useState([]);
+    const [colorFilters, setColorFilters] = useState("all");
+    const [typeFilters, setTypeFilters] = useState("all");
+    const [styleFilters, setStyleFilters] = useState("all");
     const [filteredOutfits, setFilteredOutfits] = useState([]);
 
+    const [locker, setLocker] = useState([]);
 
     useEffect(() => {
-        async function getOutfits() {
+        async function getLocker() {
             try {
                 const userId = window.localStorage.getItem("userId");
-                const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/locker/?userId=" + userId);
-                setOutfits(response);
+                //const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/locker/?userId=" + userId);
+                const response = await axios.get("http://localhost:3001/locker/?userId=" + userId);
+                setLocker(response.data);
+                setFilteredOutfits(response.data)
             } catch (error) {
-                console.error("Error fetching clothes from locker:", error);
+                console.error("Error fetching outfits from locker:", error);
             }
         }
-        getOutfits();
+        getLocker();
     }, []);
 
-    const applyFilters = () => {
+    const applyFilters = (e) => {
+        e.preventDefault();
         var temp = [];
         var temp2 = [];
-        var i, j;
+        var temp3 = [];
+        var i;
         //check filter color first
-        for (i = 0; i < outfits.length; i++) {
-            for (j = 0; j < colorFilters.length; j++) {
-                if (outfits[i].color === colorFilters[j]) {
-                    temp.push(outfits[i]);
+        if (colorFilters === "all") {
+            temp = locker;
+        } else {
+            for (i = 0; i < locker.length; i++) {
+                if (locker[i].color === colorFilters) {
+                    temp.push(locker[i]);
                 }
             }
         }
-
         //check filter type next
-        for (i = 0; i < temp.length; i++) {
-            for (j = 0; j < typeFilters.length; j++) {
-                if (temp[i].type === typeFilters[j]) {
+        if (typeFilters === "all") {
+            temp2 = temp;
+        } else {
+            for (i = 0; i < temp.length; i++) {
+                if (temp[i].type === typeFilters) {
                     temp2.push(temp[i]);
                 }
             }
         }
-        temp = [];
-        //check filter style last
-        for (i = 0; i < temp2.length; i++) {
-            for (j = 0; j < styleFilters.length; j++) {
-                if (temp2[i].type === styleFilters[j]) {
-                    temp.push(temp2[i]);
+        //check filter style next
+        if (styleFilters === "all") {
+            temp3 = temp2;
+        } else {
+            for (i = 0; i < temp2.length; i++) {
+                if (temp2[i].style === styleFilters) {
+                    temp3.push(temp2[i]);
                 }
             }
         }
-
-        setFilteredOutfits(temp);
+        return setFilteredOutfits(temp3);
     }
 
     return (
-        <div className="SearchCloset">
-            <div className="SearchFilters">
-                <h2>Keywords</h2>
-                <div class="InputContainer">
-                    <input placeholder="Search.." id="input" class="input" name="text" type="text" />
+        <>
+            <NavBar page="home" />
+            <div className="searchLocker">
+                <div className="title">
+                    <Button component={Link} to={"/locker"} className='navBack'>&#60;</Button>
+                    <h1>Search Outfits</h1>
                 </div>
-                <h6>Color</h6>
-                <DropdownButton id="dropdown-basic-button" title={colorFilters}>
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                </DropdownButton>
-                <h6>Type</h6>
-                <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                </DropdownButton>
-                <h6>Style</h6>
-                <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                </DropdownButton>
-                <Button onClick={applyFilters}>Search</Button>
-            </div>
-            <div className='Outfits'>
-                <h1>Welcome to your Locker!</h1>
+
+                <div className="greeting">
+                    <h2>What are you looking for?</h2>
+                </div>
+
+                <div className="list-container">
+
+                    <div className="search">
+                        <input type="text" placeholder="Enter keyword"></input>
+                    </div>
+
+                    <div className="listColor">
+                        <h3>Color</h3>
+                        <Select options={color} onChange={(selectedOption) => setColorFilters(selectedOption.value)} />
+                        {/*<Select options={color} />*/}
+                    </div>
+
+                    <div className="listType">
+                        <h3>Type</h3>
+                        <Select options={type} onChange={(selectedOption) => setTypeFilters(selectedOption.value)} />
+                        {/*<Select options={type} />*/}
+                    </div>
+
+                    <div className="listStyle">
+                        <h3>Style</h3>
+                        <Select options={style} onChange={(selectedOption) => setStyleFilters(selectedOption.value)} />
+                        {/*<Select options={style} />*/}
+                    </div>
+
+                    <div className="filterBtn">
+                        <button className="filter" onClick={applyFilters}>Filter</button>
+                        {/*<button className="filter">Filter</button>*/}
+                    </div>
+                </div>
+
                 <div className="CardArea">
                     {filteredOutfits.map(filteredOutfits => {
                         return (<OutfitCard
@@ -99,12 +157,16 @@ const SearchLocker = () => {
                             fitName={filteredOutfits.fitName}
                             pic={filteredOutfits.image}
                             description={filteredOutfits.description}
+                            shirt={filteredOutfits.shirt}
+                            pants={filteredOutfits.pants}
+                            shoes={filteredOutfits.shoes}
                         />)
-                    })}
+                    }
+                    )}
                 </div>
             </div>
-        </div>
-    )
+        </>
+    );
 }
 
-export default SearchLocker
+export default SearchLocker;

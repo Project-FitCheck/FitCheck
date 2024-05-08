@@ -1,0 +1,82 @@
+.searchLocker {
+    width: 80%;
+    float: right;
+    position: relative;
+}
+
+.searchLocker .navBack {
+    font-size: 40px;
+    margin-left: 10%;
+    color: var(--purple);
+    border-radius: 50%;
+}
+
+.searchLocker .title {
+    background-color: white;
+    border-bottom: solid black 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: fixed;
+    height: 14%;
+    width: 80%;
+    z-index: 1;
+}
+
+.searchLocker .title h1 {
+    margin: auto 40% auto auto;
+}
+
+.searchLocker .list-container {
+    display: flex;
+    margin-top: 50px;
+}
+
+.searchLocker .listColor,
+.listType,
+.listStyle {
+    margin-right: 25px;
+    width: 20%;
+    text-align: center;
+    padding: 15px;
+    color: #F98D5F;
+    font-size: large;
+}
+
+.searchLocker .filterBtn {
+    margin-right: 10px;
+    width: 20%;
+    text-align: center;
+    padding: 15px;
+}
+
+.searchLocker .filter {
+    margin-top: 70px;
+    height: 30%;
+    background-color: lightgray;
+    color: #F98D5F;
+    border: none;
+    cursor: pointer;
+    width: 75%;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.searchLocker .filter:hover {
+    background-color: var(--purple);
+}
+
+.searchLocker .search {
+    margin-right: 10px;
+    width: 25%;
+    padding: 15px;
+}
+
+.searchLocker .search input {
+    margin-top: 70px;
+    height: 30%;
+    width: 75%;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 50px;
+}

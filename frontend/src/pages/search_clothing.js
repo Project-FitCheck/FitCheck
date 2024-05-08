@@ -56,8 +56,8 @@ function SearchCloset() {
         async function getCloset() {
             try {
                 const userId = window.localStorage.getItem("userId");
-                const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/closet/?userId=" + userId);
-                //const response = await axios.get("http://localhost:3001/closet/?userId=" + userId);
+                //const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/closet/?userId=" + userId);
+                const response = await axios.get("http://localhost:3001/closet/?userId=" + userId);
                 setCloset(response.data);
                 setFilteredClothes(response.data)
             } catch (error) {

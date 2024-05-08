@@ -11,7 +11,6 @@ import OutfitSettingsModal from '../components/OutfitSettingsModal.jsx';
 var SHIRT, PANTS, SHOES;
 
 function Clothes(props) {
-	const [clothing, setClothing] = useState([]);
 	const [shirts, setShirts] = useState([]);
 	const [pants, setPants] = useState([]);
 	const [shoes, setShoes] = useState([]);
@@ -20,31 +19,21 @@ function Clothes(props) {
 	const [pantsIndex, setPantsIndex] = useState(0)
 	const [shoesIndex, setShoesIndex] = useState(0);
 
+	console.log(props.shirts);
 	useEffect(() => {
-		async function getClothing() {
-			try {
-				const userId = window.localStorage.getItem("userId");
-				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/closet/?userId=" + userId);
-				setClothing(response.data);
-			} catch (error) {
-				console.error(error);
-			}
+		function setClothing() {
+			setShirts(props.shirts);
+			setPants(props.pants);
+			setShoes(props.shoes);
 		}
-		getClothing();
-	}, []); // Run only once on component mount
-
-	useEffect(() => {
-		// Filter clothing after it has been updated
-		setShirts(clothing.filter((x) => (x.type === "shirt") && (x.gender === props.gender)));
-		setPants(clothing.filter((x) => (x.type === "pants") && (x.gender === props.gender)));
-		setShoes(clothing.filter((x) => (x.type === "shoes") && (x.gender === props.gender)));
-	}, [clothing, props.gender]); // Run whenever clothing state changes
+		setClothing();
+	}, [props.pants, props.shirts, props.shoes]); // Run only once on component mount
 
 	useEffect(() => {
 		SHIRT = shirts[shirtIndex];
 		PANTS = pants[pantsIndex];
 		SHOES = shoes[shoesIndex];
-	}, [shirts, pants, shoes, shirtIndex, pantsIndex, shoesIndex, clothing]);
+	}, [shirts, pants, shoes, shirtIndex, pantsIndex, shoesIndex]);
 
 	function cycleShirtLeft() {
 		setShirtIndex(Math.abs(shirtIndex - 1) % shirts.length);
@@ -149,15 +138,15 @@ function Clothes(props) {
 					</div>
 					<div className='middle'>
 						{shirts.length > 0 && (
-							<div className='male_shirt' dangerouslySetInnerHTML={{ __html: shirts[shirtIndex]?.image }}
+							<div className='male_shirt' dangerouslySetInnerHTML={{ __html: shirts[shirtIndex].image }}
 								style={maleShirtStyle} />
 						)}
 						{pants.length > 0 && (
-							<div className='male_pants' dangerouslySetInnerHTML={{ __html: pants[pantsIndex]?.image }}
+							<div className='male_pants' dangerouslySetInnerHTML={{ __html: pants[pantsIndex].image }}
 								style={malePantStyle} />
 						)}
 						{shoes.length > 0 && (
-							<div className='male_shoes' dangerouslySetInnerHTML={{ __html: shoes[shoesIndex]?.image }}
+							<div className='male_shoes' dangerouslySetInnerHTML={{ __html: shoes[shoesIndex].image }}
 								style={maleShoeStyle} />
 						)}
 					</div>
@@ -180,15 +169,15 @@ function Clothes(props) {
 					</div>
 					<div className='middle'>
 						{shirts.length > 0 && (
-							<div className='female_shirt' dangerouslySetInnerHTML={{ __html: shirts[shirtIndex]?.image }}
+							<div className='female_shirt' dangerouslySetInnerHTML={{ __html: shirts[shirtIndex].image }}
 								style={femaleShirtStyle} />
 						)}
 						{pants.length > 0 && (
-							<div className='female_pants' dangerouslySetInnerHTML={{ __html: pants[pantsIndex]?.image }}
+							<div className='female_pants' dangerouslySetInnerHTML={{ __html: pants[pantsIndex].image }}
 								style={femalePantStyle} />
 						)}
 						{shoes.length > 0 && (
-							<div className='female_shoes' dangerouslySetInnerHTML={{ __html: shoes[shoesIndex]?.image }}
+							<div className='female_shoes' dangerouslySetInnerHTML={{ __html: shoes[shoesIndex].image }}
 								style={femaleShoeStyle} />
 						)}
 					</div>
@@ -210,10 +199,20 @@ function Clothes(props) {
 function Model() {
 	const [model, setModel] = useState("");
 	const [modelGender, setModelGender] = useState("");
+
+	const [shirts, setShirts] = useState([]);
 	const [shirt, setShirt] = useState("");
-	const [pants, setPants] = useState("");
-	const [shoes, setShoes] = useState("");
+
+	const [pants, setPants] = useState([]);
+	const [pant, setPant] = useState("");
+
+	const [shoes, setShoes] = useState([]);
+	const [shoe, setShoe] = useState("");
+
+	const [isFullFit, setIsFullFit] = useState(true)
+	const [clothing, setClothing] = useState([]);
 	const [showModal, setShowModal] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const ref = useRef(null);
 
 	const [image, takeScreenshot] = useScreenshot();
@@ -224,10 +223,12 @@ function Model() {
 		async function getModel() {
 			try {
 				const userId = window.localStorage.getItem("userId");
-				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/model/?userId=" + userId);
+				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/model/?userId=" + userId);
+				const response = await axios.get("http://localhost:3001/model/?userId=" + userId);
 				response.data.fullBody.replace(/"/g, '');
 				setModel(response.data.fullBody);
 				setModelGender(response.data.gender);
+				setTimeout(() => { setLoading(false) }, 2000);
 			} catch (error) {
 				console.error("Error fetching model data:", error);
 			}
@@ -236,26 +237,74 @@ function Model() {
 		getModel();
 	}, []);
 
+	useEffect(() => {
+		async function getClothing() {
+			try {
+				const userId = window.localStorage.getItem("userId");
+				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/closet/?userId=" + userId);
+				const response = await axios.get("http://localhost:3001/closet/?userId=" + userId);
+				setClothing(response.data);
+			} catch (error) {
+				console.error(error);
+			}
+		}
+		getClothing();
+	}, []); // Run only once on component mount
+
+	useEffect(() => {
+		// Filter clothing after it has been updated
+		setShirts(clothing.filter((x) => (x.type === "shirt") && (x.gender === modelGender)));
+		setPants(clothing.filter((x) => (x.type === "pants") && (x.gender === modelGender)));
+		setShoes(clothing.filter((x) => (x.type === "shoes") && (x.gender === modelGender)));
+	}, [clothing, modelGender]); // Run whenever clothing state changes
+
+	useEffect(() => {
+			if (shirts.length === 0 || pants.length === 0 || shoes.length === 0) {
+			setIsFullFit(false);
+		} else {
+			setIsFullFit(true);
+		}
+	}, [shirts, pants, shoes])
+
 	const handleClose = () => { setShowModal(false) };
 
-	return (<div className='MainPage'>
-		<NavBar page="model" />
-		<ModelNav props={{ mode: "view" }} />
-		<div className='Model'>
-			<div className='outfit' ref={ref}>
-				<Clothes gender={modelGender} />
-				<ModelViewer props={{ mode: "view", model: model }} />
+	if (!isFullFit) {
+		return <div className='MainPage'>
+			<NavBar page="model" />
+			<ModelNav props={{ mode: "view" }} />
+			<div className='Model'>
+				<div className='outfit' ref={ref}>
+					<h1 className='noFitMsg'>A full outfit of shirt, pants, and shoes to view model</h1>
+				</div>
 			</div>
-			<Button className="saveFit" onClick={() => {
-				setShowModal(true);
-				getImage();
-				setShirt(SHIRT);
-				setPants(PANTS);
-				setShoes(SHOES);
-			}}>Save Outfit</Button>
-			{showModal && <OutfitSettingsModal pic={image} shirt={shirt} pants={pants} shoes={shoes} handleClose={handleClose} />}
 		</div>
-	</div>);
+	} else {
+		return (<div className='MainPage'>
+			<NavBar page="model" />
+			<ModelNav props={{ mode: "view" }} />
+			<div className='Model'>
+				<div className='outfit' ref={ref}>
+					{loading ? (
+						<div className="loader"></div> // Render loader while clothes are loading
+					) : (
+						<>
+							<Clothes gender={modelGender} shirts={shirts} pants={pants} shoes={shoes} />
+							<ModelViewer props={{ mode: "view", model: model }} />
+							<Button className="saveFit" onClick={() => {
+								setShowModal(true);
+								getImage();
+								setShirt(SHIRT);
+								setPant(PANTS);
+								setShoe(SHOES);
+							}}>Save Outfit</Button>
+							{showModal && <OutfitSettingsModal pic={image} shirt={shirt} pants={pant} shoes={shoe} handleClose={handleClose} />}
+						</>
+					)}
+				</div>
+
+			</div>
+		</div>);
+	}
 }
 
 export default Model;

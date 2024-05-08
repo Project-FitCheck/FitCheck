@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import NavBar from '../components/navbar.js';
-import ClothesCard from '../components/ClothesCard.jsx';
+import CatalogCard from '../components/CatalogCard.jsx';
 import Select from 'react-select';
 import "../styles/catalog.css";
 import '../styles/CardArea.css';
@@ -53,8 +53,8 @@ function Catalog() {
 	useEffect(() => {
 		async function getCatalog() {
 			try {
-				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
-				//const response = await axios.get("http://localhost:3001/clothes/");
+				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
+				const response = await axios.get("http://localhost:3001/clothes/");
 				updateCatalog(response.data);
 				setFilteredClothes(response.data);
 			} catch (error) {
@@ -147,7 +147,7 @@ function Catalog() {
 
 				<div className="CardArea">
 					{filteredClothes.map(filteredClothes => {
-						return (<ClothesCard
+						return (<CatalogCard
 							key={filteredClothes._id}
 							id={filteredClothes._id}
 							itemName={filteredClothes.productTitle}
