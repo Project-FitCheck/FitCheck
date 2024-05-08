@@ -7,16 +7,16 @@ const CatalogModal = ({ id, itemName, gender, pic, description, color, type, sty
 		try {
 			const userId = window.localStorage.getItem("userId");
 			const clothingItem = {
-				productTitle: gender + " " + color + " " + type,
+				productTitle: color + " " + type,
 				type: type,
 				color: color,
 				description: description,
 				style: style,
 				image: pic,
-				gender: gender
+				//gender: gender
 			}
 			//await axios.post("https://fitcheck-backend-7mo5.onrender.com/closet/add", { userId, clothingItem });
-			 await axios.post("http://localhost:3001/closet/add", { userId, clothingItem });
+			await axios.post("http://localhost:3001/closet/add", { userId, clothingItem });
 			handleClose();
 		} catch (error) {
 			console.log(error);

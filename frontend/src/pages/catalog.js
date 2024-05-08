@@ -8,6 +8,11 @@ import '../styles/CardArea.css';
 
 function Catalog() {
 
+	const gender = [
+		{ value: "all", label: "All" },
+		{ value: "male", label: "Male" },
+		{ value: "female", label: "Female" }
+	]
 	const color = [
 		{ value: 'all', label: 'All' },
 		{ value: 'black', label: 'Black' },
@@ -43,6 +48,7 @@ function Catalog() {
 		{ value: 'lazy', label: 'Lazy' }*/
 	]
 
+	const [genderFilters, setGenderFilters] = useState([])
 	const [colorFilters, setColorFilters] = useState([]);
 	const [typeFilters, setTypeFilters] = useState([]);
 	const [styleFilters, setStyleFilters] = useState([]);
@@ -56,6 +62,7 @@ function Catalog() {
 				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
 				const response = await axios.get("http://localhost:3001/clothes/");
 				updateCatalog(response.data);
+				console.log(catalog[0])
 				setFilteredClothes(response.data);
 			} catch (error) {
 				console.error("Error fetching clothes from closet:", error);
@@ -69,6 +76,7 @@ function Catalog() {
 		var temp = [];
 		var temp2 = [];
 		var temp3 = [];
+		var temp4 = []
 		var i;
 		//check filter color first
 		if (colorFilters === "all") {
@@ -100,7 +108,16 @@ function Catalog() {
 				}
 			}
 		}
-		return setFilteredClothes(temp3);
+		if (genderFilters === "all") {
+			temp4 = temp3;
+		} else {
+			for (i = 0; i < temp3.length; i++) {
+				if (temp3[i].gender === genderFilters) {
+					temp4.push(temp3[i]);
+				}
+			}
+		}
+		return setFilteredClothes(temp4);
 	}
 
 	return (
@@ -119,6 +136,12 @@ function Catalog() {
 
 					<div className="search">
 						<input type="text" placeholder="Enter keyword"></input>
+					</div>
+
+					<div className="listGender">
+						<h3>Gender</h3>
+						<Select options={gender} onChange={(selectedOption) => setGenderFilters(selectedOption.value)} />
+						{/*<Select options={gender} />*/}
 					</div>
 
 					<div className="listColor">
@@ -151,6 +174,7 @@ function Catalog() {
 							key={filteredClothes._id}
 							id={filteredClothes._id}
 							itemName={filteredClothes.productTitle}
+							gender={filteredClothes.gender}
 							pic={filteredClothes.image}
 							description={filteredClothes.description}
 							color={filteredClothes.color}

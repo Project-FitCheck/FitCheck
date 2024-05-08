@@ -27,7 +27,8 @@
 
 .catalog .listColor,
 .catalog .listType,
-.catalog .listStyle {
+.catalog .listStyle,
+.catalog .listGender {
     margin-right: 25px;
     width: 20%;
     text-align: center;
