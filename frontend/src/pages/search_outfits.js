@@ -45,9 +45,10 @@ function SearchLocker() {
         { value: 'lazy', label: 'Lazy' }*/
     ]
 
-    const [colorFilters, setColorFilters] = useState("all");
+    /* const [colorFilters, setColorFilters] = useState("all");
     const [typeFilters, setTypeFilters] = useState("all");
-    const [styleFilters, setStyleFilters] = useState("all");
+    const [styleFilters, setStyleFilters] = useState("all"); */
+    const [outfitFilters, setOutfitFilters] = useState("");
     const [filteredOutfits, setFilteredOutfits] = useState([]);
 
     const [locker, setLocker] = useState([]);
@@ -67,9 +68,72 @@ function SearchLocker() {
         getLocker();
     }, []);
 
+
+    const toMap = (str) => {
+        const frequencies = {};
+    
+        // Loop through each character in the string
+        for (let i = 0; i < str.length; i++) {
+            const char = str[i].toLowerCase(); // Convert to lowercase to handle case insensitivity
+            // Check if it's a letter
+            if (/^[a-z]$/.test(char)) {
+                // If the character is already a key in the object, increment its value
+                if (frequencies[char]) {
+                    frequencies[char]++;
+                } else {
+                    // If the character is not a key, add it with a value of 1
+                    frequencies[char] = 1;
+                }
+            }
+        }
+        return frequencies;
+    }
+
+    function areEquivalent(obj1, obj2) {
+        // Check if both objects have the same number of keys
+        const keys1 = Object.keys(obj1);
+        const keys2 = Object.keys(obj2);
+    
+        if (keys1.length !== keys2.length) {
+            return false;
+        }
+    
+        // Check if all keys in obj1 have the same values in obj2
+        for (let key of keys1) {
+            if (obj1[key] !== obj2[key]) {
+                return false;
+            }
+        }
+    
+        // Check if all keys in obj2 have the same values in obj1 (to ensure symmetry)
+        for (let key of keys2) {
+            if (obj1[key] !== obj2[key]) {
+                return false;
+            }
+        }
+    
+        // If all checks pass, the objects are equivalent
+        return true;
+    }
+
     const applyFilters = (e) => {
         e.preventDefault();
+        var i;
         var temp = [];
+        const map = toMap(outfitFilters);
+        console.log(map);
+
+        if (outfitFilters === "") {
+            temp = locker;
+        } else {
+            for (i = 0; i < locker.length; i++) {
+                console.log(toMap(locker[i].fitName));
+                if (areEquivalent(toMap(locker[i].fitName), map)) {
+                    temp.push(locker[i]);
+                }
+            }
+        }
+        /* var temp = [];
         var temp2 = [];
         var temp3 = [];
         var i;
@@ -102,8 +166,8 @@ function SearchLocker() {
                     temp3.push(temp2[i]);
                 }
             }
-        }
-        return setFilteredOutfits(temp3);
+        } */
+        return setFilteredOutfits(temp);
     }
 
     return (
@@ -122,34 +186,35 @@ function SearchLocker() {
                 <div className="list-container">
 
                     <div className="search">
-                        <input type="text" placeholder="Enter keyword"></input>
+                        <input type="text" placeholder="Enter keyword" value={outfitFilters} onChange={(e) => setOutfitFilters(e.target.value)}></input>
                     </div>
 
-                    <div className="listColor">
+                    {/* To be added when outfits have more identifiers
+                    {/* <div className="listColor">
                         <h3>Color</h3>
                         <Select options={color} onChange={(selectedOption) => setColorFilters(selectedOption.value)} />
-                        {/*<Select options={color} />*/}
+                        {/*<Select options={color} />*
                     </div>
 
                     <div className="listType">
                         <h3>Type</h3>
                         <Select options={type} onChange={(selectedOption) => setTypeFilters(selectedOption.value)} />
-                        {/*<Select options={type} />*/}
+                        {/*<Select options={type} />*
                     </div>
 
                     <div className="listStyle">
                         <h3>Style</h3>
                         <Select options={style} onChange={(selectedOption) => setStyleFilters(selectedOption.value)} />
-                        {/*<Select options={style} />*/}
-                    </div>
+                        {/*<Select options={style} />*
+                    </div> */}
 
                     <div className="filterBtn">
-                        <button className="filter" onClick={applyFilters}>Filter</button>
+                        <button className="filter" onClick={applyFilters}>Apply Filters</button>
                         {/*<button className="filter">Filter</button>*/}
                     </div>
                 </div>
 
-                <div className="CardArea">
+                {filteredOutfits.length ? <div className="CardArea">
                     {filteredOutfits.map(filteredOutfits => {
                         return (<OutfitCard
                             key={filteredOutfits._id}
@@ -163,7 +228,7 @@ function SearchLocker() {
                         />)
                     }
                     )}
-                </div>
+                </div> : <h2 className='notFound'>No Outfit Found</h2>}
             </div>
         </>
     );

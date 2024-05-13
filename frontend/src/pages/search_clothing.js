@@ -144,7 +144,7 @@ function SearchCloset() {
                     </div>
 
                     <div className="filterBtn">
-                        <button className="filter" onClick={applyFilters}>Filter</button>
+                        <button className="filter" onClick={applyFilters}>Apply Filters</button>
                         {/*<button className="filter">Filter</button>*/}
                     </div>
                 </div>

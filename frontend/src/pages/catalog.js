@@ -48,10 +48,10 @@ function Catalog() {
 		{ value: 'lazy', label: 'Lazy' }*/
 	]
 
-	const [genderFilters, setGenderFilters] = useState([])
-	const [colorFilters, setColorFilters] = useState([]);
-	const [typeFilters, setTypeFilters] = useState([]);
-	const [styleFilters, setStyleFilters] = useState([]);
+	const [genderFilters, setGenderFilters] = useState("all")
+	const [colorFilters, setColorFilters] = useState("all");
+	const [typeFilters, setTypeFilters] = useState("all");
+	const [styleFilters, setStyleFilters] = useState("all");
 	const [filteredClothes, setFilteredClothes] = useState([]);
 
 	const [catalog, updateCatalog] = useState([]);
@@ -62,7 +62,6 @@ function Catalog() {
 				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/clothes/");
 				const response = await axios.get("http://localhost:3001/clothes/");
 				updateCatalog(response.data);
-				console.log(catalog[0])
 				setFilteredClothes(response.data);
 			} catch (error) {
 				console.error("Error fetching clothes from closet:", error);
@@ -122,7 +121,7 @@ function Catalog() {
 
 	return (
 		<>
-			<NavBar />
+			<NavBar page="catalog"/>
 			<div className="catalog">
 				<div className="title">
 					<h1>Catalog</h1>
@@ -134,9 +133,9 @@ function Catalog() {
 
 				<div className="list-container">
 
-					<div className="search">
+					{/* <div className="search">
 						<input type="text" placeholder="Enter keyword"></input>
-					</div>
+					</div> */}
 
 					<div className="listGender">
 						<h3>Gender</h3>
@@ -163,7 +162,7 @@ function Catalog() {
 					</div>
 
 					<div className="filterBtn">
-						<button className="filter" onClick={applyFilters}>Filter</button>
+						<button className="filter" onClick={applyFilters}>Apply Filters</button>
 						{/*<button className="filter">Filter</button>*/}
 					</div>
 				</div>
