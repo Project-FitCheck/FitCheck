@@ -1,10 +1,17 @@
-.catalog {
+.searchLocker {
     width: 80%;
     float: right;
     position: relative;
 }
 
-.catalog .title {
+.searchLocker .navBack {
+    font-size: 40px;
+    margin-left: 10%;
+    color: var(--purple);
+    border-radius: 50%;
+}
+
+.searchLocker .title {
     background-color: white;
     border-bottom: solid black 1px;
     display: flex;
@@ -16,19 +23,26 @@
     z-index: 1;
 }
 
-.catalog .title h1 {
-    margin: auto;
+.searchLocker .title h1 {
+    margin: auto 40% auto auto;
 }
 
-.catalog .list-container {
+.searchLocker .list-container {
     display: flex;
     margin-top: 50px;
+    justify-content: flex-end;
 }
 
-.catalog .listColor,
-.catalog .listType,
-.catalog .listStyle,
-.catalog .listGender {
+.searchLocker .greeting {
+    position: relative;
+    width: fit-content;
+    top: 170px;
+    left: 10%;
+}
+
+.searchLocker .listColor,
+.listType,
+.listStyle {
     margin-right: 25px;
     width: 20%;
     text-align: center;
@@ -37,14 +51,14 @@
     font-size: large;
 }
 
-.catalog .filterBtn {
+.searchLocker .filterBtn {
     margin-right: 10px;
     width: 20%;
     text-align: center;
     padding: 15px;
 }
 
-.catalog .filter {
+.searchLocker .filter {
     margin-top: 70px;
     height: 30%;
     background-color: lightgray;
@@ -56,21 +70,26 @@
     border-radius: 10px;
 }
 
-.catalog .filter:hover {
+.searchLocker .filter:hover {
     background-color: var(--purple);
 }
 
-.catalog .search {
-    margin-right: 10px;
+.searchLocker .search {
+    margin-right: -30px;
     width: 25%;
     padding: 15px;
 }
 
-.catalog .search input {
+.searchLocker .search input {
     margin-top: 70px;
     height: 30%;
     width: 75%;
     font-size: 20px;
     border-radius: 10px;
     margin-left: 50px;
+}
+
+.searchLocker .notFound {
+    position: relative;
+    top: 100px;
 }

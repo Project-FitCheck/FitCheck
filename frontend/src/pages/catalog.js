@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import NavBar from '../components/navbar.js';
-import ClothesCard from '../components/ClothesCard.jsx';
+import CatalogCard from '../components/CatalogCard.jsx';
 import Select from 'react-select';
 import "../styles/catalog.css";
 import '../styles/CardArea.css';
 
 function Catalog() {
 
+	const gender = [
+		{ value: "all", label: "All" },
+		{ value: "male", label: "Male" },
+		{ value: "female", label: "Female" }
+	]
 	const color = [
 		{ value: 'all', label: 'All' },
 		{ value: 'black', label: 'Black' },
@@ -43,9 +48,10 @@ function Catalog() {
 		{ value: 'lazy', label: 'Lazy' }*/
 	]
 
-	const [colorFilters, setColorFilters] = useState([]);
-	const [typeFilters, setTypeFilters] = useState([]);
-	const [styleFilters, setStyleFilters] = useState([]);
+	const [genderFilters, setGenderFilters] = useState("all")
+	const [colorFilters, setColorFilters] = useState("all");
+	const [typeFilters, setTypeFilters] = useState("all");
+	const [styleFilters, setStyleFilters] = useState("all");
 	const [filteredClothes, setFilteredClothes] = useState([]);
 
 	const [catalog, updateCatalog] = useState([]);
@@ -69,6 +75,7 @@ function Catalog() {
 		var temp = [];
 		var temp2 = [];
 		var temp3 = [];
+		var temp4 = []
 		var i;
 		//check filter color first
 		if (colorFilters === "all") {
@@ -100,12 +107,21 @@ function Catalog() {
 				}
 			}
 		}
-		return setFilteredClothes(temp3);
+		if (genderFilters === "all") {
+			temp4 = temp3;
+		} else {
+			for (i = 0; i < temp3.length; i++) {
+				if (temp3[i].gender === genderFilters) {
+					temp4.push(temp3[i]);
+				}
+			}
+		}
+		return setFilteredClothes(temp4);
 	}
 
 	return (
 		<>
-			<NavBar />
+			<NavBar page="catalog" />
 			<div className="catalog">
 				<div className="title">
 					<h1>Catalog</h1>
@@ -117,8 +133,14 @@ function Catalog() {
 
 				<div className="list-container">
 
-					<div className="search">
+					{/* <div className="search">
 						<input type="text" placeholder="Enter keyword"></input>
+					</div> */}
+
+					<div className="listGender">
+						<h3>Gender</h3>
+						<Select options={gender} onChange={(selectedOption) => setGenderFilters(selectedOption.value)} />
+						{/*<Select options={gender} />*/}
 					</div>
 
 					<div className="listColor">
@@ -140,17 +162,18 @@ function Catalog() {
 					</div>
 
 					<div className="filterBtn">
-						<button className="filter" onClick={applyFilters}>Filter</button>
+						<button className="filter" onClick={applyFilters}>Apply Filters</button>
 						{/*<button className="filter">Filter</button>*/}
 					</div>
 				</div>
 
 				<div className="CardArea">
 					{filteredClothes.map(filteredClothes => {
-						return (<ClothesCard
+						return (<CatalogCard
 							key={filteredClothes._id}
 							id={filteredClothes._id}
 							itemName={filteredClothes.productTitle}
+							gender={filteredClothes.gender}
 							pic={filteredClothes.image}
 							description={filteredClothes.description}
 							color={filteredClothes.color}

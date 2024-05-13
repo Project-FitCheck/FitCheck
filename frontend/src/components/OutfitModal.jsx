@@ -8,13 +8,14 @@ const OutfitModal = ({ id, fitName, pic, description, handleClose, shirt, pants,
 		try {
 			const userId = window.localStorage.getItem("userId");
 			const Outfit = { head: {}, torso: { shirt }, legs: { pants }, socks: {}, shoes: { shoes }, tags: [""], image: pic, fitName: fitName, description: description };
-			await axios.delete("https://fitcheck-backend-7mo5.onrender.com/locker/add", { userId, Outfit });
+			await axios.delete("https://fitcheck-backend-7mo5.onrender.com/locker/add", {data: { userId, Outfit }});
+			//await axios.delete("http://localhost:3001/locker/", { data: { userId, Outfit } });
 			handleClose();
 		} catch (err) {
 			console.error(err);
 		}
 	}
-	
+
 	return (
 		<div className='ModalBackground'>
 			<div className='Modal'>

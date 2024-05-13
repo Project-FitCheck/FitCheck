@@ -42,6 +42,7 @@ function EditModel() {
             try {
                 const userId = window.localStorage.getItem("userId");
                 const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/model/?userId=" + userId);
+                //const response = await axios.get("http://localhost:3001/model/?userId=" + userId);
                 setGender(response.data.gender);
                 setColor(response.data.fullBody)
             } catch (error) {
@@ -60,6 +61,7 @@ function EditModel() {
             newModel: { gender, fullBody: body }
         }
         await axios.put("https://fitcheck-backend-7mo5.onrender.com/model/update", updatedModel);
+        //await axios.put("http://localhost:3001/model/update", updatedModel);
         navigate("/model");
     }
 
