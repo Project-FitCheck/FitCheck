@@ -18,8 +18,8 @@ export default function Register(props) {
         event.preventDefault();
         // console.log(firstName, lastName, username, password, email)
         try {
-            //const response = await axios.post("https://fitcheck-backend-7mo5.onrender.com/user/signup"
-            const response = await axios.post("http://localhost:3001/user/signup", {
+            const response = await axios.post("https://fitcheck-backend-7mo5.onrender.com/user/signup", {
+            //const response = await axios.post("http://localhost:3001/user/signup", {
                 firstName: firstName,
                 lastName: lastName,
                 username: username,

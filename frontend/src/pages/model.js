@@ -223,8 +223,8 @@ function Model() {
 		async function getModel() {
 			try {
 				const userId = window.localStorage.getItem("userId");
-				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/model/?userId=" + userId);
-				const response = await axios.get("http://localhost:3001/model/?userId=" + userId);
+				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/model/?userId=" + userId);
+				//const response = await axios.get("http://localhost:3001/model/?userId=" + userId);
 				response.data.fullBody.replace(/"/g, '');
 				setModel(response.data.fullBody);
 				setModelGender(response.data.gender);
@@ -241,8 +241,8 @@ function Model() {
 		async function getClothing() {
 			try {
 				const userId = window.localStorage.getItem("userId");
-				//const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/closet/?userId=" + userId);
-				const response = await axios.get("http://localhost:3001/closet/?userId=" + userId);
+				const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/closet/?userId=" + userId);
+				//const response = await axios.get("http://localhost:3001/closet/?userId=" + userId);
 				setClothing(response.data);
 			} catch (error) {
 				console.error(error);
@@ -259,7 +259,7 @@ function Model() {
 	}, [clothing, modelGender]); // Run whenever clothing state changes
 
 	useEffect(() => {
-			if (shirts.length === 0 || pants.length === 0 || shoes.length === 0) {
+		if (shirts.length === 0 || pants.length === 0 || shoes.length === 0) {
 			setIsFullFit(false);
 		} else {
 			setIsFullFit(true);

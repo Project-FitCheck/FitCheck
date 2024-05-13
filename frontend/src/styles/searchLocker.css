@@ -33,7 +33,7 @@
     justify-content: flex-end;
 }
 
-.searchLocker .greeting{
+.searchLocker .greeting {
     position: relative;
     width: fit-content;
     top: 170px;
@@ -89,7 +89,7 @@
     margin-left: 50px;
 }
 
-.searchLocker .notFound{
+.searchLocker .notFound {
     position: relative;
     top: 100px;
 }

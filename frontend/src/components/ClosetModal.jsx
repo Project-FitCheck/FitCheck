@@ -16,8 +16,8 @@ const ClosetModal = ({ id, itemName, gender, pic, description, color, type, styl
 				gender: gender
 			}
 			//const req = { userId, clothingItem };
-			//await axios.delete("https://fitcheck-backend-7mo5.onrender.com/closet", {data: { userId, clothingItem }});
-			await axios.delete("http://localhost:3001/closet/", {data: { userId, clothingItem }});
+			await axios.delete("https://fitcheck-backend-7mo5.onrender.com/closet", {data: { userId, clothingItem }});
+			//await axios.delete("http://localhost:3001/closet/", { data: { userId, clothingItem } });
 			handleClose();
 		} catch (error) {
 			console.log(error);

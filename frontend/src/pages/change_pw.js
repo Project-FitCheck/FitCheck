@@ -29,8 +29,8 @@ function ChangePassword() {
         e.preventDefault();
         try {
             const userid = window.localStorage.getItem("userId");
-            //await axios.put("https://fitcheck-backend-7mo5.onrender.com/user/update", { userid, fieldToBeUpdated: "password", updatedValue: newPW, oldValue: oldPW });
-            await axios.put("http://localhost:3001/user/update", { userid, fieldToBeUpdated: "password", updatedValue: newPW, oldValue: oldPW });
+            await axios.put("https://fitcheck-backend-7mo5.onrender.com/user/update", { userid, fieldToBeUpdated: "password", updatedValue: newPW, oldValue: oldPW });
+            //await axios.put("http://localhost:3001/user/update", { userid, fieldToBeUpdated: "password", updatedValue: newPW, oldValue: oldPW });
             setShowPopup(true);
         } catch (error) {
             console.error("Error getting user data: ", error)

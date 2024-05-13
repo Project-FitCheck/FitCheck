@@ -15,14 +15,14 @@ const CatalogModal = ({ id, itemName, gender, pic, description, color, type, sty
 				image: pic,
 				//gender: gender
 			}
-			//await axios.post("https://fitcheck-backend-7mo5.onrender.com/closet/add", { userId, clothingItem });
-			await axios.post("http://localhost:3001/closet/add", { userId, clothingItem });
+			await axios.post("https://fitcheck-backend-7mo5.onrender.com/closet/add", { userId, clothingItem });
+			//await axios.post("http://localhost:3001/closet/add", { userId, clothingItem });
 			handleClose();
 		} catch (error) {
 			console.log(error);
 		}
 	}
-	
+
 	return (
 		<div className='ModalBackground'>
 			<div className='Modal'>

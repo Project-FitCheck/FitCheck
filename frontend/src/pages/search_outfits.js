@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import NavBar from '../components/navbar.js';
-import Select from 'react-select';
+//import Select from 'react-select';
 import "../styles/searchLocker.css";
 import '../styles/CardArea.css';
 import { Button } from '@mui/material';
@@ -10,7 +10,7 @@ import OutfitCard from '../components/OutfitCard.jsx';
 
 function SearchLocker() {
 
-    const color = [
+    /* const color = [
         { value: 'all', label: 'All' },
         { value: 'black', label: 'Black' },
         { value: 'white', label: 'White' },
@@ -26,28 +26,29 @@ function SearchLocker() {
         { value: 'shirt', label: 'Shirt' },
         /*{ value: 'long-sleeve', label: 'Long-sleeve' },
         { value: 'sweater', label: 'Sweater' },
-        { value: 'jacket', label: 'Jacket' },*/
+        { value: 'jacket', label: 'Jacket' },
         { value: 'shorts', label: 'Shorts' },
         /*{ value: 'jeans', label: 'Jeans' },
-        { value: 'sweatpants', label: 'Sweatpants' },*/
+        { value: 'sweatpants', label: 'Sweatpants' },
         { value: 'pants', label: 'Pants' },
-        /*{ value: 'dress', label: 'Dress' },*/
+        /*{ value: 'dress', label: 'Dress' },
         { value: 'shoes', label: 'Shoes' }
     ]
     const style = [
         { value: 'all', label: 'All' },
         { value: 'casual', label: 'Casual' },
         { value: 'streetwear', label: 'Streetwear' },
-        /*{ value: 'formal', label: 'Formal' },
+        { value: 'formal', label: 'Formal' },
         { value: 'business', label: 'Business' },
         { value: 'gym', label: 'Gym' },
         { value: 'fun', label: 'Fun' },
-        { value: 'lazy', label: 'Lazy' }*/
-    ]
+        { value: 'lazy', label: 'Lazy' }
+    ] */
 
     /* const [colorFilters, setColorFilters] = useState("all");
     const [typeFilters, setTypeFilters] = useState("all");
     const [styleFilters, setStyleFilters] = useState("all"); */
+
     const [outfitFilters, setOutfitFilters] = useState("");
     const [filteredOutfits, setFilteredOutfits] = useState([]);
 
@@ -57,8 +58,8 @@ function SearchLocker() {
         async function getLocker() {
             try {
                 const userId = window.localStorage.getItem("userId");
-                //const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/locker/?userId=" + userId);
-                const response = await axios.get("http://localhost:3001/locker/?userId=" + userId);
+                const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/locker/?userId=" + userId);
+                //const response = await axios.get("http://localhost:3001/locker/?userId=" + userId);
                 setLocker(response.data);
                 setFilteredOutfits(response.data)
             } catch (error) {
@@ -71,7 +72,7 @@ function SearchLocker() {
 
     const toMap = (str) => {
         const frequencies = {};
-    
+
         // Loop through each character in the string
         for (let i = 0; i < str.length; i++) {
             const char = str[i].toLowerCase(); // Convert to lowercase to handle case insensitivity
@@ -93,25 +94,25 @@ function SearchLocker() {
         // Check if both objects have the same number of keys
         const keys1 = Object.keys(obj1);
         const keys2 = Object.keys(obj2);
-    
+
         if (keys1.length !== keys2.length) {
             return false;
         }
-    
+
         // Check if all keys in obj1 have the same values in obj2
         for (let key of keys1) {
             if (obj1[key] !== obj2[key]) {
                 return false;
             }
         }
-    
+
         // Check if all keys in obj2 have the same values in obj1 (to ensure symmetry)
         for (let key of keys2) {
             if (obj1[key] !== obj2[key]) {
                 return false;
             }
         }
-    
+
         // If all checks pass, the objects are equivalent
         return true;
     }

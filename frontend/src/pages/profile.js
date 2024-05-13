@@ -26,8 +26,8 @@ function Profile() {
     async function getUserData() {
       try {
         const userId = window.localStorage.getItem("userId");
-        //const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/user/?userId=" + userId);
-        const response = await axios.get("http://localhost:3001/user/?userId=" + userId);
+        const response = await axios.get("https://fitcheck-backend-7mo5.onrender.com/user/?userId=" + userId);
+        //const response = await axios.get("http://localhost:3001/user/?userId=" + userId);
         setUserData(response.data);
 
       } catch (error) {
